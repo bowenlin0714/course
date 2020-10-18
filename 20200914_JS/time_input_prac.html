@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let input = parseInt(prompt("請輸入秒數"))
+    let time = input
+    function countdown(time){
+      time--     
+      if(time==0){
+        alert("時間結束")
+      }
+    }
+    setInterval(countdown,1000);
+    document.write(`<h1><span style = "color:blue">剩餘${time}秒</span></h1>`)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function math(n,m){
+      let sums = 0
+      let times = 0
+     while(sums <= m){
+      sums+= n+times
+      times++
+     }
+      return times
+    }
+    console.log(math(1,5))
+    console.log(math(5,10))
+    console.log(math(100,1000))
+  </script>
+</body>
+</html>

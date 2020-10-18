@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  1 <!DOCTYPE html>  
+  2 <head>  
+  3 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />  
+  4 <title>JavaScript九九乘法表</title>  
+  5   
+  6 <style type="text/css">  
+  7 table{  
+  8     width:600px;         //表格height屬性可設置可不設置,建議不設置
+  9     border-collapse:separate;
+ 10     } 
+ 11 table td{  
+ 12     border:#000000 1px solid;
+ 13     text-align: center;    //使<td>標簽中的內容居中顯示，若是<th>標簽，沒有此行代碼亦可自動居中
+ 14     }  
+ 15 </style>
+ 16 
+ 17 </head>  
+ 18 <body>  
+ 19   
+ 20 <script type="text/javascript">  
+ 21 //下麵部分是核心代碼
+ 22   
+ 23 document.write("<table>");      //<table></table>添加一個表格樣式來顯示乘法表 
+ 24 for (var x = 1; x <= 9; x++)  
+ 25 {  
+ 26     document.write("<tr>");     //<tr></tr>標簽
+ 27     for (var y = 1; y <= x; y++)
+ 28     {  
+ 29         document.write("<td>"+y+"x"+x+"="+y*x+"</td>");//亦可用<th>標簽來起到居中加粗內容的作用
+ 30     }                                                    
+ 31     document.write("</tr>");  
+ 32 }  
+ 33 document.write("</table>");    
+ 34 </script> 
+ 35  
+ 36 </body>  
+ 37 </html>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin-bottom: 100px;
+      margin-left: 50px;
+    }
+  .block{
+    background-color: darksalmon;
+    margin-top: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    border: 5px solid black;
+    padding: 10px;
+  }
+  .inline{
+    background: chartreuse;
+    /* width無效 */
+    width: 200px;
+    /* height無效 */
+    height: 200px;
+    /* margintop無效 */
+    margin-top: 200px ;
+    /* margin-bottom無效 */
+    margin-bottom: 200px;
+    /* margin左右有效 */
+    /* pading上下左右都有效 */
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .center{
+    width: 300px;
+    height: 300px;
+    background-color: crimson;
+    text-align:center;
+    /* 跟區塊高度相同 */
+    line-height: 300px;
+  }
+
+  .menu{
+    background-color: yellow;
+  }
+  .menu li{
+    display: inline-block;
+    margin: 1rem;
+    background-color: grey;
+    /* padding 先上下載左右 */
+    padding: 20px 100px;
+  }
+
+  .menu li a{
+    font-size: 20px;
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    background-color: yellowgreen;
+  }
+  .menu li a:hover{
+    background-color: white;
+  }
+  </style>
+</head>
+<body>
+  <h1>區塊盒</h1>
+  <!-- 區塊元素
+       可以正常使用 width,height,margin,padding,前後會斷行，並且會填滿父元素 -->
+  <div style="background-color: burlywood;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias provident similique, quia nihil eveniet rerum facere aspernatur obcaecati numquam?</div>
+  <h1 style="background-color: cyan;">區塊盒</h1>
+  <!-- 行內元素，前後不斷行，無法設定高度寬度，根據元素內容改變 -->
+  <hr>
+  <h1>行內盒</h1>
+  <span style="background-color: cornflowerblue;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, rerum voluptatibus! Et sint unde accusamus laudantium! Quae tempore dicta culpa?</span>
+  <a href="#" style="background-color: darkmagenta;">GGGG</a>
+  <hr>
+  <h1>兩種盒子與margin,padding 的關係</h1>
+  <p class="block">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, molestiae! Amet earum nesciunt nisi consequuntur! Debitis, laboriosam! Vel, vitae qui nemo sed explicabo <span class="inline">行內元素 </span>voluptate sit, quo impedit dignissimos a, eius adipisci iure excepturi?
+  </p>
+  <hr>
+  <h1>行內水平，垂直置中</h1>
+  <div class="center">Lorem ipsum dolor sit amet.</div>
+  <hr>
+
+  <h1>Display</h1>
+  <h2>使用display 設定其他類型的盒子，稱為轉型，例如:display: inline block</h2>
+   <ul class="menu">
+   <li><a href="#">link</a></li>
+   <li><a href="#">link</a></li>
+   <li><a href="#">link</a></li>
+   <li><a href="#">link</a></li>
+   <li><a href="#">link</a></li>
+  </ul>
+
+</body>
+</html>

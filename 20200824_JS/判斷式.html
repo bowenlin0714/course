@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let a = 10
+    if(a === 10) {
+      document.write("A 等於 10");
+    }else{
+      document.write("A 不等於 10");
+    }
+    // confirm 確認對話框，結果是TRUE或FALSE 
+    // let tasty = confirm("你覺得這個東西好吃嗎");
+    // // if (tasty == true ){
+    // // //   alert("好吃");
+    // // // } else{
+    // // //   alert("難吃")
+    // // // }
+    // // tasty ? alert("好吃") : alert("難吃");
+
+    // let fun = confirm("這個遊戲好玩嗎")
+    // fun ? alert("好玩") : alert("不好玩")
+
+    //promt = 填空題
+    //prompt 案取消會收到null空值
+    // let answer = prompt("台灣的首都:");
+    // if(answer === "台北市"){
+    //   alert("答對了");
+    //   }    
+    //   else if (answer === "桃園市" || answer === "新北市" ){
+    //   alert("差一點");
+    //   }
+    //   else if (answer ==="高雄市"){
+    //   alert("發大財!!");  
+    //   }
+    //   else if (answer === null){
+    //   alert("你是台灣人嗎");  
+    //   }
+    //   else{
+    //   alert("答錯了")
+    //   }
+
+    // let city = prompt("你喜歡哪個城市")
+    // switch(city){
+    //   case "台北市":
+    //    alert("天龍人");
+    //    break;
+    //   case "紐約市":
+    //   case "賓州市":
+    //    alert("American");
+    //    break;
+    //   case "東京市":
+    //   case "京都市":
+    //    alert("我也喜歡日本")
+    //    break;
+    //   case "北京市":
+    //   case "上海市":
+    //    alert("高級中國人")
+    //    break;
+    //   case null:
+    //   case "":
+    //    alert("為啥你不回答")
+    //    break; 
+    //   default:
+    //    alert("你喜歡哪個城市")
+    //    break;  
+    // }
+
+    let fastfood = prompt("哪家速食店比較好吃")
+    switch(fastfood){
+      case "麥當勞":
+       alert("評價店家多");
+       break;
+      case "肯德基":
+       alert("雞肉好吃");
+       break;
+      case "摩斯漢堡":
+       alert("高檔速食店");
+       break;
+      case "漢堡王":
+       alert("漢堡好吃");
+       break;
+      case "丹丹漢堡":
+       alert("南部人必吃");
+       break;
+      case null:
+      case"":
+       alert("看來你不喜歡吃速食")
+       break;
+      default:
+       alert("有自己的隱藏速食名單嗎");
+       break;  
+    }
+
+  
+  </script>
+  
+  
+</body>
+</html>

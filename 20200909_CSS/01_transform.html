@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: '微軟正黑體';
+    }
+    .box{
+      width: 200px;
+      height: 200px;;
+      color: white;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .dashed{
+      display: inline-block;
+      border: 5px dashed black;
+      width: 200px;
+      height: 200px;
+    }
+    section{
+      /* 1vh=10px */
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    section h1{
+      position: absolute;
+      top: 0;
+      left:0;
+    }
+    section:nth-child(odd){
+      background: skyblue
+    }
+    section:nth-child(even){
+      background: tan;
+    }
+    /* 平移 */
+    /* 沒有原點的設置 */
+    .translate{
+      transform: translate(50%, 50%);
+    }
+    /* 縮放 */
+    .scale{
+      transform: scale(2);
+      transform-origin: right bottom;
+    }
+    /* 旋轉 */
+    /* 正負(逆時針)都可以 要加DEG單位 */
+    .rotate{
+      transform: rotate(45deg);
+      /* 變形的原點 */
+      transform-origin: left top ;
+    }
+
+    .skew{
+      transform: skew(45deg) ;
+      transform-origin: left bottom;
+    }
+
+    /*設定多屬性 */
+    .more{
+      /* 有一個以上函式，會由左至右逐一套用，順序非常重要 */
+      transform: translate(100px) rotate(45deg);
+      /* transform: rotate(45deg) translate(100px); */
+    }
+    .rotate3d{
+      transition-duration: 0.9s;
+    }
+    
+    .rotate3d:hover{
+      transform: rotate3d(0 ,1 ,0, 90deg) translateZ(-50px)
+    }
+
+  </style>
+</head>
+<body>
+  <section>
+    <h1>translate (位移)</h1>
+    <div class="dashed">
+      <div class="box translate">translate(位移)</div>
+    </div>
+  </section>
+  
+  <section>
+    <h1>Scale (縮放)</h1>
+    <div class="dashed">
+      <div class="box scale">Scale(縮放)</div>
+    </div>
+  </section>
+  
+  <section>
+    <h1>rotate (旋轉)</h1>
+    <div class="dashed">
+      <div class="box rotate">rotate (旋轉)</div>
+    </div>
+  </section>
+  
+  <section>
+    <h1>skew (傾斜)</h1>
+    <div class="dashed">
+      <div class="box skew">skew (傾斜)</div>
+    </div>
+  </section>
+  
+  <section>
+    <h1>設定多屬性</h1>
+    <div class="dashed">
+      <div class="box more ">設定多屬性)</div>
+    </div>
+  </section>
+
+  <section>
+    <h1>3d旋轉</h1>
+    <div class="dashed">
+      <div class="box rotate3d ">3d旋轉</div>
+    </div>
+  </section>
+
+</body>
+</html>

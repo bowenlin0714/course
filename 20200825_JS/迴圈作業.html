@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  
+    // let year = prompt("請輸入西元年")
+    // let month = Number(prompt("请输入月份"));
+    // let day = Number(prompt("请输入日期"));
+    // let monthSum = 0;//月份之和
+    // // let rune = (y%400 == 0||(y%4 == 0 && y%400 !=0 ))
+    
+    // switch (month - 1){
+        
+    //     case 11 :
+    //         monthSum += 30;
+    //     case 10 :
+    //         monthSum += 31;
+    //     case 9 :
+    //         monthSum += 30;
+    //     case 8 :
+    //         monthSum += 31;
+    //     case 7 :
+    //         monthSum += 31;
+    //     case 6 :
+    //         monthSum += 30;
+    //     case 5 :
+    //         monthSum += 31;
+    //     case 4 :
+    //         monthSum += 30;
+    //     case 3 :
+    //         monthSum += 31;
+    //     case 2 :
+    //         if(year%400 == 0||(year%4 == 0 && year%400 !=0 )){
+    //             monthSum += 29; 
+    //         }else{
+    //             monthSum += 28;
+    //         }
+    //     case 1 :
+    //         monthSum += 31;
+    // }
+    // let result = monthSum + day;
+       
+    
+    // alert(result);
+    // 老師作法
+    // let year = prompt("請輸入西元年")
+    // let month = prompt("请输入月份");
+    // let day = prompt("请输入日期");
+    // let sum = 0;
+
+    // for(let i=1; i<=(month-1); i++){
+    //      if(i==2){
+    //         sum+=28
+    //     }
+    //     else if((i<=7 && i%2==1)||(i>=8 && i%2==0)){
+    //         sum+=31
+    //     }
+    //     else{
+    //         sum+=30
+    //     }
+    // }
+    // sum+=day
+
+    // console.log(sum)
+    // 輸入日期
+    let y = parseInt(prompt("年"))
+    let m = parseInt(prompt("月"))
+    let d = parseInt(prompt ("日"))
+    // 設定最後天數
+    let sum = 0
+    // 設定計算範圍，為月份-1 
+    for(let i = 1; i<=(m-1); i++){
+        if(i==2){
+            sum+=28
+        }
+        // 設定31天有幾個月
+        else if((i <= 7 && i % 2 ==1)||(i>=8&&i%2==0)){
+            sum+=31
+        }
+        else{
+            sum+=30
+        }
+    } 
+    // 加上天數   
+    sum+=d
+
+    document.write(sum)
+</script>
+
+</body>
+</html>

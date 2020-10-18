@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let time = 11
+    
+    let countdown=
+      setInterval(() => {
+        time--
+        document.write(`<h1>${time}</h1>`)
+        if(time<=-1){
+          alert("時間到")
+        }
+      }, 1000);
+
+      setTimeout(() => {
+        clearInterval(countdown)
+      }, 11000);
+   
+  </script>
+</body>
+</html>

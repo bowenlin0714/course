@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 第一題
+    let list = [
+      ["","星期一",	"星期二",	"星期三",	"星期四"],
+      ["時段一",18.2,	17.3,	15.0,	13.4,],
+      ["時段一",23.8,	25.1,	20.6,	17.8,],
+      ["時段一",20.6,	21.5,	18.4,	15.7,]
+    ]
+    document.write("<table border = '1'>")
+    for (let l of list){
+      document.write("<tr>")
+        for(let ll of l){
+          document.write(`<td>${ll}</td>`)
+        }
+      document.write("</tr>")
+    }
+    document.write("</table>")
+    
+    // 第二題
+    let sum  =0
+
+    for(let i = 1; i<list.length; i++){
+      sum+=list[i][1]
+    }
+    document.write(`星期一的平均溫度是${sum/(list.length-1)}<br>`)
+    sum=0
+
+    for(let i = 1; i<list.length; i++){
+      sum+=list[i][2]
+    }
+    document.write(`星期二的平均溫度是${sum/(list.length-1)}<br>`)
+    sum=0
+
+    for(let i = 1; i<list.length; i++){
+      sum+=list[i][3]
+    }
+    document.write(`星期三的平均溫度是${sum/(list.length-1)}<br>`)
+    sum=0
+
+    for(let i = 1; i<list.length; i++){
+      sum+=list[i][4]
+    }
+    document.write(`星期四的平均溫度是${sum/(list.length-1)}<br>`)
+    sum = 0
+    // 第三題
+    for(let i = 1; i<list[1].length; i++){
+      sum+=list[1][i]
+    }
+    document.write(`時段一的平均溫度是${sum/(list[1].length-1)}<br>`)
+    sum=0
+
+    for(let i = 1; i<list[2].length; i++){
+      sum+=list[2][i]
+    }
+    document.write(`時段二的平均溫度是${sum/(list[2].length-1)}<br>`)
+    sum=0
+
+    for(let i = 1; i<list[3].length; i++){
+      sum+=list[3][i]
+    }
+    document.write(`時段三的平均溫度是${sum/(list[3].length-1)}<br>`)
+    
+    // 第四題
+    let day = 1
+    let time =1
+    let deg = list[1][1]
+
+    for(let i=1; i<list.length; i++)
+    {
+      for(let j=1; j<list[i].length; j++){
+        if(list[i][j] > deg){
+          deg = list[i][j]
+          day = j
+          time= i
+        }
+      }
+    }
+    document.write(`最高溫在星期${day},時段${time},最高溫是${deg}<br>`)
+
+     day = 1
+     time =1
+     deg = list[1][1]
+
+    for(let i=1; i<list.length; i++)
+    {
+      for(let j=1; j<list[i].length; j++){
+        if(list[i][j] < deg){
+          deg = list[i][j]
+          day = j
+          time= i
+        }
+      }
+    }
+    document.write(`最低溫在星期${day},時段${time},最低溫是${deg}`)
+  </script>
+</body>
+</html>

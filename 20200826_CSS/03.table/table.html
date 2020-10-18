@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+    table{
+      /* 根據父元素去改變 */
+      width: 75%;
+      border: 5px solid black;
+      /* 削掉td與table的距離 */
+      /* border-collapse: collapse; */
+      /* 設定格子之間的距離，跟上面衝突 */
+      /* border-spacing: 15px; */
+      text-align: center;
+      box-shadow: 0 0 20px black;
+  
+
+      
+    }
+    td{
+      border: 3px solid black;
+      padding: 1rem;
+      color: cornsilk;
+    }
+    tr:nth-child(odd){
+      background:grey ;
+    }
+    tr:nth-child(even){
+      background:rgb(192, 192, 192) ;
+    }
+    tr:hover{
+      background:black;
+
+    }
+  </style>
+</head>
+<body>
+  <!-- 快速創建表格 -->
+  <!-- table>(tr>td{$}*5)*10 -->
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+  </table>
+  
+</body>
+</html>

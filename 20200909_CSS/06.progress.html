@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    *{
+      font-family: 'Righteous', cursive;
+      
+    }
+
+    body,html{
+      height:100%
+    }
+
+    body{    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: purple ;
+    }
+
+    .progress{
+      width: 500px;
+      height: 30px;
+      border: 1px solid black;
+      border-radius: 1rem;
+      background: linear-gradient(
+        45deg,
+        #333 0%, 
+        #333 25%,
+        white 25%,
+        white 50%,
+        #333 50%,
+        #333 75%,
+        white 75%,
+        white 100%     
+         );
+      background-size: 20px 20px;
+      animation: progress 1s linear infinite;   
+    }
+
+    @keyframes progress {
+     from {
+      background-position: 0 0 ;
+     } 
+     to {
+      background-position: 20px 0;
+     } 
+    }
+
+  </style>
+</head>
+<body>
+  <div class="progress">
+    1
+  </div>
+</body>
+</html>

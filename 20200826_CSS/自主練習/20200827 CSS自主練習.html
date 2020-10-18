@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-image: url("./自主練習圖片檔/9417b9fe578062c0e3d155ed36ae2da5.jpg");
+      
+      background-repeat: no-repeat  ;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .table{
+      font-family: 'Russo One', sans-serif;
+      border: 3px solid black;
+      width: 1000px;
+      height: 900px;
+      margin-top: 200px;
+      margin-bottom: 200px ;
+      box-shadow: 0 0 20px 20px white,0 0 50px 50px black;
+      
+      /* 調整表格間距 */
+      border-spacing: 0px;
+    }
+    
+    
+    td{
+      border: 3px solid white  ;
+      text-align: center;
+      font-size: 2rem;
+
+    }
+
+    .td1{
+      
+      background: radial-gradient(black 50%, white);
+    }
+    .td{
+      background-color: red;
+      width: 500px;
+      height: 100px;
+      border: solid red; 
+      font-family: 'Jomhuria', cursive; 
+      color: white;
+      font-size: 10rem;
+      text-align: center;
+      letter-spacing: 10px;
+    }
+    .tdcap{
+      background-image: url(./自主練習圖片檔/cap.jpg) ;
+      background-size:cover ;
+      background-position:center ;
+    }
+    .tdiron{
+      background-image: 
+      url("./自主練習圖片檔/iron2.jpg"),
+      url("./自主練習圖片檔/iron1.jpg"),
+      url("./自主練習圖片檔/iron3.jpg");
+
+      background-repeat: no-repeat;
+      background-position: left,left top,right bottom;
+      background-size: 500px 150px,500px 200px,500px 110px;
+
+    }
+
+  </style>
+</head>
+
+<body>
+  <table align="center" class="table" border="1 black">
+    <tr>
+      <td class="td1" colspan="5" >
+        <table align="center" style="border: solid red  ">
+          <tr>
+            <td class="td">
+              <div>MARVEL</div>             
+            </td>
+          </tr>
+        </table>
+      </td>
+      
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td colspan="3" rowspan="2" class="tdiron"></td>
+      <td>14</td>
+      <td rowspan="2" class="tdcap">15</td>
+    </tr>
+    <tr>
+      
+      
+      <td>19</td>
+      
+    </tr>
+    
+  </table>
+
+  
+</body>
+</html>

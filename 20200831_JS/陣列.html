@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   let citys=["屏東","台北","高雄","台中","台南"]
+    console.log(`總共有${citys.length}個水果`);
+    console.log(`第1個城市是${citys[0]}`);
+
+   let foods={
+     rest:"KFc",
+     food:"雞腿",
+     price: 40
+   }
+
+   console.log(foods.rest)
+   console.log(foods["rest"])
+   console.log(`餐廳是${foods.rest},食物是${foods.food},價格是${foods.price}`)
+   console.log(Object.keys(foods))
+
+   let fruits=[
+     {
+       name:"蘋果",
+       price: 30
+     },
+     {
+       name:"柳丁",
+       price: 20
+     },
+     {
+       name:"葡萄",
+       price: 70
+     }
+   ] 
+   for(let i=0; i<fruits.length; i++){
+    console.log(`${fruits[i].name}的價格是${fruits[i].price}`)
+   }
+
+   let stores={
+     name: "50嵐",
+     tel: "02-2366-9655",
+     drink:[
+        {
+          drink: "奶茶",
+          price: 40
+        },
+        {
+          drink: "紅茶",
+          price: 20
+        },
+        {
+          drink: "烏龍茶",
+          price: 50
+        }
+     ]
+     
+
+   } 
+    for(let i=0; i<stores.drink.length; i++) {
+      console.log(stores.name+"的電話是"+stores.tel+"飲料有"+stores.drink[i].drink+",價格是"+stores.drink[i].price)
+    }
+    // js裡面文字陣列
+   
+  // for of的用法 只能對[]用
+   for(let fruit of fruits ){
+      console.log(fruit)
+    }
+
+  // for in的用法 for in兩種都能用
+  for(let key in foods){
+    console.log(`${key}:${foods[key]}`)
+  } 
+     
+   
+  </script>
+</body>
+</html>

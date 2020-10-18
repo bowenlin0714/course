@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+ let count = 1;
+ let num = 100;
+    let input ="";
+    while(input != 100){
+      input = prompt(`第${count}次猜測`);
+      if(input != num) 
+      count++
+      if(input < num){
+        alert("再大一點")
+      }
+      if(input > num){
+        alert("再小一點")
+      }     
+    } 
+    if(count <= 5){
+    alert(`總共猜了${count}次，太神啦`);
+    }
+    else if(count <= 30){
+    alert(`總共猜了${count}次，還行`);
+    }
+    else{
+    alert(`總共猜了${count}次，有這麼難猜嗎`);
+    }
+    
+
+  </script>
+</body>
+</html>

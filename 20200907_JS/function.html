@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function sayname(age){
+      console.log(age)
+    }
+    sayname(12)
+    sayname(12)
+    sayname(12)
+
+    // 如在()裡面先預設一個數值將設定為預設值，如該物件為空白將自動帶入其數值
+    function sayhi(name,age, group =`前端`){
+    // 下為另一種寫法
+    // const sayhi = (name,age, group =`前端`)=>{}
+    // arguments是陣列，裡面是傳進functoin裡面所有東西
+    // console.log(arguments)
+      console.log(name,age,group)
+      // return為計算之後丟出來的結果
+      let text = `${name}今年${age}歲，班別是${group}`
+      return text
+    }
+
+    let hi1=sayhi("A",25)
+    console.log(hi1)
+    let hi2=sayhi("B",21)
+    document.write(hi2)
+    let hi3=sayhi("c",55)
+    alert(hi3)
+    sayhi("D",25,"後端")
+    
+
+
+
+
+    // 判斷奇偶數
+    function evenorodd(num){
+     
+      if(input %2==0){
+        alert(`是偶數`)
+      }else if(input %2==1){
+        alert(`是奇數`)
+      }
+      else{
+        alert(`請輸入數字`)
+      }
+    }
+    let input = prompt("請輸入數字")
+    evenorodd(input)
+    
+    // 回傳true of false
+    const evenorodd2 = (number)=>{
+      let num = number
+      if(num%2==0){
+        return true
+      }
+      else{
+        return false
+      }
+    }
+    evenorodd2(10)
+    
+  </script>
+</body>
+</html>

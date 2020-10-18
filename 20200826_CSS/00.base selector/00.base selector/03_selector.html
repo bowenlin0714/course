@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <style>
+    /* 類別名稱只允許自元，連字符號 '-'，底線 數字 *
+    別用數字開頭，別用中文 */
+    
+    .a{
+      color: royalblue;
+      font-size: 30px;
+    }
+    .SIZE{
+      font-size: 20px;
+    }
+    li{
+      color: saddlebrown;
+    }
+    /* 後代選擇器 選擇之後的層數 */
+    nav p{
+      color: blue;
+    }
+    /* 子代選擇器 選擇下一層*/
+    nav > p{
+      color: red;
+    }
+
+    /* 通用選擇器 */
+    *{
+      background-color: greenyellow ;
+    }
+    
+
+  </style>
+</head>
+<body>
+  <h1 class="a">class 選擇器</h1>
+  <p class="SIZE">class 是CSS使用率最高的選擇器，Bootstrap使用大量的類別來統一樣式。具有重複的使用性</p>
+  <h1 class="a">相同元素不同外觀</h1>
+  <ul>
+    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quam?</li>
+    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quam?</li>
+    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quam?</li>
+    <li class="SIZE">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quam?</li>
+    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quam?</li>
+    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quam?</li>
+    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quam?</li>
+  </ul>
+
+  <h1 class="a">可以重複使用</h1>
+  <p>Lorem ipsum, dolor <a class="a" href="#">sit amet consectetur</a> adipisicing elit. Ullam expedita cupiditate repellat obcaecati adipisci, animi vitae id eveniet vero placeat voluptas <em class="a" ><b>GGGG</b></em> dolore omnis, magnam eaque asperiores. Corrupti, iusto delectus.</p>
+
+  <h1 class="a">ID選擇器</h1>
+  <p>一份文件檔裡面只允許一個ID名稱，具有唯一的特性，通常作為網頁邏輯區塊名稱</p>
+  <h1>網頁邏輯區塊的名稱以ID來命名</h1>
+  <div class="a" id="header">我是header，裡面是我的子結構</div>
+  <div id="main">我是main，裡面是我的子結構</div>
+  <div id="sidebar">我是sidebar，裡面是我的子結構</div>
+  <div id="footer">我是footer，裡面是我的子結構</div>
+
+  <h1>後代選擇器與子代選擇器</h1>
+  <nav>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, nam.</p>
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, doloremque.</p>
+    </div>
+  </nav>
+
+
+  
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let list=[
+      [
+        ["星期一"],
+        ["時段一","時段二","時段三"],
+        [18.2,23.8,20.6]
+      ],
+      [
+        ["星期二"],
+        ["時段一","時段二","時段三"],
+        [17.3,25.1,21.5]
+      ],
+      [
+        ["星期三"],
+        ["時段一","時段二","時段三"],
+        [15.0,20.6,18.4]
+      ],
+      [
+        ["星期四"],
+        ["時段一","時段二","時段三"],
+        [13.4,17.8,15.7]
+      ],
+    ]
+    
+    
+    for(let i=0; i<list.length; i++){
+      for(let j=0; j<list[i].length; j++){
+       let week = list[i][0]
+       let time = list[i][1][j]  
+       let degree = list[i][2][j] 
+      
+      document.write(`${week}${time}的溫度是${degree}`)
+      document.write("<br>")
+      }
+    }
+
+    
+    
+    
+     </script>
+</body>
+</html>

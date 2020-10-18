@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: '微軟正黑體';  
+    }
+
+    section{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section:nth-child(odd){
+      background-color: indianred;
+    }
+
+    .box{
+      width: 200px;
+      height: 200px;
+      color: white;
+      text-align: center;
+      line-height: 200px ;
+      background: black;
+    }
+
+    /* 
+     transition 
+     1.要有觸發條件
+     2.一次性的動態效果，沒有循環，必須要重新觸發一次
+
+     animation
+     1.可設定關鍵影格(keyframes)控制動畫進度，產生更複雜且循環的動畫
+     2.網頁載入時自動發生，也可以觸發後發生，可以循環重複來回撥放
+
+     */
+
+    .animate{
+      /* 動畫名稱 */
+      animation-name: animation;
+      /* 持續時間 */
+      animation-duration: 3s;
+      /* 播放次數 */
+      animation-iteration-count: 1;
+      /* 播放速率 */
+      animation-timing-function: ease-in;
+      /* 播放方向 */
+      /* normal(預設) 0% */
+      /* reverse 反向撥放 */
+      /* alternate 交替播放，奇數正向撥放，偶數反向撥放 */
+      /* alternate-reverse */
+      animation-direction: alternate;
+      /*延遲時間 */
+      animation-delay: 2s;
+      /* 撥放後的狀態 */
+      /* forward (停留在動畫結束後的樣式) */
+      /* Backwards(返回動畫一開始的樣式) */
+      animation-fill-mode: forwards;
+      /* 縮寫 */
+     
+    }
+
+    @keyframes animation {
+      from {
+        background-color: green;
+      }
+      33% {
+        background-color: blueviolet;
+      
+      }
+      66% {
+        background-color: blue;
+        
+      }
+      to {
+        background-color: green;
+        
+      }
+    } 
+    .multi {
+      animation: rotateit 3s moveit 3s;
+    }
+
+    
+
+    @keyframes rotateit {
+      50%{
+        transform: rotate(360deg) ;
+      }
+    }
+
+    @keyframes moveit {
+      50% {
+        margin-left: 1000px;
+      }
+    }
+    /* bg */
+    .bg{
+      width: 100vw;
+      height: 100vw;
+      background: linear-gradient(45deg, purple blue);
+      background-size: 200% ;
+      animation: bg 5s linear infinite alternate;
+    }
+
+    @keyframes bg {
+      from { 
+         background-position:0% 50% ;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      to {
+        background-position: 0% 50%;
+        filter: hue-rotate(120deg);
+      }
+    }
+
+    /* 步進動畫，一步一步變化 */
+    /* 
+      starts與end 差異在於起跑點的位置
+      steps(n,start) 動畫時間一開始顯示在結束位置
+      steps(n, end)  畫面時間一開始顯示在起始位置
+     */
+    .box1{
+      width: 100px;
+      height: 100px;
+      color: white ;
+      font-size: 2rem;
+      background: blue;
+      animation: move 4s steps(4,start) infinite;
+    }
+    .box2{
+      width: 100px;
+      height: 100px;
+      color: white ;
+      font-size: 2rem;
+      background: red;
+      animation: move 4s steps(4,end) infinite;
+    }
+    @keyframes move {
+      100%{
+        transform: translateX(400px) ;
+      }
+    }
+    .doraemo{
+      width: 250px;
+      height: 300px;
+      background: url('./doraemo.png') no-repeat left top;
+      animation: run 0.5s steps(6,end) infinite;
+    }
+
+    @keyframes run {
+      0% {
+        background-position: 0px 0px;
+      }
+      100% {
+        background-position: -1500px 0px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <section>
+    <div class="box animate">Lorem.</div>
+  </section>
+  
+  <section>
+    <div class="box multi">
+      66
+    </div>
+  </section>
+  
+  
+
+  <div style="margin: 100px, 0; background-color: grey;width: 500px;  ">
+    <h1>步進動畫</h1>
+    <div class="box1">start</div>
+    <div class="box2">end</div>
+  </div>
+
+  <section>
+    <div class="doraemo"></div>
+  </section>
+  
+</body>
+</html>

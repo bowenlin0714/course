@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let array = ["a","b","c","d"]
+    // .join(連接文字)
+    // 把陣列組成文字
+    let join = array.join("")
+    console.log(join)
+    
+    // .push()
+    // 在陣列後新增值，不限長度
+    array.push("e","f","g")
+    console.log(array)
+
+    // .splice(開始數字, 刪除數量, 插入新值1, 插入新值2....)
+    // 刪除數量可以是0
+    let array1= ["蘋果","鳳梨","香蕉","橘子"]
+    array1.splice(1,1,"葡萄","西瓜")
+    console.log(array1)
+
+    // .concat(陣列) 將陣列合併
+    let array2 = array.concat(array1)
+    console.log(array2)
+
+    // .reverse()顛倒陣列
+    let array3 = array.reverse()
+    console.log(array3)
+    
+    // .map() 迴圈處理每個值後產生新的陣列
+    let nums = [1,2,3,4]
+    // 如果箭頭函式只有一個東西，不用加括號
+    nums = nums.map((num)=>{
+      let data = num*2
+      return data
+    } )
+    console.log(nums)
+    
+    // .filter()迴圈過濾每個值
+    // 如果 return 是true 保留值
+    // 如果 return 是false 不保留
+    let nums1 = nums.filter(num =>{
+      return number >3
+    })
+    console.log(nums1)
+
+    // .reduce
+    let nums2 = nums.reduce((a,b)=>{
+      console.log(a,b)
+      return a+b
+    })
+    console.log(nums2)
+
+
+  </script>
+
+</body>
+</html>

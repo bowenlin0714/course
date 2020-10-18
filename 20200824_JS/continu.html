@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // continue= 略過這一次
+    // break=剩下全部停掉
+
+    // for(let i=0; i<10; i++){
+    //   if(i == 5){
+    //     continue;
+    //   }
+    //   if(i == 7){
+    //     break;
+    //   }
+    //   document.write(i)
+    // }
+
+    //
+
+    // 猜數字
+    let count = 1;
+    let input ="";
+    while(input != 100){
+      input = prompt(`第${count}次猜測`);
+      if(input != 100) count++
+      if(input <=99){
+        alert("再大一點")
+      }
+      if(input >100){
+        alert("再小一點")
+      }     
+    } 
+    alert(`總共猜了${count}次`);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- 網頁預設字型大小 16px -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .font-style{
+      /* 設定字體大小，px，em，rem */
+      font-size: 30px;
+      /* 設定斜體 */
+      font-style: italic ;
+      /* 設定粗細體 */
+      font-weight: bold;
+      /* 設定大寫 */
+      font-variant: small-caps;
+    }
+    .text-style{
+      /* 設定文字對齊的方式 */
+      text-align: center;
+      /* 設定文字畫線的位置: underline ,line-through, overline   */
+      text-decoration-line: underline;
+      /* 縮排 */
+      text-indent: 30px;
+      /* 設定大小寫 uppercase(全大寫) lowercase(全小寫) */
+      text-transform: uppercase;
+      /* 設定文字陰影
+      第一格PX:水平位移量 往左或是往右，右為正
+      第二格PX:垂直位移量 往上或往下，下為正
+      第三格PX:陰影模糊半徑 
+      第四:顏色
+      第五:可設定多重陰影，用逗號隔開*/
+      text-shadow: 5px 5px 5px rgba(255, 0, 255, 0.5),
+      0px 20px 10px rgba(233, 231, 98, 1),
+      0px -10px 15px rgba(241, 15, 27, 1);
+      /* 字母與字母間的間隔 */
+      letter-spacing: 10px;
+      /* 單字與單字間的間隔，適合英文，中文難有間格 */
+      word-spacing: 5px;
+      /* 行與行的間隔，可以設定px em rem，也可以只設定數字(倍數)*/
+      line-height: 30px;
+
+
+    }
+     .word-wrap{
+      width: 400px;
+      background-color: royalblue;
+      /* 過長的單字瀏覽器會自動判斷換行，使用word-wrap=到指定的長度自動斷行 */
+      word-wrap: break-word;
+     }
+     
+     .word-break{
+       width: 400px;
+       background: yellow;
+       /* break-all=強制換行 不管單字完整性
+          keep-all=只能在半形或連字符號換行 */
+       word-break: keep-all;
+     }
+
+     .white-space{
+       width: 400px;
+       background: red;
+       white-space: pre;
+     }
+
+     /*偽類  */
+     /* 順序不可改變!! 記法=LoVe-HaTe */
+     /* 設定連結狀態 */
+     /* 初始狀態 */
+     a:link{
+       color: red;
+       text-decoration: none;
+     }
+     /* 拜訪過的狀態 */
+     a:visited{
+       color:grey;
+     }
+     /* 滑鼠移入狀態 */
+     a:hover{
+       color: yellowgreen;
+       text-decoration: underline;
+     }
+     a:active{
+       color: orange;
+     }
+
+
+    h1{
+      text-align: center ;
+    }
+  </style>
+</head>
+<body>
+  <h1 cla>設定font</h1>
+  <p class="font-style">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quidem id excepturi nisi illum quae voluptatibus, consequuntur, omnis quo earum corporis amet voluptatum eaque facilis ea voluptate numquam quisquam nemo!
+  </p>
+  <h1 class="text-style">設定Text</h1>
+  <p class="text-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod commodi odit minus hic, corporis officiis doloremque, numquam deserunt, praesentium unde deleniti dignissimos veritatis excepturi maxime sunt facilis quae delectus provident.</p>
+
+  <H1>word-wrap</H1>
+  <p class="word-wrap">
+    GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+  </p>
+  <h1>word-break</h1>
+  <p class="word-break">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias omnis reprehenderit tempore, debitis, harum similique unde hic nemo natus error blanditiis minus corrupti at dolor voluptatum. Quasi nulla corrupti dolorem!</p>
+  <hr>
+  <h1>white-space</h1>
+  <p class="white-space">
+        onst btn = document.getElementById('btn')
+    let count = 0
+    function render() {
+      btn.innerText = `Count: ${count}`
+    }
+    btn.addEventListener('click', () => {
+      // Count from 1 to 10.
+      if (count < 10) {
+        count += 1
+        render()
+      }
+    })
+  </p>
+  <hr>
+  <h1>連結標籤變化</h1>
+  <a href="#">連結變化</a>
+  <hr>
+  <h1>em與rem的差異</h1>
+  <h1>rem為 root 預設的 font-size的倍數，預設為16px</h1>
+  <div style="font-size: 1rem;">
+    font
+      <div style="font-size: 2rem;">
+        font
+       <div style="font-size: 3rem;">font</div>
+      </div>
+  </div>
+  <hr>
+  <h1 text-align="left">em為父層 font-size 的倍數，父層若沒有設定文字尺寸會往外找，都沒有最後會以root(html)預設的font-size為依據，也就是16PX</h1>
+  <div style="font-size: 1em;">
+    font
+      <div style="font-size: 2em;">
+        font
+       <div style="font-size: 3em;">font</div>
+      </div>
+  </div>
+  <a href="#">回到頂端</a>
+
+</body>
+</html>

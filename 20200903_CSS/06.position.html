@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,body{
+      height: 110%;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* 若一個絕對路徑元素都沒有定位點，最後會依據html初始容器左上角來定位 */
+    /* 唐僧 */
+    .intro{
+      position: absolute;
+      top: 0;
+      left:10%;
+      line-height: 50px;
+    }
+    .monk{
+      width: 200px;
+      height: 200px;
+      background-color: paleturquoise;
+      border: 5px dotted black;
+      border-radius: 15px;
+      font-size: 0px;
+      position: relative ;
+    }
+    .monkey,.pig,.kappa,.horse{
+      font-family: '微軟正黑體';
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      display:inline-block;
+      border-radius: 15px;
+    }
+
+    .monkey{
+      background: red ;
+      position: absolute;
+      top: -30px;
+      right: -30px;
+    }
+    /* position relative */
+    .pig{
+      background: green;
+      position: relative;
+      top: 50px;
+      left: 50px
+    }
+    .kappa{
+      background: blue;
+    }
+    .horse{
+      background:yellow;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="monk">
+    <div class="monkey">悟空</div>
+    <div class="pig">八戒</div>
+    <div class="kappa">悟淨</div>
+    <div class="horse">白馬</div>
+  </div>
+
+  <div class="intro">
+    <ul>
+      <li>若一個絕對定位元素都沒有定位點，最後會依據html初始容器左上角來定位</li>
+      <li>元素定位是relative，沒有任何位移屬性，會留在原地不動，此時relative元素被視為子完素(絕對定位)的定位點目標(僅哭咒)</li>
+      <li>元素定位是relative，使用TOP,bottom,right,left時，會以自身原來位置作位移，並且保留原來空位，不會被其他元素佔據</li>
+      <li>元素定位是absolute時，沒有任何位移屬性，該元素會脫離正常流向，原地生至定位層後面元素會流至其下方</li>
+      <li>元素定位是absolute時，若其祖先元素都找不到定位absolute或relative，最後會找到跟元素html</li>
+    </ul>
+    
+  </div>
+
+  
+</body>
+</html>

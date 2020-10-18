@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小測驗</title>
+</head>
+<body>
+  <Script>
+    let n = prompt("請輸入你的姓名");
+    let scr = 0
+    alert("測驗開始喽")
+    let ans1 = prompt("1:台灣的首都是哪個市");
+    if (ans1 == "台北市"){
+      alert("答對了")
+      scr += 20
+    }
+    else{
+      alert("可惜答錯了")
+    }
+    let ans2 = prompt("2:世界上最高的山");
+    if (ans2 == "喜馬拉雅山"){
+      alert("答對了")
+      scr += 20 
+    }
+    else{
+      alert("可惜答錯了")
+    }
+    let ans3 = prompt("3:鱷魚是魚嗎");
+    if (ans3 == "不是" || ans3 == "否"){
+      alert("答對了")
+      scr += 20
+    }
+    else{
+      alert("可惜答錯了")
+    }
+    let ans4 = prompt("4:現任美國總統的名字");
+    if (ans4 == "川普" || ans4 == "特朗普"){
+      alert("答對了")
+      scr += 20
+    }
+    else{
+      alert("可惜答錯了")
+    }  
+    let ans5 = prompt("5:現任中國領導者的名字");
+    if (ans5 == "習近平"){
+      alert("答對了")
+      scr += 20
+    }
+    else{
+      alert("可惜答錯了")
+    }
+    let ans6 = prompt("6:現任台灣元首的名字");
+    if (ans6 == "蔡英文"){
+      alert("答對了")
+      scr += 20
+    }
+    else{
+      alert("可惜答錯了")
+    }
+    let ans7 = prompt("7:在6月6號被罷免的市長是");
+    if (ans7 == "韓國瑜"){
+      alert("答對了")
+      scr += 20
+    }
+    else{
+      alert("可惜答錯了")
+    }
+     if( scr >= 140){
+       alert(`親愛的${n}，你的分數是${scr}，愛因斯坦再世!`)
+     }
+     else if( scr >=80){
+       alert(`親愛的${n}，你的分數是${scr}，可惡差一點滿分`)
+     }
+     else if(scr >=40){
+      alert(`親愛的${n}，你的分數是${scr}，勉勉強強`)
+     }
+     else{ 
+       alert(`${scr}分，傻了吧你`)
+     }
+   
+
+
+  </Script>
+</body>
+</html>

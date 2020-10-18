@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let n = prompt("請輸入姓名")
+    let m = prompt("請輸入月份")
+    let d = prompt("請輸入日期")
+    
+    if((m==3&&d>=21)||(m==4&&d<=20)){
+      alert(`${n}你好，你的星座是牡羊座`)
+    }
+    else if((m==4&&d>=21)||(m==5&&d<=21)){
+      alert(`${n}你好，你的星座是金牛座`)
+    }   
+    else if((m==5&&d>=22)||(m==6&&d<=21)){
+      alert(`${n}你好，你的星座是雙子座`)
+    }
+    else if((m==6&&d>=22)||(m==7&&d<=23)){
+      alert(`${n}你好，你的星座是巨蟹座`)
+    }
+    else if((m==7&&d>=24)||(m==8&&d<=23)){
+      alert(`${n}你好，你的星座是獅子座`)
+    }
+    else if((m==8&&d>=24)||(m==9&&d<=23)){
+      alert(`${n}你好，你的星座是處女座`)
+    }
+    else if((m==9&&m>=24)||(m==10&&d<=23)){
+      alert(`${n}你好，你的星座是天平座`)
+    }
+    else if((m==10&&d>=24)||(m==11&&d<=22)){
+      alert(`${n}你好，你的星座是天蠍座`)
+    }
+    else if((m==11&&d>=23)||(m==12&&d<=22)){
+      alert(`${n}你好，你的星座是射手座`)
+    }
+    else if((m==12&&d>=23)||(m==1&&d<=20)){
+      alert(`${n}你好，你的星座是魔羯座`)
+    }
+    else if((m==1&&d>=21)||(m==2&&d<=19)){
+      alert(`${n}你好，你的星座是水平座`)
+    }
+    else{
+      alert(`${n}你好，你的星座是雙魚座`)
+    }
+
+    for(i==1,j==1; i<=51; i++,j+=5){
+      document.write("G")
+    }
+
+  </script>
+</body>
+</html>

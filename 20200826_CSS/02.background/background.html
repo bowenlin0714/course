@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    body{
+      /* 背景圖片設定為 background-attachment: fixed，背景圖片的放置位置是以視埠(view port)為基礎，也就是會以瀏覽器左上角開始平鋪，而不是從個別元素盒子開始平舖 */
+      background-image:url( "https://picsum.photos/600/600/?random=1") ;
+      background-repeat: no-repeat;
+      background-size: cover ;
+      background-attachment: fixed;
+      }
+    
+    
+    .box1{
+      font-size: 2rem;
+      color: orange;
+      text-shadow: 0 0 3px white;
+      width: 600px;
+      height: auto;
+      border: 3px solid blue;
+      margin: 100px auto;
+      box-shadow: 0 0 20px rgb(126, 117, 117);
+      padding-left: 20px;
+    
+      
+      font-family: 'Russo One', sans-serif;
+      line-height: 70px;
+      text-shadow: 0 0 20px red;
+      
+    }
+    .box{
+      font-size: 2rem;
+      color: orange;
+      text-shadow: 0 0 3px white;
+      width: 600px;
+      height: 600px;
+      border: 3px solid blue;
+      margin: 100px auto;
+      box-shadow: 0 0 20px rgb(126, 117, 117);
+      background-color: black ;
+     
+    
+      
+      font-family: 'Russo One', sans-serif;
+      line-height: 70px;
+      text-shadow: 0 0 20px red;
+      
+    }
+    /* 背景顏色 */
+    .bgcolor{
+      background-color: black;
+    }
+    /* 背景圖片 圖片url後面要加''*/
+    .bgimage{
+      background-image: url('../pica.png' );
+    }
+    /* 圖片指定次數 */
+    /* 水平重複 */
+    .bgrepeat-x{
+      background-repeat: repeat-x;
+    }
+    /* 垂直重複 */
+    .bgrepeat-y{
+      background-repeat: repeat-y;
+    }
+    /* 不重複 */
+    .bgrepeat-no{
+      background-repeat: no-repeat;
+    }
+    /* background-size */
+    .bgsize{
+      /* 改變背景圖片尺寸 */
+      background-image: url('../pica.png');
+      background-repeat: no-repeat;
+      /* contain 等比例縮放 圖片一邊碰到盒子另一邊停止縮放 不會自動填滿整格  */
+      /* cover 等比例縮放，圖片填滿整格後停止 */
+      /* size也可直接填寫數值 */
+      background-size: cover;
+    }
+     /* 直接編寫圖片位置 兩個值 第一個值水平 第二個值為垂直 */
+     /* 兩個值也可以為絕對數值 rem em px */
+     /* 只設定一個值時，另一值會被認定為center */
+    .bgposition{
+      background-position: 50% 50%   ;
+    }
+    /* 縮寫 */
+    /* 1.background的size一定要緊接在 background-position之後，且之間要用斜線//分隔
+       2.設定background-position，先設定水平軸向，再設定垂直軸向，右為正，下為正 */
+    .bg-abbr{
+      background: url(../Duck-PNG-Image-26960-300x278.png)
+      center/500px 500px no-repeat black;
+      
+    }
+    /* 使用多層背景重疊時，個屬性可以用逗號分隔，圖片出現順序會由上到下 ，上方會蓋住下方，地第一章背景圖在最上層，第二章第二層，最後一張為底層*/
+    .bg-three{
+      background-image: 
+      url("https://picsum.photos/600/100/?random=1"),
+      url("https://picsum.photos/600/400/?random=2"),
+      url("https://picsum.photos/600/100/?random=3");
+
+      background-repeat: no-repeat,no-repeat,no-repeat;
+      background-position: left top,left, left bottom;
+    }
+    .bg-5{
+      /* background-image:
+      url("https://picsum.photos/200/300/?random=1"),
+      url("https://picsum.photos/200/300/?random=2"),
+      url("https://picsum.photos/200/600/?random=3"),
+      url("https://picsum.photos/200/300/?random=4"),
+      url("https://picsum.photos/200/300/?random=5");
+
+      background-repeat: no-repeat; 
+      background-position: left top,right top,center,left bottom, right bottom ;
+       */
+      /* 縮寫版 */
+  background:url("https://picsum.photos/200/300/?random=1") no-repeat left top, 
+              url("https://picsum.photos/200/300/?random=2") no-repeat left bottom, 
+              url("https://picsum.photos/200/600/?random=3") no-repeat center, 
+              url("https://picsum.photos/200/300/?random=4") no-repeat right top, 
+              url("https://picsum.photos/200/300/?random=5") no-repeat right bottom ;
+    }
+    
+    .pikachu{
+      font-size: 3rem;
+      color: black;
+      text-shadow: red;
+      width: 600px;
+      height: 600px;
+      border: 5px solid green;
+      margin: 100px auto;
+      box-shadow: 0 0 30px red;
+      background-position: 50% 50%;
+
+      font-family: 'Indie Flower', cursive;
+      background-image: url(../pica.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+    }
+    .pikatx{
+      margin: 30px;
+    }
+
+    .bro{
+      background-image: 
+      url(../bro1.png),
+      url(../bro2.png),
+      url(../bro3.jpeg),
+      url(../bro4.jpg),
+      url(../bro5.jpg);
+
+      background-repeat: no-repeat;
+      background-size: 200px 200px,
+                       200px 200px,
+                       200px 200px, 
+                       200px 200px,
+                       200px 200px;
+      background-position:left top, left bottom,center,right top, right bottom ;
+  </style>
+</head>
+<body>
+  <!-- 兩個class中間不用加逗號-->
+  <div class="box1 bgcolor">
+    <div style="margin: 20px;" >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad cum dignissimos possimus quisquam ullam a quis ea, enim debitis itaque ex accusamus molestias delectus modi nemo, eveniet sed expedita totam.
+    </div>
+
+  </div>
+  
+  <div class="box bgimage">
+  
+      background-image
+  
+
+  </div>
+  
+  <div class="box bgimage bgrepeat-x">
+    background-repeat-x
+  </div>
+  <div class="box bgimage bgrepeat-y">
+    background-repeat-y
+  </div>
+  <div class="box bgimage bgrepeat-no">
+    background-no-repeat
+  </div>
+  <div class="box bgsize">
+    background-size
+  </div>
+  <div class="box bgimage bgrepeat-no bgposition">
+    background-position
+  </div>
+  <div class="pikachu">
+    <div class="pikatx">Pikachu
+    </div>
+    
+    
+  </div>
+  <div class="box bg-abbr">
+    縮寫 
+  </div>
+  <div class="box bg-three">
+    多張背景圖
+  </div>
+  
+  <div class="box bg-5">
+    <table border="1"style="background: chocolate; border: darkblue;">
+      <tr>
+        <td>組合圖片練習</td>
+      </tr>
+    </table>
+    
+  </div>
+  </div>
+  <class class="box bro">
+    Bro</class>
+  </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+</body>
+</html>

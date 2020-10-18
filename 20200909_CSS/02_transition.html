@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+    1. 轉場 transition 是由兩組樣是之間的漸進式轉換過程
+    2. 一格起始樣式，一個結束樣式，劉喊棄會將兩個樣式的變化補成動畫
+     (tween)\
+    3. 必須要有觸發動作，最常見的是:hover，或其他狀態改變
+     */
+     body{
+       height: 100%;
+     }
+     .big{
+      width: 500px;
+       height: 500px;
+       background-color: blue;
+       position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50% );
+      transition-duration: 3s;
+     }
+     .big:hover{
+      transform: rotate(-45deg);
+       width: 800px;
+       height: 800px;
+     }
+     .container{
+       width: 300px;
+       height: 300px;
+       background-color: red;
+       position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50% );
+      transition-duration: 3s;
+     }
+     .container:hover{
+       transform: rotate(300deg);
+       width: 600px;
+       height: 600px;
+     }
+    .box{
+      width: 200px;
+      height: 200px;
+      background: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50% );
+      border-radius: 50%;
+      
+      /* transition-duration: 2s;
+      /* 轉場屬性 */
+      /* transition-property: background, width, height; */
+      /* 轉場速率 */
+      /* ease是預設，ease-in, ease-out, ease-in-out,linear */
+      /* transition-timing-function: ease-out; */
+      /* 延遲時間 */
+      /* transition-delay: 1s; */ 
+      
+      /* 縮寫 */
+      transition: width 0.5s ease-out,height 1s ease-out 1s;
+    }
+
+    .box:hover{
+      background: red;
+      width: 500px;
+      height: 500px;
+      box-shadow: 0 0 50px black;
+      
+    }
+
+  </style>
+</head>
+<body>
+  <div class="big">
+    <div class="container">
+      <div class="box"></div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    let date = [
+      ["星期一","星期二","星期三"],
+      ["時段一","時段二","時段三","時段四"]
+    ] 
+
+    let forms = [
+      [18.2,17.3,15.0,13.4],
+      [23.8,25.1,20.6,17.8],
+      [20.6,21.5,18.4,15.7]
+    ]
+    let week = [0,0,0,0]
+    let time = [0,0,0]
+
+    for (let i=0; i<forms.length; i++){
+      for(let j=0; j<forms[i].length; j++){
+        week[j]+= forms[i][j]/forms.length;
+        time[i]+= forms[i][j]/forms[i].length
+      }
+    }
+    document.write(`${date[0]}分別的平均溫度是${week}`)
+    document.write("<br>")
+    document.write(`${date[1]}分別的平均溫度是${time}`)
+    document.write("<br>")
+    
+
+    let max = forms[0][0]
+    let min = forms[0][0]
+    for (let i=0; i<forms.length; i++){
+      for(let j=0; j<forms[i].length; j++){
+        if(forms[i][j]>max){
+          max = forms[i][j]         
+        }
+        if(forms[i][j]<min ){
+          min = forms [i][j]
+        }
+      }
+    }
+    document.write(`最大是${max}`)
+    document.write(`最小是${min}`)
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // .round() 四捨五入
+    console.log(Math.round(7.9999))
+    // .ceil() 無條件進位到整數
+    console.log(Math.ceil(7.6666*10)/10)
+    // .floor() 無條件捨去到整數
+    console.log(Math.floor(7.555))
+    // .pow(數字, 次方)
+    console.log(Math.pow(8,7))
+    // .sqrt(數字)平方根
+    console.log(Math.sqrt(64))
+    // .sign(數字)正負數判斷
+    // -1代表負數
+    // 0就是0
+    // 1代表正數
+    console.log(Math.sign(-100))
+    // .min(數字)找出最小值
+    console.log(Math.min(200,300,5,800,50))
+    // 如為陣列不可直接輸入([25,62,47,48,])
+    let nums = [200,300,5,800,50]
+    // 必須設定為變數之後才可辨別 (解構賦值)
+    console.log(Math.min(...nums))
+
+
+  </script>
+</body>
+</html>

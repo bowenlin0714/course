@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS</title>
+  <!-- 第一種CSS:引用外部CSS樣式 -->
+  <!-- 優點: 可以減少CSS原始碼，，不需要一值重複撰寫，檔案也較少 -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 第二種CSS方式 style 標籤 
+  該網頁文件專屬方式，無法被其他文件使用-->
+  <style>
+    /*選擇器*/
+    /*
+     選擇器{
+       屬性:值;
+       屬性: 值;
+       屬性:值;
+     }
+    */
+    h1{
+      color: rgb(255, 255, 255);
+      background-color: rgb(64, 199, 30) ;
+      font-size: 50px ;
+    }
+    p{
+      color: blue;
+      font-size: 30px;
+      background-color: blanchedalmond;
+    }
+     /*群組選擇器  */
+     /* 用逗號區隔 */
+
+    h1,h2,h3,h4,h5{
+      color: red;
+    }   
+  </style>
+</head>
+<body>
+  <!-- 第三種方式: style屬性樣式，被稱為行內樣式 -->
+  <!-- 行內樣式優先權是最高的，屬於該元素的專屬樣式，不會被內嵌style元素，外部樣式表影響 -->
+  <h1 style="color: blue">CSS第一課</h1>
+  <p>學習控制元素的樣式屬性及基礎選擇器</p>
+  
+  <h1 style="color: blueviolet;">CSS第二堂課</h1>
+  <p>學習盒模型(box-model),定位(position),浮動(float)</p>
+  
+  <h1 style="color: chocolate;">CSS第三堂課</h1>
+  <p>學習轉場(transform),動畫(anomation)</p>
+  
+  <h1 style="color: white;">CSS第四堂課</h1>
+  <p>學習切版</p>
+  
+  <h2>股份有限公司女士簡介不同嚴重，點點主演。</h2>
+  <h3>是誰新增時尚說出常用，成人模擬，有限責。</h3>
+  <h4>那種春天有着留學，暴力網頁課程，臨床如。</h4>
+  <h5>人才上去生命消費者都能，如何全國第一個。</h5>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let str ="Hello World               "
+    // .trim() 移除文字前後空白 中間不會拿掉
+    str = str.trim()
+    console.log(str)
+    // .touppercase() 文字轉大寫
+    str = str.toUpperCase()
+    console.log(str)
+    // .tolowercase() 文字轉小寫
+    str = str.toLowerCase()
+    console.log(str)
+    
+    let address = "新北市泰山區貴子里致遠新村55之1號"
+    // .includes() 是否包含指定文字，只能搜尋一個文字，搜尋多個要多寫
+    let istaisan = address.includes("泰山") && address.includes("台北")
+    console.log(istaisan)
+    // .nmatch() 是否符合正則表達式  regex101
+    // 回來的結果是陣列
+    let istaisan2 = address.match(/泰山/g)
+    console.log(istaisan2)
+    // .indexof(文字，開始文字) 從開始文字後找第幾個字符合
+    // 開始文字不放的話就是第一個字
+    let istaisan3 = address.indexOf("泰山")
+    console.log(istaisan3)
+    
+    let text = "吃葡萄不吐葡萄皮"
+    // replace(文字，取代文字)
+    // 取代符合的第一個結果
+    let replaced = text.replace("葡萄","蘋果")
+    console.log(replaced)
+    // .replace(正則表達式，取代文字)
+    // 取代符合正則表達式的結果
+    let replaced2 = text.replace(/葡萄/g,"蘋果")
+    console.log(replaced2)
+
+    let numbers = "0123456789"
+    // .substr(開始，長度)
+    // 包含開始位置
+    let cut = numbers.substr(0,5)
+    console.log(cut)
+    // .substring(開始位置，結尾位置)
+    // 包含開始位置，不包含結尾位置
+    let cut2 = numbers.substring(0,5)
+    console.log(cut2)
+    // .slice(開始位置, 結尾位置)
+    // 可以放負數代表倒數
+    // 結尾位置可不放，代表到最底
+    let cut3 = numbers.slice(-5,-2)
+    console.log(cut3)
+
+    // 當把文字用　ＰarseInt或Parsefloat時，會得到NaN
+    // (NaN==NaN)判斷結果會是 False
+    // 所以要用 isNaN() 判斷
+    // let notnum ="abc"
+    // let nan = parseInt(notnum)
+    // cconsole.log(isNaN(nan))
+
+    let alpha = "a,b,c,d,e,f"
+    // .split(分割文字)
+    // 將文字分割成陣列
+    let array = alpha.split(",")
+    console.log(array)
+  </script>
+</body>
+</html>

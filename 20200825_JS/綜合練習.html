@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 基本迴圈用法 -->
+   <!-- <script>
+     for(let i=1; i<11; i=i+3){
+       document.write(i)
+
+     }
+   </script> -->
+
+  <!-- 此為99乘法表無格子板 -->
+   <!-- <script>
+     for(i=1; i<=9; i++){
+       for(j=1; j<=9; j++)
+       document.write(`${i}*${j}=${i*j}<br>`)
+
+     }
+   </script> -->
+
+  <!-- 99乘法表，有格子，顏色還在研究 -->
+  <!-- <table border="2"  >
+    <script>
+
+    for(let i=1;i<=9;i++)
+    {
+        document.write("<tr>");
+        for(var j=1 ;j<=9;j++)
+        { 
+            document.write("<td>"+i+"*"+j+"="+i*j+"</td>");
+            }
+            document.write("<td>");
+        
+        document.write("<tr>");
+    }
+    </script>
+    </table> -->
+
+    <!--使用者輸入end才結束  -->
+    <!-- 用while -->
+    <!-- <script>
+      let input = ""
+      while (input !== "end"){
+       input = prompt("輸入end才能結束")
+       
+      } -->
+
+    <!-- </script> -->
+    
+    <!-- 使用者輸入end才結束 -->
+    <!--使用do{....}while，跟while相反\ -->
+    <!-- <script>
+      let input= ""
+      do{
+        input = prompt("輸入end方能結束");
+      }
+        while( input != end)
+    </script> -->
+
+    <!-- 猜數字遊戲 -->
+    <!-- <script>
+   let count = 1
+   let num = 100
+    while(true){
+      let ans = prompt(`這是第${count}次猜測`)
+      if( ans == num){
+        break
+      }
+    count++
+    }
+    if(count <=10){
+      alert("你是天才吧")
+     } 
+     else{
+       alert("再接再厲")
+       
+    }
+    
+
+    </script> -->
+    <!-- 星星練習 -->
+
+    <!-- <script>
+      let str = prompt("請輸入你要的星星行數")
+      for(i = 0; i<= str; i++){
+        for(j = 0; j < i; j++){
+          document.write("G")
+
+        }
+          document.write("<br>")
+
+      }
+
+    </script> -->
+     <!--星星塔練習  -->
+     <script>
+       let str = prompt("請輸入你要的星星行數")
+       for( let i= 1; i<=str; i++){
+         for(let j = 1; j<= (str-i); j++){
+           document.write("&nbsp;&nbsp;&nbsp")
+           }
+         for(let k = 1; k<=(2*i-1) ;k++){
+           document.write("G")
+
+         }
+         document.write("<br>") 
+         }
+       
+     </script>
+
+
+</body>
+</html>

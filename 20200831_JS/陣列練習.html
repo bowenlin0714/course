@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 宣告一個數字陣列
+    let nums=[33,75,69,41,50,19]
+    
+    // 第
+    for(let i=0; i<nums.length; i++){
+      console.log(`第${i+1}個數字為${nums[i]}`)     
+    }
+
+    for(let i=0; i<nums.length; i++){
+      if(nums[i]==41){
+        console.log(`第${i}個數字為${nums[3]}`)
+      }
+        
+    }
+    
+    // 奇偶有幾個
+    let odd=0
+    let even=0
+    for(let i=0; i<nums.length; i++){
+      if(nums[i]%2==0){
+        odd++
+      }else{
+        even++
+      }
+    }
+      console.log(`偶數有${odd}個,奇數有${even}個`)
+
+    let min = nums[0];
+    let max = nums[0];
+
+    for(let num of nums){
+      if( num > max){
+        max= num
+      }
+      if(num < max){
+        min = num
+      }
+       
+      }
+    console.log(`最大的數字為${max},最小的數字為${min}`)  
+    
+    // max=Math.max.apply(null,nums);
+    // min=Math.min.apply(null,nums);
+    
+    // console.log(`最大的數字是${max}`);
+    // console.log(`最小的數字是${min}`)
+    
+
+    let form =[
+      [33,	32,	56,	45,	33,],
+      [77,	33,	68,	45,	23,],
+      [43,	55,	43,	67,	65,]
+    ]
+    let price =[12,16,10,14,15]
+    
+    let sales =[0,0,0]
+    let product=[0,0,0,0,0]
+     for(let i=0; i<form.length; i++){
+       for(let j=0; j<form[i].length; j++){
+          sales[i]+= form[i][j]*price[j]
+          product[j] += form[i][j]*price[j]
+       }
+     }
+
+    console.log(sales);
+    console.log(product) 
+
+
+
+  </script>
+</body>
+</html>

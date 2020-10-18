@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let array1 = [1,2,3,4]
+    // .findindex() 回傳第一個符合運算結果的索引值 0,1,2,3
+    // 找不到回傳-1
+    let index = array1.findIndex(value=>{
+      return value >3
+    } )
+    console.log(index)
+
+    // .unshift() 在陣列前面新增值
+    array1.unshift(0)
+    console.log(array1)
+
+    // .pop)() 移除陣列最後一個東西
+    // 回傳移除的值
+    let last = array1.pop()
+    console.log('pop 移除的:'+last)
+    console.log(array1)
+
+    // .shift()移除陣列的第一個東西
+    // 回傳移除的值
+    let first = array1.shift()
+    console.log('shift 移除的:'+first)
+    console.log(array1)
+
+    // .sort排序，依照編碼位置而定，所以順序不穩定
+    let array2 = ["a123","B456","789","一","二","三"]
+    array2.sort()
+    console.log(array2)
+
+    let nums = [400,900,700,800,300]
+    nums.sort()
+    console.log(nums)
+    
+    // 數字大到小
+    nums.sort((a,b)=>{
+      console.log(a,b)
+      return a-b
+    }
+    )
+    console.log(nums)
+
+    // 數字小到大
+    nums.sort((a,b)=>{
+      console.log(a,b)
+      return b-a
+    }
+    )
+    console.log(nums)
+
+    // 中文排序
+    let chinese=["一","二","三","四","上","下"]
+    chinese.sort((a,b)=>{
+      return a.localeCompare(b, "zh-Hant-TW")
+    }
+    )
+    console.log(chinese)
+
+    // 陣列複製，假如不加slice array3 array4視為同一物件，會一起更改
+    let array3 =[1,2,3]
+    let array4 =array3
+    array4.push(4)
+    console.log(array3)
+    console.log(array4)
+
+    // 下為加了slice之後的結果
+    let array5 =[1,2,3]
+    let array6 =array5.slice()
+    array6.push(4)
+    console.log(array5)
+    console.log(array6)
+
+  </script>
+</body>
+</html>

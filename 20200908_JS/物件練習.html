@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 
+    function reverse(name){
+      console.log(name.trim().split("").reverse().join(""))
+    }
+    reverse(`你好我的名字叫小名            `)
+    reverse(`           今天天氣真好          `)
+
+    // 文字大小寫互換
+    function exchange(text){
+      let newtext = text.split("")
+      for(let i=0; i<newtext.length; i++){
+        if(newtext[i].toUpperCase()===newtext[i]){
+          newtext[i].toLowerCase()
+        }else{
+          newtext[i].toUpperCase()
+        }
+      }
+        document.write(text)
+    }
+    exchange("EaEaEaEaEaEaE")
+    
+
+    // 回傳0到100隨機整數
+    function randnum1(num){
+      return Math.floor(Math.random()*(num+1))
+    }
+    console.log(randnum1(100))
+
+    // 隨機數字function
+    function randnum2(min,max){
+      return Math.floor(Math.random()*(max-min+1)+min)
+    }
+    console.log(randnum2(50,200))
+    console.log(randnum2(15,90))
+    
+  </script>
+
+</body>
+</html>
