@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="chart"></canvas>
+  <script src="./source/Chart.min.js"></script>
+  <script>
+    // .getContext('2d') 取的 canvas 的 2d 繪圖參數
+    const canvasChart = document.getElementById('chart').getContext('2d')
+
+    // 如果有 JQ
+    // const chart  = $('#chart') 
+
+    fetch('./source/A17030000J-000049-FTt.json')
+    .then(response =>{
+      return response.json() 
+    }) 
+    .then(json =>{
+      const months =[]
+      const TWD    =[]
+      const RMB    =[]
+      const JPY    =[]
+      for(let j of json){
+        months.push(j.月別)
+        TWD.push(j.新台幣)
+        RMB.push(j.人民幣)
+        JPY.push(j.日圓)
+      }
+    
+    const chart = new Chart(canvasChart,{
+      // 折線圖
+      type:'line',
+      data:{
+       
+        labels:months,
+       
+        datasets:[{
+         
+          label:'新台幣',
+         
+          data:TWD,
+         
+          borderColor:'blue',
+         
+          backgroundColor:'pink',
+          
+          borderWidth:5,
+          
+          fill:false,
+         
+          lineTension:0
+        },
+        {
+          label:'人民幣',
+         
+          data:RMB,
+         
+          borderColor:'red',
+         
+          backgroundColor:'pink',
+          
+          borderWidth:5,
+          
+          fill:false,
+         
+          lineTension:0
+        },
+        {
+          label:'日圓',
+         
+          data:JPY,
+         
+          borderColor:'black',
+         
+          backgroundColor:'pink',
+          
+          borderWidth:5,
+          
+          fill:false,
+         
+          lineTension:0
+        }        
+        ]
+      }
+    })
+  })  
+
+  </script>
+</body>
+</html>

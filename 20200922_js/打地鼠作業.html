@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+  <style>
+    body{
+      height: 100%;
+      width: 100%;
+      background-image: url(./打地鼠素材/2825704.gif);
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    .gameboy{
+      width:1550px ;
+      height: 960px;
+      background-image: url(./打地鼠素材/gameboy.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    .screen{
+      width: 820px;
+      height: 720px;
+      position: absolute;
+      top:120px;
+      left: 374px;
+      border: 1px solid white;
+      border-radius: 50px;
+      cursor: url(./打地鼠素材/hammer.png) ,auto;
+      background-image: url(./打地鼠素材/hole_background.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    #startbut{
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      position: absolute;
+      right: 100px;
+      top: 250px;
+      box-shadow: 0px 7px 5px 5px rgb(61, 61, 61) ;
+      outline: none;
+      cursor: pointer;
+    }
+    #resetbut{
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      position: absolute;
+      right: 220px;
+      top: 370px;
+      box-shadow: 0px 7px 5px 5px  rgb(61, 61, 61) ;
+      outline: none;
+      cursor: pointer;
+    }
+    #startbut:active{
+      transform: translateY(7px);
+      box-shadow: 0px 2px 2px 2px rgb(29, 29, 29) ;
+    }
+    #resetbut:active{
+      transform: translateY(7px);
+      box-shadow: 0px 2px 2px 2px rgb(29, 29, 29) ;
+    }
+    #scorescreen{
+      width: 150px;
+      height: 60px;
+      border: 1px solid white;
+      border-radius: 20px;
+      position: absolute;
+      top: 40px;
+      left: 500px;
+    }
+    #timescreen{
+      width: 150px;
+      height: 60px;
+      border: 1px solid white;
+      border-radius: 20px;
+      position: absolute;
+      top: 40px;
+      right: 500px;
+    }
+    #highplayer{
+      width: 250px;
+      height: 70px;
+      border: 1px solid white;
+      border-radius: 30px;
+      position: absolute;
+      left: 80px;
+      bottom: 380px;
+    }
+    #highscore{
+      width: 250px;
+      height: 70px;
+      border: 1px solid white;
+      border-radius: 30px;
+      position: absolute;
+      left: 80px;
+      bottom: 250px;
+    }
+    #moleicon1{
+      width: 70px;
+      height: 70px;
+      background-image: url(./打地鼠素材/mole_1.png);
+      background-size: cover;
+      position: absolute;
+      left: 20px;
+      top: 10px;
+    }
+    #moleicon2{
+      width: 70px;
+      height: 70px;
+      background-image: url(./打地鼠素材/mole2.png);
+      background-size: cover;
+      position: absolute;
+      left: 200px;
+      top: 10px;
+    }
+    /* #beforegame{
+      width: 820px;
+      height: 720px;
+      position: absolute;
+      top:120px;
+      left: 374px;
+      border: 1px solid white; */
+      /* display: none; */
+    /* } */
+    
+    #bighole{
+      width: 700px;
+      height: 600px;
+      border: 1px solid white ;
+      margin: auto;
+      margin-top: 80px;
+      position: relative;
+    }
+    #hole1{
+      width: 170px;
+      height: 180px;
+      border: 1px solid white;
+      position: absolute;
+    }
+    #hole1:active img{
+      animation: molemove 2s ease-in-out infinite;
+    }
+    #hole2{
+      width: 170px;
+      height: 180px;
+      border: 1px solid white;
+      position: absolute;
+      top: 0%;
+      left: 38%;
+     
+    }
+    #hole3{
+      width: 170px;
+      height: 180px;
+      border: 1px solid white;
+      position: absolute;
+      top: 0%;
+      right: 0%;
+    }
+    #hole4{
+      width: 170px;
+      height: 180px;
+      border: 1px solid white;
+      position: absolute;
+      left: 0%;
+      top: 32%;
+    }
+    #hole5{
+      width: 170px;
+      height: 180px;
+      border: 1px solid white;
+      position: absolute;
+      top: 32%;
+      left: 38%;
+    }
+    #hole6{
+      width: 170px;
+      height: 180px;
+      border: 1px solid white;
+      position: absolute;
+      right: 0%;
+      top: 32%;
+    }
+    #hole7{
+      width: 170px;
+      height: 180px;
+      border: 1px solid white;
+      position: absolute;
+      bottom: 0%;
+    }
+    #hole8{
+      width: 170px;
+      height: 180px;
+      border: 1px solid white;
+      position: absolute;
+      bottom: 0%;
+      left: 38%;
+    }
+    #hole9{
+      width: 170px;
+      height: 180px;
+      border: 1px solid white;
+      position: absolute;
+      bottom: 0%;
+      right: 0%;
+    }
+    img{
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      
+    }
+    @keyframes molemove {
+      50% {
+                margin-top: -40px;
+                opacity: 1;
+            }
+            100% {
+                margin-top: -15px;
+                opacity: 0;
+            }
+        }
+    
+  </style>
+</head>
+<body>
+  <div class="gameboy">  
+    <!-- 最高最低分 -->
+    <div id="highplayer">
+      <p>TOP Player :<span>name</span></p>
+    </div>
+    <div id="highscore" >
+      <p>Score :<span class="nes-text is-primary">0</span></p>
+    </div>
+
+    <input type="button" value="start" id="startbut">
+    <!-- 3.2.1倒數 -->
+    <!-- <div id="beforegame">
+      <div id="before1">3</div>
+      <div id="before2">2</div>
+      <div id="before3">1</div>
+    </div> -->
+
+    <input type="button" value="reset" id="resetbut" onclick="
+    javascript:window.location.reload()">
+    <div id="scorescreen"><span id="yourscore">0</span></div>
+    <div id="timescreen"><span id="timelast">0</span></div>
+    
+    <!-- 主要螢幕 -->
+    <div class="screen">
+      <div id="moleicon1"></div>
+      <div id="moleicon2"></div>
+
+      <!-- 地鼠洞 -->
+     <div id="bighole">
+       <div id="hole1">
+         <img src="./打地鼠素材/mole_1_inside.png">
+       </div>
+       <div id="hole2">
+        <img src="./打地鼠素材/mole_1_inside.png">
+       </div>
+       <div id="hole3">
+        <img src="./打地鼠素材/mole_1_inside.png">
+       </div>
+       <div id="hole4">
+        <img src="./打地鼠素材/mole_1_inside.png">
+       </div>
+       <div id="hole5">
+        <img src="./打地鼠素材/mole_1_inside.png">
+       </div>
+       <div id="hole6">
+        <img src="./打地鼠素材/mole_1_inside.png">
+       </div>
+       <div id="hole7">
+        <img src="./打地鼠素材/mole_1_inside.png">
+       </div>
+       <div id="hole8">
+        <img src="./打地鼠素材/mole_1_inside.png">
+       </div>
+       <div id="hole9">
+         <img src="./打地鼠素材/mole_1_inside.png">
+       </div>
+     </div>
+    
+     
+  </div>
+  <script>
+    const startbut = document.getElementById("startbut")
+    const resetbut = document.getElementById("resetbut")
+    const highplayer =document.getElementById("scorescreen")
+    const highscore =document.getElementById("timescreen")
+    const scorescreen =document.getElementById("scorescreen")
+    const timescreen =document.getElementById("timescreen")
+    var   timelast  = document.getElementById("timelast")
+    var   yourscore = document.getElementById("yourscore")
+    var   images = document.getElementsByTagName("img") 
+
+    let score = 0
+    let time  = 30
+    
+    function comeout(){
+      randimg = Math.floor(Math.random()*9);
+      image[randimg].src
+    }
+
+    
+  </script>
+</body>
+</html>

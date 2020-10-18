@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    <h1><span class="time" style="color: blue;"></span></h1>
+  </div>
+  
+  <Script>
+    let input = parseInt(prompt("請輸入秒數"))+1
+    let time = document.getElementsByClassName("time")[0]
+
+    function countdown(){
+      input--;
+      time.innerText = input;
+      if(input<0){
+        time.innerText= ("<span style='color:red'>時間到</span>")
+        clearInterval(timer)
+      }
+    }
+    let timer = setInterval("countdown()",1000)
+
+
+  </Script>
+</body>
+</html>

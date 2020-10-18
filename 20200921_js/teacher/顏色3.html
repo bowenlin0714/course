@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #preview {
+      height: 200px;
+      width: 200px;
+      border: 1px solid black;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="preview"></div>
+  紅色
+  <input type="range" min="0" max="255" value="0" id="input-r">
+  <span id="text-r">0</span>
+  <input type="button" value="隨機" id="random-r">
+  <br>
+  綠色
+  <input type="range" min="0" max="255" value="0" id="input-g">
+  <span id="text-g">0</span>
+  <input type="button" value="隨機" id="random-g">
+  <br>
+  藍色
+  <input type="range" min="0" max="255" value="0" id="input-b">
+  <span id="text-b">0</span>
+  <input type="button" value="隨機" id="random-b">
+  <script>
+    const inputR = document.getElementById('input-r')
+    const inputG = document.getElementById('input-g')
+    const inputB = document.getElementById('input-b')
+    const textR = document.getElementById('text-r')
+    const textG = document.getElementById('text-g')
+    const textB = document.getElementById('text-b')
+    const randomR = document.getElementById('random-r')
+    const randomG = document.getElementById('random-g')
+    const randomB = document.getElementById('random-b')
+    const preview = document.getElementById('preview')
+
+    // let r = 0
+    // let g = 0
+    // let b = 0
+    let r = 0, g = 0, b = 0
+    
+    inputR.oninput = () => {
+      r = inputR.value
+      textR.innerText = r
+      preview.style.background = `rgb(${r}, ${g}, ${b})`
+    }
+    inputG.oninput = () => {
+      g = inputG.value
+      textG.innerText = g
+      preview.style.background = `rgb(${r}, ${g}, ${b})`
+    }
+    inputB.oninput = () => {
+      b = inputB.value
+      textB.innerText = b
+      preview.style.background = `rgb(${r}, ${g}, ${b})`
+    }
+
+    randomR.onclick = () => {
+      const color = Math.round(Math.random()*255)
+      r = color
+      inputR.value = color
+      textR.innerText = color
+      preview.style.background = `rgb(${r}, ${g}, ${b})`
+    }
+    randomG.onclick = () => {
+      const color = Math.round(Math.random()*255)
+      g = color
+      inputG.value = color
+      textG.innerText = color
+      preview.style.background = `rgb(${r}, ${g}, ${b})`
+    }
+    randomB.onclick = () => {
+      const color = Math.round(Math.random()*255)
+      b = color
+      inputB.value = color
+      textB.innerText = color
+      preview.style.background = `rgb(${r}, ${g}, ${b})`
+    }
+  </script>
+</body>
+</html>

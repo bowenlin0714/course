@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+  <style>
+    html,body{
+      height: 100%;
+    }
+    body{ 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+      border: 0;
+      font-family: 'Orbitron', sans-serif;
+    }
+    #circle{
+      width: 1300px;
+      height: 1300px;
+      position: absolute;
+      background-image: url(./clock_image/kisspng-the-satanic-bible-church-of-satan-satanism-portabl-pentagram-which-blood-red-sticker-by-marras-5d38aee21b9781.688902111563995874113.png);
+      background-size: contain;
+      animation: run reverse 80s 0s infinite linear;
+    }
+    #circle1{
+      width: 900px;
+      height: 900px;
+      position: absolute;
+      background-image: url(./clock_image/circle1.png);
+      background-size: contain;
+      animation: run 50s 0s infinite linear;
+    }
+    @keyframes run {
+      from{
+        transform: rotate(0deg);
+      }
+      to{ 
+        transform: rotate(360deg) ;
+      }
+    }
+    #container{
+      width: 750px;
+      height: 750px;
+      box-shadow: inset 0px 0px 20px 15px rgb(0, 0, 0);
+      padding: 20px;
+      text-align: center;
+      border-radius: 50%;
+      position: relative;
+      background-image: url(./clock_image/—Pngtree—skull_617182.png);
+      background-repeat: no-repeat;
+      background-color: rgb(51, 146, 106);
+      background-position: 50% 36%;
+      background-size: 1100px 1100px;
+      
+      
+    }
+    
+    #clock{
+      
+        width:200px;
+        height:200px;
+        margin: 0 auto;
+        border-radius: 50%;
+        background: rgb(30, 30, 30);
+        position: absolute;
+        top: 36%;
+        left: 20%;
+        box-shadow: inset 8px 15px 20px 10px black,
+        0px 5px 20px 5px rgb(0, 0, 0);
+        border: 7px solid black;
+        
+    }
+    #eye{
+        width:200px;
+        height:200px;
+        margin: 0 auto;
+        border-radius: 50%;
+       background-color: rgb(30, 30, 30);
+        position: absolute;
+        top: 36%;
+        right: 18%;
+        box-shadow: inset 8px 15px 20px 10px black,
+        0px 5px 20px 5px rgb(0, 0, 0);
+        border: 10px solid black;
+        animation: eye 2s 1s infinite ease-in-out;
+    }
+    
+    #eyeball{
+      width: 220px;
+      height: 220px;
+      position: absolute;
+      top: 41%;
+      left: 53%;
+      color:rgb(212, 211, 211);
+      font-size: 45px;  
+      
+    }
+    
+    
+    #dot{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: radial-gradient(grey,rgb(243, 243, 243) );
+      background-color: rgb(230, 230, 230);
+      transform: translate(-50%,-50%);
+      z-index: 999;
+      border: 1px solid black;
+      box-shadow: 3px 3px 1px 1px rgba(0,0,0,0.6) ;
+      background-image: url(./clock_image/kisspng-eye-clip-art-5b315bd3515556.4586638715299614273332.png);
+      background-size: cover;;
+      background-repeat: no-repeat;
+    }
+    #scale{
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    
+    #hour{
+        position: absolute;
+        top:calc(50% - 3px);
+        width:25%;
+        height:6px;
+        background:rgb(228, 228, 228);
+        transform-origin: right center;
+        transform: rotate(0deg);
+        left:25%;
+        border-radius: 30px;
+        z-index: 900;
+        box-shadow: 6px 6px 1px 1px rgba(0,0,0,0.5) ;
+        background: radial-gradient(grey,rgb(243, 243, 243) );
+    }
+    #minute{
+        position: absolute;
+        top:calc(50% - 3px);
+        width:40%;
+        height:6px;
+        background: rgb(221, 221, 221);
+        transform-origin: right center;
+        transform: rotate(0deg);
+        left:10%;
+        border-radius: 30px;
+        box-shadow: 6px 6px 1px 1px rgba(0,0,0,0.5) ;
+        background: radial-gradient(grey,rgb(243, 243, 243) );
+    }
+    #second{
+        position: absolute;
+        top:calc(50% - 1px);
+        width:45%;
+        height:2px;
+        background: red;
+        transform-origin: right center;
+        transform: rotate(0deg);
+        left:5%;
+        border-radius: 30px;
+        box-shadow: 6px 6px 1px 1px rgba(0,0,0,0.6) ;
+    }
+    #screen{
+      
+        width: 270px;
+        height: 80px;
+        border: 3px solid black;
+        margin-top: 133px;
+        display: inline-block;
+        border-radius: 20px;
+        font-size: 35px;
+        position: relative;     
+        background-color: rgb(240, 240, 240); 
+        padding-bottom: 8px;
+        box-shadow: inset 5px 5px 48px 40px black,
+                          0px 0px 5px 5px rgba(0, 0, 0, 0.5)
+    }
+
+    #timer{
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 45px;      
+      color: rgb(226, 225, 225);
+    }
+    #scale{
+      position: absolute;
+      top: 38%;
+      left: 22%;
+      width: 180px;
+      height: 180px;
+      background-image: url(./clock_image/5f60beb5b1be3.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 5000000;
+    }
+    
+</style>
+</head>
+<body>
+  <div id="circle"></div>
+  <div id="circle1"></div>
+  
+  <div id="container">
+    <div id="scale"></div>
+    <div id="clock">
+      <div class="number">
+
+      </div>
+      <div id="dot"></div>
+      <div id="hour"></div>
+      <div id="minute"></div>
+      <div id="second"></div>
+  </div>
+  <div id="eye">
+  </div>
+  <div id="eyeball">
+    <div style="
+    position:absolute; top: 9%; left:19%;
+    ">
+      <span id="year"></span><br>
+      <span id="month"></span>
+      <span id="date"></span>
+    </div>
+    
+  </div>
+   <div id="screen">
+     <span id="timer"></span>
+  
+   </div>
+  </div>
+ 
+<script>
+  const hour = document.getElementById("hour");
+  const minute = document.getElementById("minute");
+  const sec = document.getElementById("second");
+  const time = document.getElementById("timer")
+  const year = document.getElementById("year")
+  const month = document.getElementById("month")
+  const date = document.getElementById("date")
+  
+  const run1 = document.getElementById("circle1")
+
+  const setDate = () => {
+      const now = new Date();
+      const h = now.getHours();
+      const m = now.getMinutes();
+      const s = now.getSeconds();
+      const y = now.getFullYear();
+      const mon = now.getMonth();
+      const d = now.getDate();
+      // m = checkTime(m);
+      // s = checkTime(s);
+      
+      year.innerHTML = y
+      month.innerHTML= mon
+      date.innerHTML = `/${d}`
+      time.innerHTML = `${h}:${m}:${s}`
+      hour.style.transform = `rotate( ${h*30+90}deg )`;
+      minute.style.transform = `rotate( ${m*6+90}deg )`;
+      sec.style.transform = `rotate( ${s*6+90}deg )`;
+
+  
+  }
+  
+  setInterval(setDate, 1000);
+  setDate();
+
+  function checkTime(x) {
+        if (x < 10) {
+            return "0" + x;
+        }
+        return x;
+    }
+
+  
+  
+</script>
+</body>
+</html>

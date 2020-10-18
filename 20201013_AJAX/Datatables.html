@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css"/>
+</head>
+<body>
+  <table id="data">
+    <thead>
+      <th>標題</th>
+      <th>時間</th>
+      <th>主辦</th>
+    </thead>
+    <tbody>
+     
+    </tbody>
+  </table>
+  <script src="./source/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.js"></script>
+  <script>
+
+    $.get('https://kktix.com/events.json',function(response){
+      for(let data of response.entry){
+        $('#data tbody').append(`
+         <tr>
+           <td>${data.title}</td>
+           <td>${data.content.split('\n')[0].slice(3)}</td>
+           <td>
+            <a href = "${data.author.uri}">${data.author.name}</a>
+           </td>
+         </tr>
+        `)
+      }
+      $('#data').DataTable({
+      language:{
+        url:'//cdn.datatables.net/plug-ins/1.10.21/i18n/Chinese.json'
+      },
+      lengthMenu: [
+          // 數值，-1是全部
+          [5, 30, -1],
+          // 顯示文字
+          [5, 30, '全部']
+      ],
+      columnDefs: [
+          {
+            // 目標欄位
+            targets: [0, 1, 2],
+            // 是否可排序
+            orderable: false,
+            // 是否可搜尋
+            searchable: false
+          }
+        ]
+
+    })
+    },'json')
+    
+    
+    
+    
+    
+    
+   </script>
+</body>
+</html>

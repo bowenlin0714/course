@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+    li{
+      width: 200px;
+      height: 200px;
+      font-size: 50px;
+      margin-left: 20px;
+    }
+    input{
+      width: 200px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" value="剪刀" id="scissor" onclick="scissor()">
+  <input type="button" value="石頭" id="stone"  onclick="stone()"> 
+  <input type="button" value="布" id="paper"  onclick="paper()"> 
+  <ul>
+    <li id="result">Round :<div id="round">0</div></li>
+  </ul>
+  <ul>
+    <li id="result">Win :<div id="win">0</div></li>
+  </ul>
+ 
+  <ul>
+    <li id="result">Lose :<div id="lose">0</div></li>
+  </ul>
+  <ul>
+    <li id="result">Duce :<div id="duce">0</div></li>
+  </ul>
+
+  <script>
+    var win = document.getElementById("win")
+    var lose= document.getElementById("lose")
+    var duce= document.getElementById("duce")
+    var round= document.getElementById("round")
+   
+    var r = [0]
+    var w = [0]
+    var l = [0]
+    var d = [0]
+
+    function scissor(){
+      let com = Math.floor(Math.random()*3)
+     
+      switch(com){
+        case 0:
+        alert("電腦出剪刀,平手");
+        d++
+        r++
+        break
+        case 1:
+        alert("電腦出石頭,你輸了");     
+        l++
+        r++ 
+        break
+        case 2:
+        alert("電腦出布,你贏了");
+        w++
+        r++           
+      }
+      win.innerHTML = w
+      lose.innerHTML = l
+      duce.innerHTML = d
+      round.innerHTML = r    
+    }
+    function stone(){
+      let com = Math.floor(Math.random()*3)
+      switch(com){
+        case 0:
+        alert("電腦出剪刀,你贏了");
+        w++
+        r++
+        break
+        case 1:
+        alert("電腦出石頭,平手");
+        d++
+        r++
+        break
+        case 2:
+        alert("電腦出布,你輸了")
+        l++
+        r++
+      }
+      win.innerHTML = w
+      lose.innerHTML = l
+      duce.innerHTML = d
+      round.innerHTML = r   
+    }
+    function paper(){
+      let com = Math.floor(Math.random()*3)
+      switch(com){
+        case 0:
+        alert("電腦出剪刀,你輸了");
+        l++
+        r++
+        break
+        case 1:
+        alert("電腦出石頭,你贏了");
+        w++
+        r++
+        break
+        case 2:
+        alert("電腦出布,平手")
+        d++
+        r++
+      }
+      win.innerHTML = w
+      lose.innerHTML = l
+      duce.innerHTML = d
+      round.innerHTML = r   
+    }
+    
+
+    
+    
+      
+
+
+      
+    
+    
+  
+    
+    
+    
+  </script>
+</body>
+</html>

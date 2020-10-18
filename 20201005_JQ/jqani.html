@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="./0102.jpg" id="man">
+  <br/>
+  <input type="button"  id="btnanimate" value="動畫">
+  <input type="button"  id="btnstop" value="停止">
+  <input type="button"  id="btnfadeout" value="淡出">
+  <input type="button"  id="btnfadein" value="淡入">
+  <input type="button"  id="btnfadeto" value="半透明">
+  <input type="button"  id="btnslideup" value="滑出">
+  <input type="button"  id="btnslidedown" value="滑入">
+  <script src="./jquery-3.5.1.min.js"></script>
+  <!-- JQuetryUI -->
+  <!-- animatejs -->
+  <script>
+   const man = $('#man')
+   //  .animate只能用數字相關功能
+  //  .animate({CSS樣式:值}),slow/fast/毫秒,動畫結束後執行的function
+   $('#btnanimate').click(function(){
+     man.animate({
+       width:'+=500px',
+       height:'+=500'
+     },5000,function(){
+       console.log("變寬了");
+     }).animate({
+       width:'-=500px',
+       height:'-=500px'
+     },5000,function(){
+       console.log("不見了");
+     })
+   })
+
+   $('#btnstop').click(function(){
+    //  .stop(是否停止之後的動畫，是否跳到動畫結束)
+     man.stop(true,true)
+   })
+
+   $('#btnfadeout').click(function(){
+    //  .fadeout(毫秒,動畫結束後執行的function)
+    //  透明度變成0後 display:none
+     man.fadeOut(5000,function(){
+       console.log("淡出");
+     })
+   })
+
+   $('#btnfadein').click(function(){
+    //  .fadeIn(毫秒,動畫結束後執行的function)
+    //  透明度變成0後 display:none
+     man.fadeIn(5000,function(){
+       console.log("淡入");
+     })
+   })
+
+   $('#btnfadeto').click(function(){
+    //  .fadeTo(毫秒,動畫結束後執行的function)
+    //  透明度變成0後 display:none
+     man.fadeTo(4000,0.5,function(){
+       console.log("半透明");
+     })
+   })
+
+   $('#btnslideup').click(function(){
+    //  .slideUp(毫秒,動畫結束後執行的function)
+    //  改height 到 0
+     man.slideUp(4000,function(){
+       console.log("滑出");
+     })
+   })
+
+   $('#btnslidedown').click(function(){
+    //  .slideDown(毫秒,動畫結束後執行的function)
+    //  改height 到 原本高度
+     man.slideDown(4000,function(){
+       console.log("滑入");
+     })
+   })
+  </script>
+</body>
+</html>

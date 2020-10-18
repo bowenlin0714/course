@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #outer {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: relative;
+    }
+    #inner {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      position: absolute;
+      left: 50px;
+      top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://fb.com" id="link-fb">Facebook</a>
+  <hr>
+  <div id="outer">
+    <div id="inner"></div>
+  </div>
+  <input type="text" id="input-text">
+  <h1 id="content"></h1>
+  <script>
+    const linkFB = document.getElementById('link-fb')
+    linkFB.onclick = event => {
+      event.preventDefault()
+      alert('不會跳頁')
+    }
+
+    const outer = document.getElementById('outer')
+    const inner = document.getElementById('inner')
+    outer.addEventListener('click', event => {
+      event.stopPropagation()
+      console.log('outer')
+    })
+    inner.addEventListener('click', event => {
+      event.stopPropagation()
+      console.log('inner')
+    })
+    document.addEventListener('click' , () => {
+      console.log('document')
+    })
+
+    const inputText = document.getElementById('input-text')
+    const content = document.getElementById('content')
+    inputText.onchange = () => {
+      console.log('change');
+    }
+    inputText.oninput = () => {
+      content.innerText = inputText.value
+      console.log('input')
+    }
+    inputText.onfocus = () => {
+      console.log('focus')
+    }
+    inputText.onblur = () => {
+      console.log('blur')
+    }
+  </script>
+</body>
+</html>

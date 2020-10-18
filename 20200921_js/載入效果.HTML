@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      padding: none ;
+      margin: none  ;
+    }
+    #loading{
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      background-color: white;
+      margin: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading">
+    <img src="./load.svg" alt="">
+    <h1>載入中</h1>
+  </div>
+  <img src="https://i.redd.it/y69ercliqi551.png" alt="">
+  <img src="https://i.redd.it/y69ercliqi551.png" alt="">
+  <img src="https://i.redd.it/y69ercliqi551.png" alt="">
+  <img src="https://i.redd.it/y69ercliqi551.png" alt="">
+  <img src="https://www.wallpaperup.com/uploads/wallpapers/2014/01/15/228439/9c3928b843a01ec6d3b796583a707704-1000.jpg" alt="">
+  <img src="https://www.wallpaperup.com/uploads/wallpapers/2014/01/15/228439/9c3928b843a01ec6d3b796583a707704-1000.jpg" alt="">
+  <img src="https://www.wallpaperup.com/uploads/wallpapers/2014/01/15/228439/9c3928b843a01ec6d3b796583a707704-1000.jpg" alt="">
+  <SCript>
+    
+
+    // 網頁載入完成
+    // DOM解析完成
+    window.onload =()=>{
+      console.log('window onload  ')
+    }
+    // 當文件載入狀態改變時
+    // loading 讀取中
+    // interactive 解析完 dom ，但是圖片下載中
+    // complete 完成\
+    const loading = document.getElementById("loading")
+
+    document.onreadystatechange=()=>{
+      console.log(document.readyState)
+      if(document.readyState==='complete'){
+        loading.style.display ='none'
+      }
+    }
+
+  </SCript>
+</body>
+</html>

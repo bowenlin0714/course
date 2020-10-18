@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 20px;
+    }
+    #gallery{
+      width: 400px;
+      height: 300px;
+      overflow: hidden;
+    }
+    #photo{
+      position: relative;
+      width: 2000px;      
+    }
+    #photo img{
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div id="gallery">
+    <div id="photo">
+     <img src="./0551.jpg" alt="">
+     <img src="./0552.jpg" alt="">
+     <img src="./0553.jpg" alt="">
+     <img src="./0554.jpg" alt="">
+     <img src="./0555.jpg" alt="">
+    </div>
+  </div>
+  <input type="button" value="&lt;" id="left">
+  <input type="button" value="&gt;" id="right">
+  <script src="./jquery-3.5.1.min.js"></script>
+  <script>
+      let now  = 1
+      $('#right').click(function(){
+        if(now< $('#photo img').length){
+          now++
+          const move  =(now-1)*400
+          $('#photo').stop(true,true)
+          $('#photo').animate({left: `-${move+20}px`},1000).animate({
+            left:`-${move}px`
+          },100)
+        }
+        
+      })
+      
+      $('#left').click(function(){
+        if(now>1){
+          now--
+          const move  =(now-1)*400
+          $('#photo').stop(true,true)
+          // 如果now是1，-${move-20}px會是'--20' .CSS會錯誤
+          if(now==1){
+            $('#photo').animate({left: `${move+20}px`},1000).animate({
+            left:`-${move}px`
+          },100)
+          }else{
+            $('#photo').animate({left: `-${move-20}px`},1000).animate({
+            left:`-${move}px`
+          },100)
+          }        
+        }       
+      })
+      
+  </script>
+</body>
+</html>

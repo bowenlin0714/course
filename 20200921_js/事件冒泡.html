@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #outer{
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: rebeccapurple;
+
+    }
+    #inner{
+      width: 100px;
+      height: 110px;
+      background-color: blue;
+      position: absolute;
+      left: 50px;
+      top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <a href="https//fb.com" id="link-fb">Facebook</a>
+  <div id="outer">
+    <div id="inner"></div>
+  </div>
+
+  <script>
+    const linkfb = document.getElementById('link-fb')
+    linkfb.onclick= event=>{
+      event.preventDefault()
+      alert('不會跳頁')
+    }
+    // 事件冒泡機制
+    const outer = document.getElementById('outer')
+    const inner = document.getElementById('inner')
+    outer.addEventListener('click', event =>{
+      event.stopPropagation()
+      console.log('outer')
+    })
+    inner.addEventListener('click', event =>{
+      event.stopPropagation()
+      console.log('inner')
+    })
+    document.addEventListener('click', event =>{
+      event.stopPropagation()
+      console.log('document')
+    })
+    
+    
+  </script>
+</body>
+</html>

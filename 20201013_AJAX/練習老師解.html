@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table id="table"></table>
+  <script src="./source/axios.min.js"></script>
+  <script>
+    const table = document.getElementById('table')
+    axios.get('./source/原民特色景點.json')
+     .then(function(response){
+       const data =response.data
+       for(let rec of data[0].result.records){
+        table.insertAdjacentHTML('beforeend',`
+        <tr>
+          <td>${rec.Name}</td>
+          <td>${rec.Region}</td>
+        </tr>
+        `)
+       }
+     })
+  </script>
+</body>
+</html>

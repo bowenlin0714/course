@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .reds{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <H1 id="myh1">我是 MYH1</H1>
+  <a href="#">a</a>
+  <a href="#">b</a>
+  <p class="reds">p1<del>刪除</del>></p>
+  <p class="reds">p2<del>刪除</del>></p>
+  <p class="reds">p3<del>刪除</del>></p>
+  <ul id="myul">
+    <li>1</li>
+    <li>2</li>
+    <li id="myli">3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <h2 id="myh2">h2h2</h2>
+  <script>
+    
+    // getelementByID 用ID抓取元素，
+    const myh1 = document.getElementById('myh1')
+    // .innerText 裡面的文字
+    console.log(myh1.innerText)
+    myh1.innerText="apple"
+
+    // getelementByTagname 用ID抓取元素
+    const aTags = document.getElementsByTagName('a')
+    console.log(aTags)
+    //用for迴圈去抓
+    for(let tag of aTags){
+      // 標籤.屬性名 可以取得或修改屬性
+      console.log(tag.innerText)
+      // 修改目標網址
+      tag.href= 'https://www.google.com/?hl=zh_tw'
+    } 
+    const reds =document.getElementsByClassName('reds')
+    for(let red of reds){
+      console.log(red.innerText)
+      console.log(red.innerHTML)
+      console.log(red.outerHTML)
+    }
+    // queryselector 用CSS 選擇器抓取元素，只取締一個符合
+    // queryselectorAll 用CSS選擇器抓取元素，取全部符合
+
+    const myli = document.querySelector('#myli')
+    // previousElementsiling 抓同一層的上一個
+    myli.previousElementSibling.classList.add('reds')
+
+    // 用迴圈抓同一層前N個元素
+    let firstli = myli
+    for(let i=0; i<2; i++){
+      firstli = firstli.previousElementSibling
+    } 
+    firstli.classList = 'reds'
+
+    // nextElementSibling 同一層的下一個元素
+    // .style.CSS樣式名稱
+    myli.nextElementSibling.style.color='blue'
+    // 遇到有-號的CSS名稱後面第一個字母要用大寫
+    myli.nextElementSibling.style.backgroundColor = 'pink'
+
+    //parentElemen 上一層
+    myli.parentElement.style.border = '1px solid black'
+
+    const myul = document.getElementById('myul')
+    // children下一層所有的東西
+    const children = myul.children
+    for(let child of children){
+      child.style.textshadow = '0px 0px 5px black'
+    }
+    // firstElementChild 下一層的第一個東西
+    const first = myul.firstElementChild
+    first.style.fontSize = '100px' 
+    // lastElementChild 下一層的最後一個東西
+    const last = myul.lastElementChild
+    last.style.fontSize = '100px' 
+    
+    // .renmove 刪除元素
+    // first.remove()
+
+    const myh2 = document.getElementById("myh2")
+    // inserAdjacentHTML 插入HTML
+    // beforeBegin, aferBegin, bforeend, afterend
+    // begin 指開始標籤，after 指結尾標籤
+    myh2.insertAdjacentHTML('beforebegin','<p>beforebegin</p>')
+    myh2.insertAdjacentHTML('afterbegin','<p>afterbegin</p>')
+    myh2.insertAdjacentHTML('beforeend','beforeend')
+    myh2.insertAdjacentHTML('afterend','aferend')
+    
+
+
+  </script>
+</body>
+</html>

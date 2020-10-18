@@ -1,0 +1,280 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <style>
+      body{
+      height: 100%;
+      width: 100%;
+      background-image: url(./打地鼠素材/2825704.gif);
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+          
+    }
+    .gameboy{
+      width:1550px ;
+      height: 960px;
+      background-image: url(./打地鼠素材/gameboy.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    #screen{
+      width: 820px;
+      height: 700px;
+      position: absolute;
+      border-radius: 30px;
+      top:120px;
+      left: 374px;
+      cursor: url(./打地鼠素材/hammer.png) ,auto;     
+      background-image: url(./打地鼠素材/grass.png);
+      background-size: cover;
+      background-color: chartreuse;
+    }
+    #startbtn{
+      position: absolute;
+      right: 100px;
+      top: 250px;    
+    }
+    #resetbtn{
+      position: absolute;
+      right: 220px;
+      top: 370px;
+    }
+    #scorescreen{
+      position: absolute;
+      top: 40px;
+      left: 500px;
+    }
+    #timescreen{
+      position: absolute;
+      top: 40px;
+      right: 500px;
+      width: 200px;
+    }
+    #tplayerscreen{
+      position: absolute;
+      left: 80px;
+      bottom: 380px;
+    
+    }
+    #tscorescreen{
+      position: absolute;
+      left: 80px;
+      bottom: 250px;
+    }
+    #hole1{
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+    }
+    #hole2{
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      position: absolute;
+      top: 0%;
+      left: 38%;
+     
+    }
+    #hole3{
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      position: absolute;
+      top: 0%;
+      right: 0%;
+    }
+    #hole4{
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      position: absolute;
+      left: 0%;
+      top: 36%;
+    }
+    #hole5{
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      position: absolute;
+      top: 36%;
+      left: 38%;
+    }
+    #hole6{
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      position: absolute;
+      right: 0%;
+      top: 36%;
+    }
+    #hole7{
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+    }
+    #hole8{
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      position: absolute;
+      bottom: 0%;
+      left: 38%;
+    }
+    #hole9{
+      width: 200px;
+      height: 200px;
+      border: 1px solid white;
+      position: absolute;
+      bottom: 0%;
+      right: 0%;
+    }
+    .hole img{
+      width: 200px;
+      position: absolute;
+      bottom: 0%;
+    }
+    .hole::after{
+      display: block;
+      content: '';
+      z-index: 2;
+    }
+    .mole{
+      background: url('./打地鼠素材/mole1_inside.png') bottom center no-repeat;
+      background-size: 60%;
+      position: absolute;
+      border: 1px solid blue  ;
+      width: 200px;
+      height: 200px;
+    }
+    .hole.up .mole{
+      top: 100%;
+    }
+   
+
+    
+    </style>
+  </head>
+  <body>
+
+    <div class="gameboy"> 
+      <!-- 按鈕 -->
+      <button type="button" class="nes-btn is-primary" id="startbtn">Start</button>
+      <button type="button" class="nes-btn is-primary" id="resetbtn">Reset</button>
+      <!-- 分數時間顯示 -->
+      <div class="nes-container is-rounded" id="scorescreen">
+        <p>Score : <span id="scoreinput">0</span></p>
+      </div>
+      <div class="nes-container is-rounded" id="timescreen">
+        <p>Time : <span id="timeinput">0</span></p>
+      </div>
+      <!-- 主要螢幕 -->
+      <div class="nes-container is-rounded" id="screen">
+        <div id="bighole">
+          <div id="hole1" class="hole">
+            <img src="./打地鼠素材/hole.png" alt="">
+            <div class="mole"></div>
+          </div>
+          <div id="hole2" class="hole">
+            <img src="./打地鼠素材/hole.png" alt="">
+            <div class="mole"></div>
+          </div>
+          <div id="hole3" class="hole">
+            <img src="./打地鼠素材/hole.png" alt="">
+           <div class="mole"></div>
+          </div>
+          <div id="hole4" class="hole">
+            <img src="./打地鼠素材/hole.png" alt="">
+            <div class="mole"></div>
+          </div>
+          <div id="hole5" class="hole">
+            <img src="./打地鼠素材/hole.png" alt="">
+            <div class="mole"></div>
+          </div>
+          <div id="hole6" class="hole">
+            <img src="./打地鼠素材/hole.png" alt="">
+            <div class="mole"></div>
+          </div>
+          <div id="hole7" class="hole">
+            <img src="./打地鼠素材/hole.png" alt="">
+            <div class="mole"></div>
+          </div>
+          <div id="hole8" class="hole">
+            <img src="./打地鼠素材/hole.png" alt="">
+            <div class="mole"></div>
+          </div>
+          <div id="hole9" class="hole">
+            <img src="./打地鼠素材/hole.png" alt="">
+            <div class="mole"></div>
+          </div>
+        </div>
+
+
+        
+
+      </div>
+        <!-- 高分榜 -->
+        <div class="nes-container is-rounded" id="tplayerscreen">
+          <p id="topplayerinput"></p>
+        </div>
+        <div class="nes-container is-rounded" id="tscorescreen">
+          <p id="highscoreinput"></p>
+        </div>
+
+      </div>
+    
+   
+    </div>
+    <script>
+      const holes =document.querySelectorAll('.hole')
+      console.log(holes.length);
+      let lasthole;
+      
+      
+      function randomtimes(min,max){
+        return Math.floor(Math.random()*(max-min)+min)
+        
+      }
+      
+     
+
+      function randholes(holes){
+        const idx = Math.floor(Math.random()*holes.length)
+        const hole= holes[idx]
+        
+        if(lasthole===hole ){
+          return randholes(holes)
+        }
+        lasthole =hole
+        return hole
+        
+      }
+
+      function showup(){
+        const time = randomtimes(200,1000);
+        const hole = randholes(holes);
+        hole.classList.add('up');
+
+        setTimeout(()=>{
+          hole.classList.remove('up');
+          showup()
+
+        },time)
+      }
+     
+    </script>
+  </body>
+  </html>

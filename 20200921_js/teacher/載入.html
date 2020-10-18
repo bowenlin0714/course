@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #loading {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <img src="./loading.svg" alt="">
+    <br>
+    <h1>載入中請稍後...</h1>
+  </div>
+  <img height="100px" src="https://www.pxwall.com/wp-content/uploads/2018/03/4K-High-Definition-Wallpaper-3840x2160.jpg" alt="">
+  <img height="100px" src="https://wallpapercave.com/wp/wp3479287.jpg" alt="">
+  <img height="100px" src="https://wallpaperaccess.com/full/508751.jpg" alt="">
+  <img height="100px" src="https://lh3.googleusercontent.com/proxy/MXd81CdJKEc3WB4dzXHoQr9MFN3l4e2l15y2_rpDJdMkdI7igDdNUaoh5kOhYldZ39c3mfeVviwWuCofiSw165_JlLOuoUS462dELvog-JkOh4NCLQPkVNuGXm3BriDYeNs=s0-d" alt="">
+  <script>
+    const loading = document.getElementById('loading')
+
+    // 網頁載入完成
+    // DOM 解析完、圖片也載入完
+    window.onload = () => {
+      console.log('window onload')
+    }
+
+    // 當文件載入狀態改變時
+    // loading 讀取中
+    // interactive 解析完 DOM，但是圖片下載中
+    // complete 完成
+    document.onreadystatechange = () => {
+      console.log(document.readyState)
+      if(document.readyState === 'complete') {
+        loading.style.display = 'none'
+      }
+    }
+  </script>
+</body>
+</html>

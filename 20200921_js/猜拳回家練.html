@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ 
+</head>
+<body>
+  <input type="button" value="剪刀" class="btn">
+  <input type="button" value="石頭"class="btn">
+  <input type="button" value="布" class="btn">
+  
+  <ul id="history"></ul>
+
+  <script>
+    const variety = ['剪刀','石頭','布']
+    const btns = document.getElementsByClassName("btn")
+    const history = document.getElementById("history")
+    var round = document.getElementById("round")
+    var r =[0]
+    round.innerHTML =r
+  
+    
+    for(const btn of btns){
+      btn.onclck = () =>{
+        const player =btn.value
+        const com = variety[Math.floor(Math.random()*3)]
+
+        let result=''
+        if(player===com){
+          result="平手"
+        }
+        else if(
+          (player==="剪刀"&&com==="布")||(player==="石頭"&&com==="剪刀")||(player==="布"&&com==="石頭")
+        ){
+          result = '贏'
+        }
+        else{
+          result="輸"
+        }
+        const text= `你出${player},電腦出${com},你${result}了`
+        alert(text)
+        history.insertAdjacentHTML('afterbegin',`<li>${text}</li>`)
+        round++
+      }
+    }
+    round.innerHTML =r
+
+
+  </script>
+</body>
+</html>

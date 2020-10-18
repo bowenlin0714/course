@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" class="btn" value="剪刀">
+  <input type="button" class="btn" value="石頭">
+  <input type="button" class="btn" value="布">
+  <ul id="history"></ul>
+
+  <script>
+
+    const options = ["剪刀","石頭","布"]
+    const btns = document.getElementsByClassName('btn')
+    const history = document.getElementById("history")
+
+    for(const btn of btns){
+      btn.onclick = ()=>{
+        const player = btn.value
+        const computer = options[Math.floor(Math.random()*3)]
+
+        let result = 0
+        if(player== computer){
+          result = "平手"
+        }
+        else if(
+                (computer=='剪刀'&&player =='石頭')||
+                (computer=='石頭'&&player =='布')||
+                (computer=='布'&&player =='剪刀')         
+                ){
+           result='贏'       
+        }
+        else{
+           result="輸"
+        }
+        const text =`你出${player},電腦出${computer},你${result}了`
+        alert(text)
+        history.insertAdjacentHTML('afterbegin',`<li>${text}</li>`)
+        }
+      }
+    
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #cards{
+      height: 210px;
+      overflow: hidden;
+    }
+    .card{
+      float: left;
+      margin-top:100px;
+      background-color: black;
+      color: wheat;
+    }
+    .card img{
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div id="cards">
+    <div class="card">
+      <img src="./0551.jpg" alt="">
+      <p>第1張卡片</p>
+    </div>
+    <div class="card">
+      <img src="./0552.jpg" alt="">
+      <p>第2張卡片</p>
+    </div>
+    <div class="card">
+      <img src="./0553.jpg" alt="">
+      <p>第3張卡片</p>
+    </div>
+    <div class="card">
+      <img src="./0554.jpg" alt="">
+      <p>第4張卡片</p>
+    </div>
+    <div class="card">
+      <img src="./0555.jpg" alt="">
+      <p>第5張卡片</p>
+    </div>
+  </div>
+  <script src="/jquery-3.5.1.min.js"></script>
+  <script>
+  //  $('.card').mouseenter(function(){
+  //   $(this).stop(true,false).animate({marginTop:'3px'},500)
+  //   $(this).next().stop(true,false).animate({marginTop:'50px'},400)
+  //   $(this).prev().stop(true,false).animate({marginTop:'50px'},400)
+  //  })
+  //  $('.card').mouseleave(function(){
+  //   $(this).stop(true,false).animate({marginTop:'100px'},500)
+  //   $(this).next().stop(true,false).animate({marginTop:'100px'},400)
+  //   $(this).prev().stop(true,false).animate({marginTop:'100px'},400)
+  //  })
+   
+  //  .hover(.mouseenter的function, mouseleave的function)
+   $('.card').hover(function(){
+    $(this).stop(true,false).animate({marginTop:'3px'},500)
+    $(this).next().stop(true,false).animate({marginTop:'50px'},400)
+    $(this).prev().stop(true,false).animate({marginTop:'50px'},400)
+   },function(){
+    $(this).stop(true,false).animate({marginTop:'100px'},500)
+    $(this).next().stop(true,false).animate({marginTop:'100px'},400)
+    $(this).prev().stop(true,false).animate({marginTop:'100px'},400)
+   })
+  </script>
+</body>
+</html>

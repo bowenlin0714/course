@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .big{
+      font-size: 100px;
+
+    }
+    .red{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>文字</h1>
+  <h1>文字</h1>
+  <h1><a href="#">連結</a></h1>
+  <img src="./ass.png" alt="" id="img1">
+  <input type="text"  id="inputtext">
+  <p id="p">666</p>
+  <ul id="ul1">
+    <li>1</li>
+    <li>
+      <a href="">連結</a>
+    </li>
+    <li>3</li>
+  </ul>
+  <UL id="ul2">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </UL>
+
+  <UL id="ul3">
+    <li>1</li>
+    <li>2</li>
+    <li>
+      <a href="" id="link">3</a>
+    </li>
+    <li>4</li>
+    <li>5</li>
+  </UL>
+  
+  <p id="pp">text</p>
+
+  <script src="./jquery-3.5.1.min.js"></script>
+  <script>
+  // text()文字
+  // ()沒東西是取直
+  // ()有東西是修改
+  console.log($('h1').eq(1).text());
+  $('h1').eq(0).text('aaa')
+
+  // .html() html
+  // ()沒東西是取直
+  // ()有東西是修改
+  console.log($('h1').eq(2).html().trim());
+  
+  // .attr()(屬性，值) 屬性
+  // ()沒給值就是取值
+  // ()有值是修改
+  console.log($(img1).attr('src'));
+  $('#img1').attr('src', './grass.png')
+
+  // .val 值
+  // ()沒東西是取值
+  // ()有東西是修改
+   $('#inputtext').val('666')
+   console.log($('#inputtext').val());
+
+  // .css(名稱，值) 樣式
+  // ()沒東西是取值
+  // ()有東西是修改 
+  // 一次修改多個樣式可用 .css({名稱:值})
+  $('h1').css('border','5px solid green')
+  // 前面的可不用加引號，如要用-號要用引號
+  $('h1').css({color: 'blue','background-color': 'black',fontSize:'50px'})
+  console.log($('h1').css('color'));
+  
+  // .addClass() 新增class
+  // 若要新增多個以空白分割
+  // .removeClass() 移除class
+  // 若要除多個以空白分割
+  $('#p').addClass('big red')
+  $('#p').removeClass('red')
+  
+  // .find 找某一個值
+  // 在裡面尋找符合選擇器的東西
+  
+  $('#ul1').find('a').addClass('big')
+  //也可以直接加空白
+  $('#ul1 a').addClass('big')
+  
+  // .prev() 同一層的上一個東西
+  // .prevAll() 同一層的上面所有東西，()裡面可以放選擇器
+  // .next() 同一層的下一個東西
+  // .nextAll() 同一層的下面所有東西，()裡面可以放選擇器
+  // .siblings() 同一層的其他東西 ()裡面可以放選擇器篩選
+  const midli = $('#ul2').find('li').eq(2)
+  midli.prev().css('color','red')
+  midli.prevAll().css('border','2px solid blue')
+  midli.next().css('color','yellow')
+  midli.nextAll().css('border','2px solid red')
+  midli.siblings().css('background','skyblue')  
+  
+  //.parent()上一層
+  // .parents() 上面所有的， 不包含目前元素 .() 裡面可以放選擇器篩選
+  // .closest() 最近的，上面所有的，包含目前元素 .() 必須放選擇器篩選
+  const link =$('#link')
+  link.parent().css('border','1px solid red')
+  link.parents().css('border','1px solid black ')
+  link.closest('li').css('color','red')
+  
+  // .append() 在後面插入HTML
+  // .prepend() 在前面插入HTML
+  $('#pp').append('後')
+  $('#pp').prepend('前')
+
+  
+
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      background-color: blue;
+    }
+    .bar1{
+      width: 255px;
+      height: 50px;
+      background-color: crimson;
+      border-radius: 20px;
+      
+    }
+    .bar2{
+      width: 255px;
+      height: 50px;
+      background-color: green;
+      border-radius: 20px;
+    }
+    .bar3{
+      width: 255px;
+      height: 50px;
+      background-color: blue;
+      border-radius: 20px;
+    }
+    .dot1{
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      border: 1px solid black;
+      background-color: blanchedalmond;
+      display: inline-block;
+    }
+    
+  </style>
+</head>
+<body>
+ <div class="container"></div>
+ <!-- 選項一 -->
+  <h1>R</h1>
+  <h1 id="h1">0</h1>
+  <input type="range" min="0" max="255" id="range1" value="0"
+  onchange="color1()">
+  
+  <input type="button" value="隨機" id="red" onclick="color1()">
+
+<!-- 選項二 -->
+  <h1>G</h1>
+  <h1 id="h2">0</h1>
+  <input type="range" min="0" max="255" id="range2" value="0"
+  onchange="color2()">
+    
+  </div><input type="button" value="隨機" id="green" onclick="color2()" >
+
+<!-- 選項三 -->
+  <h1>B</h1>
+  <h1 id="h3">0</h1>
+  <input type="range" min="0" max="255" id="range3" value="0"
+  onchange="color3()">
+    
+  <input type="button" value="隨機" id="blue" onclick="color2()">
+</div>
+
+  <script>
+    var red = document.getElementById("red")
+    var green = document.getElementById("green")
+    var blue = document.getElementById("blue")
+   
+    var h2 = document.getElementById("h2")
+    var h3 = document.getElementById("h3")
+    var range1 = document.getElementById("range1").value
+    var range2 = document.getElementById("range2")
+    var range3 = document.getElementById("range3")
+    var container = document.getElementsByClassName("container ")
+    let random = Math.floor(Math.random()*255);
+   
+
+  function color1(){   
+   var range1 = document.getElementById("range1").value
+   document.getElementById("h1").innerHTML = range1
+  }
+  function color2(){   
+    var range2 = document.getElementById("range2").value
+   document.getElementById("h2").innerHTML = range2
+  }
+  function color3(){   
+    var range3 = document.getElementById("range3").value
+   document.getElementById("h3").innerHTML = range3
+  }
+ 
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="myh1">1</h1>
+
+  <input type="button" value="點我" class="btn">
+  <input type="button" value="點我" class="btn">
+  <input type="button" value="點我" class="btn">
+  <input type="button" value="點我" class="btn">
+  <input type="button" value="點我" class="btn">
+
+  <h1 id="keytext"></h1>
+  <script>
+    const myh1 = document.getElementById('myh1')
+    myh1.onclick = () => {
+      let number = parseInt(myh1.innerText)
+      number++
+      myh1.innerText = number
+    }
+
+    const btns = document.getElementsByClassName('btn')
+    for(let btn of btns) {
+      btn.onclick = event => {
+        // console.log(event)
+        event.target.value = '點過了'
+      }
+    }
+
+    const keytext = document.getElementById('keytext')
+    document.onkeydown = event => {
+      keytext.innerText = event.key
+    }
+  </script>
+</body>
+</html>

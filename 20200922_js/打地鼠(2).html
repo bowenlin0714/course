@@ -1,0 +1,549 @@
+
+    <head>
+        <title>打地鼠</title>
+        <meta http-equiv="Content-Type" screen="text/html; charset=utf-8"/>
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+       <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+       <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+        <style type="text/css">
+            body{
+              background-image: url(./打地鼠素材/1906b12de736876d91b9f2e818493905.gif);
+              background-size: cover;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            #gameboy{
+              width:1550px ;
+              height: 960px;
+              background-image: url(./打地鼠素材/gameboy.png);
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+            
+             }
+             #screen{
+                width: 822px;
+                height: 700px;
+                position: absolute;
+                border-radius: 30px;
+                top:120px;
+                left: 374px;
+                cursor: url(./打地鼠素材/hammer.png) ,auto;  
+                background-image: url(./打地鼠素材/ass.png);
+                background-size: cover;   
+                background-repeat: no-repeat;
+             
+              }
+              #screen:active{
+                cursor: url(./打地鼠素材/hammer_click.png) ,auto;  
+              }
+              #startbtn{
+                position: absolute;
+                right: 170px;
+                top: 230px;  
+                background-color: rgb(240, 240, 240);
+              }
+              #reset{
+                position: absolute;
+                right: 170px;
+                top: 320px;
+              }
+              #resetbtn{
+                position: absolute;
+                right: 153px;
+                top: 410px;
+              }
+              .hole1{
+                width:800 ;
+                height: 40px;
+                position: absolute;
+                left: 1%;
+                top: 137px;
+                z-index: 50000000;
+                background-image: url(./打地鼠素材/holeeee.png);
+                background-size: 200px 40px;
+            }
+            .hole2{
+                width:800 ;
+                height: 40px;
+                position: absolute;
+                left: 1%;
+                top: 309px;
+                z-index: 50000000;
+                background-image: url(./打地鼠素材/holeeee.png);
+                background-size: 200px 40px;
+            }
+            .hole3{
+                width:800 ;
+                height: 40px;
+                position: absolute;
+                left: 1%;
+                bottom: 174px;
+                z-index: 50000000;
+                background-image: url(./打地鼠素材/holeeee.png);
+                background-size: 200px 40px;
+            }
+            .hole4{
+                width:800 ;
+                height: 40px;
+                position: absolute;
+                left: 1%;
+                bottom: 0%;
+               z-index: 50000000;
+                background-image: url(./打地鼠素材/holeeee.png);
+                background-size: 200px 40px;
+            }
+              #intro{
+                width: 700px;
+                height: 300px;
+<<<<<<< HEAD:網路.html
+                /* background-image: url(./打地鼠素材/IckyAdmiredGeese-small.gif); */
+=======
+>>>>>>> master:打地鼠(2).html
+                z-index: 12112112121;
+                position: absolute;
+                /* display: none; */
+              }
+<<<<<<< HEAD:網路.html
+              
+            .hole1{
+                width:800 ;
+                height: 40px;
+                position: absolute;
+                left: 1%;
+                top: 137px;
+                z-index: 50000000;
+                background-image: url(./打地鼠素材/holeeee.png);
+                background-size: 200px 40px;
+            }
+            .hole2{
+                width:800 ;
+                height: 40px;
+                position: absolute;
+                left: 1%;
+                top: 309px;
+                z-index: 50000000;
+                background-image: url(./打地鼠素材/holeeee.png);
+                background-size: 200px 40px;
+            }
+            .hole3{
+                width:800 ;
+                height: 40px;
+                position: absolute;
+                left: 1%;
+                bottom: 174px;
+                z-index: 50000000;
+                background-image: url(./打地鼠素材/holeeee.png);
+                background-size: 200px 40px;
+            }
+            .hole4{
+                width:800 ;
+                height: 40px;
+                position: absolute;
+                left: 1%;
+                bottom: 0%;
+               z-index: 50000000;
+                background-image: url(./打地鼠素材/holeeee.png);
+                background-size: 200px 40px;
+            }
+=======
+              #progressbar{
+                  width: 500px;
+                  height: 40px;
+                  position: absolute;
+                  bottom: 60px;
+                  left: 34%;
+              }
+              #topcontain{
+                  width: 250px;
+                  height: 240px;
+                  background-color: tomato;
+                  position: absolute;
+                  bottom: 200px;
+                  left: 90px;
+              }
+              #form1{
+                  position: absolute;
+                  top: 70px;
+                  left: 25%;
+              }
+              
+>>>>>>> master:打地鼠(2).html
+            table {
+              width: 800px;
+              height: 680px;
+              position: absolute;
+              top: 1%;
+              left: 1% ;
+                
+            }
+            td {
+                width: 100px;
+                height: 100px;               
+<<<<<<< HEAD:網路.html
+                /* background-image: url(./打地鼠素材/mole2.png); */
+=======
+>>>>>>> master:打地鼠(2).html
+                background-size: contain;
+                background-position: -100% 100%;
+                background-repeat: no-repeat;
+                
+                position: relative;
+                overflow: hidden;
+                z-index: 1000;
+            }
+            img{
+              position: absolute;      
+<<<<<<< HEAD:網路.html
+              /* animation: comeup 3s 0s infinite;      */
+=======
+              animation: comeup 1s 0s infinite linear;     
+>>>>>>> master:打地鼠(2).html
+            }
+            @keyframes comeup{
+              0% {
+              transform: translateY(50px);
+              opacity: 0.4;
+              }
+              40%{
+              transform: translateY(-10px);
+              opacity: 1;
+              }
+              100%{
+                transform: translateY(50px);
+                 opacity: 1;
+              }
+            }
+        </style>
+       
+    </head>
+    <body>
+        <div id="gameboy">
+           
+            <button type="button" class="nes-btn"
+            onclick="GameStart()" id="startbtn">Start</button>
+            <button type="button" class="nes-btn" id="resetbtn"
+            onclick="GameOver() ">Result</button>
+            <button type="button" class="nes-btn"
+            onclick="javascript:window.location.reload()" id="reset">Reset</button>
+            
+           <form name="form1" id="form1">
+
+                
+                <label style="color: rgb(231, 231, 231);">Score:</label>
+                
+                <input type="text" name="score" size="5" style="border: 3px solid black;">
+                <label style="color: rgb(231, 231, 231);">Hit Rate：</label>
+                <input type="text" name="success" size="10" style="border: 3px solid black;">
+                <label style="color: rgb(231, 231, 231);">Time：</label>
+                <input type="text" name="lefttime" size="5" style="border: 3px solid black;">
+                <label style="display: none;">Mistake:</label>
+                <input type="text" name="getminer" size="5" style="display: none;">
+            </form>
+            <div class="nes-container is-rounded" id="screen">
+                <!-- 待機畫面 -->
+              <div id="intro">
+              <!-- <div class="hole1"></div>
+              <div class="hole2"></div>
+              <div class="hole3"></div>
+              <div class="hole4"></div> -->
+              </div>
+              <div class="hole1"></div>
+              <div class="hole2"></div>
+              <div class="hole3"></div>
+              <div class="hole4"></div>
+<<<<<<< HEAD:網路.html
+              
+=======
+
+>>>>>>> master:打地鼠(2).html
+              <table>
+                <tr>
+                    <td id="td[0]" onclick="hitmouse(0)">
+                    
+                    </td>
+                    <td id="td[1]" onclick="hitmouse(1)">
+                       </td>
+                    <td id="td[2]" onclick="hitmouse(2)">
+                       </td>
+                    <td id="td[3]" onclick="hitmouse(3)">
+                        </td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td id="td[4]" onclick="hitmouse(4)">
+                        <img src="./打地鼠素材/dilettgif (1).gif" >
+                        </td>
+                    <td id="td[5]" onclick="hitmouse(5)">
+                        </td>
+                    <td id="td[6]" onclick="hitmouse(6)">
+                       </td>
+                    <td id="td[7]" onclick="hitmouse(7)">
+                       </td>
+                   
+                </tr>
+                <tr>
+                    <td id="td[8]" onclick="hitmouse(8)">
+                        </td>
+                    <td id="td[9]" onclick="hitmouse(9)">
+                       </td>
+                    <td id="td[10]" onclick="hitmouse(10)">
+                       </td>
+                    <td id="td[11]" onclick="hitmouse(11)">
+                       </td>
+                   
+                </tr>
+                <tr>
+                    <td id="td[12]" onclick="hitmouse(12)">
+                       </td>
+                    <td id="td[13]" onclick="hitmouse(13)">
+                        </td>
+                    <td id="td[14]" onclick="hitmouse(14)">
+                       </td>
+                    <td id="td[15]" onclick="hitmouse(15)">
+                       </td>
+               
+                </tr>
+                
+            </table>
+           
+            </div>
+            <!-- 高分榜 -->
+            <div class="nes-container is-rounded" id="topcontain">
+                <p style="line-height: 50px;">
+                   Top player:<br> 
+                   <span id="topname">Name</span><br>
+                   Top Score :<br>
+                   <span id="topscore">0</span><br>
+                </p>
+              </div>
+            
+            <progress class="nes-progress is-error" value="30" max="30" id="progressbar"></progress>
+         
+        </div>
+        <script>
+            
+          var intro = document.getElementById("intro")
+          var progressbar = document.getElementById("progressbar")
+          var td = new Array(),      //每個格子的地鼠數量
+    start = false,       //遊戲狀態
+    score = 0,             // 分數
+    clickon = 0,              //滑鼠點擊次數
+    success = 0,               //成功率
+    hiton = 0,             //擊中老鼠次數
+    countDown = 30,        //到計時
+    getminer = 0,         //大地鼠數量
+    interId = null,     //指定 setInterval()的變量
+    timeId = null,        //指定 setTimeout()的變量
+    landmineId=null,
+    digtrioid=null,
+    progresstime = 30     //進度條
+    // 儲存紀錄
+    const topname = document.getElementById("topname")
+    const topscore= document.getElementById("topscore")
+
+    
+//遊戲開始
+function GameStart(){
+    start = true;
+    intro.style.display = "none"
+    interId = setInterval(showmouse,1000);
+    landmineId = setInterval(showminer,1000);
+    digtrioid= setInterval(showdigtrio,1000);
+    document.form1.score.value = score;
+    document.form1.success.value = success;
+    showtime();
+    progresscountdown()
+}
+
+//遊戲結束
+function GameOver(){
+    timeStop();
+    start = false;
+    clearMouse();
+    alert("Game Over！\n Score："+score+"\n Hit rate："+success);
+    // 顯示最高分
+    
+    if(highscoreStorage === null || highscore.score < score) {
+    //   音效
+
+        const name = prompt('最高分! 請輸入你的名字')
+        highscore.score = score
+
+        highscore.name = name || '路人'
+  
+        localStorage.setItem('highscore', JSON.stringify(highscore))
+        topname.innerText = highscore.name
+        topscore.innerText = highscore.score
+      }
+
+    success = 0;
+    score = 0;
+    hiton = 0;
+    clickon = 0;
+    countDown = 30;
+    progresstime = 0
+    
+  }
+ 
+//  隨機出現時間
+function randtime(min,max){
+    return Math.floor(Math.random()*(max-min)+min);
+}
+//顯示剩餘時間
+function showtime(){
+    document.form1.lefttime.value = countDown;
+    if(countDown == 0){
+        GameOver();
+        return;
+        
+    }else{
+        countDown = countDown-1;
+        timeId = setTimeout("showtime()",1000);
+    }
+}
+// 時間條
+function progresscountdown(){
+    function progress(){
+        progressbar.value = progresstime
+        progresstime = progresstime-1
+      
+    }
+    var pro =setInterval(progress,1000)
+    progress()
+}
+
+
+ 
+ 
+//stop all the time
+function timeStop(){
+    clearInterval(interId);
+    clearTimeout(timeId);
+    clearTimeout(landmineId);
+    clearTimeout(digtrioid)
+}
+ 
+//顯示地鼠
+function showmouse(){
+    if(start)
+    {
+        var current = Math.floor(Math.random()*20);
+<<<<<<< HEAD:網路.html
+
+        document.getElementById("td["+current+"]").innerHTML = `<img src='./打地鼠素材/dilettgif.gif'style='position: absolute;left: 44px;top: 20px;'>`;
+=======
+ 
+ 
+        document.getElementById("td["+current+"]").innerHTML = '<img src="./打地鼠素材/dilettgif.gif" style="position: absolute;left: 44px;top: 20px">';
+>>>>>>> master:打地鼠(2).html
+   
+        //隐藏地鼠
+        setTimeout("document.getElementById('td["+current+"]').innerHTML=''",1000);
+    
+    }
+}
+//顯示大地鼠
+function showminer(){
+    if(start)
+    {
+        
+        var landmine = Math.floor(Math.random()*20);
+        document.getElementById("td["+landmine+"]").innerHTML = `<img src="./打地鼠素材/dugminer.png" style="position: absolute;left: 5px;bottom: 15px; z-index:5000">`;
+        //1秒后隐藏地雷
+        setTimeout("document.getElementById('td["+landmine+"]').innerHTML=''",1000);
+    }
+      
+}
+// 顯示三地鼠
+function showdigtrio(){
+    if(start){
+
+        var digtrio = Math.floor(Math.random()*20);
+        document.getElementById("td["+digtrio+"]").innerHTML=`<img src="./打地鼠素材/digtrio.gif" alt="" style="position: absolute;height: 140px;
+                        width: 150px;bottom: 24px; left: 15%;">`;
+         // 一秒後隱藏
+         setTimeout("document.getElementById('td["+digtrio+"]').innerHTML=''",1000)
+    }
+}
+ 
+//清除所有圖片
+function clearMouse(){
+    for(var i=0;i<=15;i++)
+    {
+        document.getElementById("td["+i+"]").innerHTML="";
+    }
+}
+    
+//判斷是否擊中地鼠
+function hitmouse(id){
+    if(start==false)
+    {
+        alert("Press Start");
+        return;
+    }
+    else
+    {   
+         clickon +=1;
+        if(document.getElementById("td["+id+"]").innerHTML!="")
+        {
+<<<<<<< HEAD:網路.html
+            //如果打到老鼠加分
+            if(document.getElementById("td["+id+"]").innerHTML ==  `<img src='./打地鼠素材/dilettgif.gif'style='position: absolute;left: 44px;top: 20px;'>`){
+                score += 1;
+                hiton += 1;
+=======
+            //如果打到大地鼠扣分
+            if(document.getElementById("td["+id+"]").innerHTML ==  `<img src="./打地鼠素材/dugminer.png" style="position: absolute;left: 5px;bottom: 15px; z-index:5000">`){
+                
+                score -= 1;
+                getminer += 1;
+>>>>>>> master:打地鼠(2).html
+                success = hiton/clickon;
+                document.form1.success.value = success.toFixed(2);
+                document.form1.score.value = score;
+                document.form1.getminer.value = getminer;
+                document.getElementById("td["+id+"]").innerHTML="";
+                
+            }
+            // 打到三地鼠加兩分
+            // if(document.getElementById("td["+digtrio+"]").innerHTML=='<img src="./打地鼠素材/digtrio.gif" alt="" style="position: absolute;height: 140px; width: 150px;bottom: 24px; left: 15%;">'){
+            //     score += 2;
+            //     hiton += 1;
+            //     success = hiton/clickon;
+            //     document.form1.success.value = success.toFixed(2);
+            //     document.form1.score.value = score;
+            //     document.getElementById("td["+id+"]").innerHTML="";
+            // }
+            //打到地鼠加分
+            else {
+                
+                score += 1;
+                hiton += 1;
+                success = hiton/clickon;
+                document.form1.success.value = success.toFixed(2);
+                document.form1.score.value = score;
+                document.getElementById("td["+id+"]").innerHTML="GG";
+            }
+            
+        }
+        else
+        {
+            
+            success = hiton/clickon;
+            document.form1.success.value = success.toFixed(2);
+            document.form1.score.value = score;
+        }
+    }
+}
+
+ 
+    
+        </script>
+    </body>
+</html>

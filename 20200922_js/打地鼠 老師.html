@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #game td {
+      width: 75px;
+      height: 75px;
+      border: 1px solid black;
+    }
+    body {
+      cursor: url(./cursor_black.png) 50 50, auto;
+    }
+    .red {
+      background: red;
+    }
+    .blue {
+      background: blue;
+    }
+  </style>
+</head>
+<body>
+  <table id="game">
+    <tr>
+      <td id="hole7"></td>
+      <td id="hole8"></td>
+      <td id="hole9"></td>
+    </tr>
+    <tr>
+      <td id="hole4"></td>
+      <td id="hole5"></td>
+      <td id="hole6"></td>
+    </tr>
+    <tr>
+      <td id="hole1"></td>
+      <td id="hole2"></td>
+      <td id="hole3"></td>
+    </tr>
+  </table>
+  <input type="button" value="開始遊戲" id="btn-start">
+  <p>
+    目前分數:
+    <span id="text-score">0</span>
+  </p>
+  <p>
+    最高紀錄
+    <br>
+    玩家: <span id="text-highplayer"></span>
+    <br>
+    分數: <span id="text-highscore"></span>
+  </p>
+  <script>
+    const btnStart = document.getElementById('btn-start')
+    const holes = document.querySelectorAll('#game td')
+    const textScore = document.getElementById('text-score')
+    const textHighPlayer = document.getElementById('text-highplayer')
+    const textHighScore = document.getElementById('text-highscore')
+
+    const rihai = new Audio()
+    rihai.src = './rihai.mp3'
+
+    let score = 0
+    let isInGame = false
+
+    let timer = 0
+
+    let highscore = { name: '', score: 0 }
+    let highscoreStorage = JSON.parse(localStorage.getItem('highscore'))
+    if(highscoreStorage !== null) {
+      highscore = highscoreStorage
+      textHighPlayer.innerText = highscore.name
+      textHighScore.innerText = highscore.score
+    }
+
+    btnStart.onclick = () => {
+      btnStart.disabled = true
+
+      score = 0
+      textScore.innerText = score
+
+      isInGame = true
+
+      timer = setInterval(game, 1000)
+      setTimeout(end, 5000)
+
+      game()
+    }
+
+    const game = () => {
+      for(const hole of holes) {
+        hole.classList.remove('red')
+        hole.classList.remove('blue')
+      }
+
+      for(let i=0;i<3;i++) {
+        const random = Math.floor(Math.random()*9)
+        holes[random].classList.add('red')
+      }
+    }
+
+    const end = () => {
+      clearInterval(timer)
+
+      for(const hole of holes) {
+        hole.classList.remove('red')
+        hole.classList.remove('blue')
+      }
+
+      btnStart.disabled = false
+      alert(`你的分數是 ${score}`)
+
+      if(highscoreStorage === null || highscore.score < score) {
+        rihai.play()
+
+        const name = prompt('最高分! 請輸入你的名字')
+        highscore.score = score
+
+        // if(name === null || name.length === 0) {
+        //   highscore.name = '路人'
+        // } else {
+        //   highscore.name = name
+        // }
+        highscore.name = name || '路人'
+  
+        localStorage.setItem('highscore', JSON.stringify(highscore))
+        textHighPlayer.innerText = highscore.name
+        textHighScore.innerText = highscore.score
+      }
+    }
+
+    for(const hole of holes) {
+      hole.onclick = () => {
+        if(hole.classList.contains('red')) {
+          hole.classList.remove('red')
+          hole.classList.add('blue')
+
+          score++
+          textScore.innerText = score
+        }
+      }
+    }
+
+    document.onkeydown = event => {
+      const key = event.key
+      if(!isNaN(key) && isInGame) {
+        const target = document.getElementById(`hole${key}`)
+        if(target && target.classList.contains('red')) {
+          target.classList.remove('red')
+          target.classList.add('blue')
+
+          score++
+          textScore.innerText = score
+        }
+      }
+    }
+  </script>
+</body>
+</html>

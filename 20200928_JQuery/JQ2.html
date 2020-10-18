@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="text1">123</h1>
+  <input type="button" value="點我" id="but1">
+  <input type="button" value="點我產生新按鈕" id="but2">
+  <script src="./jquery-3.5.1.min.js"></script>
+  <script>
+   
+  //  當載入完html後
+  // $(document).ready(function(){
+    // 要執行的程式碼
+  // })
+   $(document).ready(function(){
+      $('#but1').click(function(){
+        $(this).val('點啥')
+        $('#text1').text('456')
+      })
+
+      $('#btn2').click(
+        function(){
+          $('body').append('<input type="button" value ="新按鈕" class = "new">')
+        }
+      )
+    })
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin:0;
+    }
+    li{
+      list-style: none;
+    }
+    img{
+      border: none;
+    }
+    .play{
+      width:400px ;
+      height: 96px;
+      border: 1px solid black;
+      position: relative;
+      margin: 150px;
+      overflow: hidden;
+    }
+    ol{
+      position: absolute;
+      right: 5px ;
+      bottom: 5px;
+      z-index: 2;
+    }
+    ol li{
+      float: left;
+      cursor: pointer;
+      margin-right: 3px;
+      border: 1px solid white;
+      background-color: violet;
+      display: inline;
+    }
+    .active{
+      padding: 3px 8px;
+      font-weight: bold;
+      color: rgb(184, 184, 184);
+      background-color: yellow;
+      position: relative;
+      bottom: 2px;
+    }
+
+    ul{
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      z-index: 1;
+    }
+    ul li{
+      float: left;
+      width: 400px;
+      height: 96px;
+    }
+    ul img{
+      float: left;
+      width: 400px;
+      height: 96px;
+    }
+  </style>
+</head>
+<body>
+  <div id="play" class="play">
+    <ol>
+      <li class="active">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ol>
+    <ul>
+      <li><a href="#"><img src="./pic1.jpg"></a></li>
+      <li><a href="#"><img src="./pic2.jpg"></a></li>
+      <li><a href="#"><img src="./pic3.jpg"></a></li>
+      <li><a href="#"><img src="./pic4.jpg"></a></li>
+      <li><a href="#"><img src="./pic5.jpg"></a></li>
+    </ul>
+    
+  </div>
+  <script src="./jquery-3.5.1.min.js"></script>
+  <script>
+    $(function(){
+      var abtns = $('#play ol');
+      var oul   = $('#play ul');
+      var alis  = oul.find('li')
+      
+      // 給所有按鈕添加點擊事件
+      abtns.click(function(){
+        $(this).attr('class','active').siblings().attr("class",'')
+      })
+
+    })
+  </script>
+</body>
+</html>

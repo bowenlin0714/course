@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" value="點我" onclick="alert('hi')">
+  <input type="button" value="點我" onclick="this.value = '你好棒'; this.style.color = 'red'">
+  <h1 onmouseover="this.style.color = 'red'" onmouseout="this.style.color = 'black'">123</h1>
+  <h1 onmouseover="changeColor(this, 'red')" onmouseout="changeColor(this, 'black')">456</h1>
+  <script>
+    const changeColor = (element, color) => {
+      element.style.color = color
+    }
+  </script>
+</body>
+</html>
