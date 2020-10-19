@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./axios.min.js"></script>
+  <script>
+    
+  //  async function getData(){
+
+  //  } 
+  //  const getData = async() => {
+  //   let title= ''
+  //   // await後面一定只能放promise
+  //   // 等待promise 的resolve或reject後才繼續執行
+  //   await fetch('https://kktix.com/events.json')
+  //     .then(res=> {
+  //       return res.json()
+  //       })
+  //     .then(json=> {
+  //       title =json.title
+  //       })
+    
+  //   console.log(title);
+  //  }
+  //  getData()
+
+   const getData = async() =>{
+     try{
+       let title = ''
+      //  將.then結果直接帶入變數
+      const response = await fetch('https://kktix.com/events.json')
+      const json = await response.json()
+      title = json.title
+      console.log(title);
+     }catch(error){
+
+     }
+   }
+  </script>
+</body>
+</html>

@@ -6,30 +6,41 @@
   <title>Document</title>
 </head>
 <body>
+  <script src="/20201019_JS/axios.min.js"></script>
   <script>
     let origin = 'https://jsonplaceholder.typicode.com/users'
-
-    fetch(origin)
-    .then(res => {return res.json()})
-    .then(jsons => {
+    
+    const getData = async()=>{
+      try{
+      await fetch(origin)
+     .then(res => {return res.json()})
+     .then(jsons => {
      
-     let find = jsons.find(
+      let find = jsons.find(
        function(writer){
          return writer.name  === "Leanne Graham"
        } 
       )
-     let leanne = `https://jsonplaceholder.typicode.com/posts?userId=${find.id}`
+      let leanne = `https://jsonplaceholder.typicode.com/posts?userId=${find.id}`
 
-      fetch(leanne)
+       fetch(leanne)
       .then(res2 => {return res2.json()})
       .then(jsons2 =>{
         for(let j of jsons2){
-          document.write(`${j.title}`)
-          document.write('<br/>')
+          document.write('<ul>')
+          document.write(`<li>${j.title}</li>`)
+          document.write('</ul>')
         }
-      })
+       })
+      }
+     )
+      }catch(error){
+        console.log('錯誤');
+      }
+      
     }
-    )
+    
+    getData()
     
 
   </script>

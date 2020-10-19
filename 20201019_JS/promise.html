@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // const passed = true
+    // const willGetmoney = new Promise((resolve,reject)=>{
+    //   if(passed){
+    //     // 承諾成功
+    //     resolve('考試拿到零用錢')
+    //   }else{
+    //     // 承諾失敗
+    //     reject(new Error('沒考過'))
+    //   }
+    // })
+    // willGetmoney
+    // // 承諾成功時
+    // .then(result=>{
+    //   console.log(result);
+    // })
+    // // 承諾失敗時
+    // // .then 裡面有語法錯誤的話也會跳到catch
+    // .catch(error=>{
+    //   console.log(error.message);
+    // })
+
+    // 寫成function 
+    const willGetmoney = (pass) => {
+      return new Promise((resolve,reject) => {
+        if(pass){
+          resolve('考試拿到零用錢')
+        }else{
+          reject(new Error('沒考過'))
+        }
+      })
+    }
+
+    willGetmoney(true)
+    .then( result=>{
+      console.log(result);
+    })
+    .catch( error=>{
+      console.log(error.message);
+    })
+    
+  </script>
+</body>
+</html>
