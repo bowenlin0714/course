@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .taichi{
+      margin: auto;
+      background: linear-gradient(to right,black 50%,white 50%);
+      width: 800px;
+      height: 800px;
+      border: 1px solid black;
+      border-radius: 50%;
+      box-shadow: 0 0 10px black;
+      position: relative;
+      
+    }
+    .yin{
+      width: 400px;
+      height: 400px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      left: 25%;
+      top: 0;
+    }
+    .yin::after{
+      content: '';
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .yang{
+      width: 400px;
+      height: 400px;
+      background-color: black;
+      border-radius: 50%;
+      position: absolute;
+      left: 25%;
+      bottom: 0;
+    }
+    .yang::after{
+      content: '';
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <div class="taichi">
+    <div class="yin">
+    
+    </div>
+    <div class="yang">
+      
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: '微軟正黑體';
+      box-sizing: border-box;
+    }
+    *::before,*::after{
+      box-sizing: border-box;
+    }
+
+    h1{
+      color: white;
+      background-color: #333;
+      margin: 2rem 0 0 0;
+      padding: 1rem;
+    }
+
+    hr{
+      margin: 2% 0;
+    }
+
+    .container{
+      width: 75%;
+      margin: 1% auto;
+    }
+
+    .box{
+      width: 100px;
+      height: 100px;
+      color: white;
+      background-color: #333;
+      margin: 20px auto;
+      position: relative;
+    }
+
+    /* 必須要有content */
+    .box::before{
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 5px solid blue;
+      left: -100%;
+    }
+    .box::after{
+      content: '';
+      width: 100px;
+      height: 100px;
+      border: 5px solid green;
+      position: absolute;
+      left: 100%;
+      top: 0;
+
+    }
+
+    .bgcolor{
+      background-color: turquoise;
+    }
+    .col{
+      width: 45%;
+      margin: 2.5%;
+      float: left;
+    }
+    .col img{
+      width: 100%;
+
+    }
+    .clearfix::after{
+      content:'' ;
+      display: block;
+      clear: both;
+    }
+
+    /* 當作背景容器使用 */
+    .bg{
+      color: white;
+      height: 300px;
+      position: relative;
+    }
+    .bg::before{
+      content: '';
+      background: url('https://picsum.photos/1920/1080') no-repeat center/cover;
+      position: absolute;
+      width: 100%;
+      height: 100%; 
+      z-index: -1;
+    }
+    .bg::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
+
+    /* 摸到主體，分身做事 */
+    .box2{
+      width: 150px;
+      height: 150px;
+      background: url('https://picsum.photos/150/150/?random=1')no-repeat center/cover;
+      margin: auto;
+      position: relative;
+    }
+    .box2::before{
+      content: '';
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 0;
+      left: -110%;
+      background: url('https://picsum.photos/150/150/?random=2')no-repeat center/cover;
+      transition: 0.5s;
+    }
+
+    .box2:hover::before {
+      left: 110%;
+    }
+    
+    .box2::after{
+      content: '';
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 0;
+      left: 110%;
+      background: url('https://picsum.photos/150/150/?random=3')no-repeat center/cover;
+      transition: 0.5s;
+    }
+    .box2:hover::after {
+      left: -110%;
+    }
+    
+    /* 當作麵包屑使用 */
+    .bread li{
+       float: left;
+       position: relative;
+    }
+    
+    .bread li~li{
+      margin-left: 20px;
+    }
+
+    .bread li~li::before{
+      content: '>';
+      position: absolute;
+      top:0;
+      left: -15px;
+      color: black;
+    }
+
+    .bread li:last-child{
+      color: red;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>偽元素 ::before , ::after</h1>
+    <div class="box">
+      <div class="content">lorem</div>
+    </div>
+  </div>
+
+  <div class="container ">
+    <h1>啟動條件與功用特性</h1>
+    <ul>
+      <li>1. 必須要有content:'';才會有作用</li>
+      <li>2. 會建立一個inline元素</li>
+      <li>3. 結構上，before會被建立在主體內容區域的前方，反之</li>
+      <li>4. 主要用來輔助主體，產生更多層次的效果</li>
+      <li>5. 偽元素不能再接偽元素</li>
+      <li>6. 無法使用在置換元素， img input iframe</li>
+      <li>7. before與after定位時，重疊順序由上而下，after&gt;before&gt;本體內容</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="container">
+    <h1>當作清浮動用</h1>
+  </div>
+    <div class="container bgcolor clearfix">
+      <div class="col">
+        <img src="https://picsum.photos/600/400" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti sint qui, incidunt aliquam cumque excepturi? Facere, fugit alias natus vel beatae quaerat, incidunt, fugiat libero repellendus eligendi est maiores eum officia porro voluptatem? Eligendi explicabo magni voluptas blanditiis, quos impedit!
+        </p>
+      </div>
+      <div class="col">
+        <img src="https://picsum.photos/600/400" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti sint qui, incidunt aliquam cumque excepturi? Facere, fugit alias natus vel beatae quaerat, incidunt, fugiat libero repellendus eligendi est maiores eum officia porro voluptatem? Eligendi explicabo magni voluptas blanditiis, quos impedit!
+        </p>
+      </div>
+    </div>
+    <hr>
+
+    <div class="container">
+      <h1>當作背景容器使用</h1>
+    </div>
+    <div class="container">
+      <div class="bg">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic nobis quibusdam debitis voluptatibus deserunt architecto!
+      </div>
+    </div>
+      
+    <div class="container">
+      <h1>摸到主體，分身做事情</h1>
+    </div>
+    <div class="container">
+      <div class="box2">
+        <div class="inside"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>當作麵包屑使用0</h1>
+    </div>
+    <div class="container">
+      <div class="bread">
+        <li>首頁</li>
+        <li>薯條</li>
+        <li>可樂</li>
+        <li>薯餅</li>
+      </div>
+    </div>
+
+</body>
+</html>
