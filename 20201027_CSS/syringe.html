@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .main{
+      width: 800px;
+      height: 400px;
+      border: 1px solid black;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .content{
+      width: auto;
+      height: auto;
+      border: 1px solid black;
+      background: linear-gradient(to top, white ,rgb(221, 221, 221) ,white)
+    }
+    .p1{
+      width: 35px;
+      height: 80px;
+    }
+    .p2{
+      width: 40px;
+      height: 60px;
+    }
+    .p3{
+      width: 400px;
+      height: 100px;
+      position: relative;
+      background: linear-gradient(to left, rgba(255, 255, 6, 0.2) 50%, transparent 50%),linear-gradient(to top, white ,rgb(221, 221, 221) ,white) ;
+    }
+    .p4{
+      width: 40px;
+      height: 60px;
+    }
+    .p5{
+      width: 55px;
+      height: 0.01px;
+    }
+    .deg{
+      width: 400px;
+      height: 20px;
+      background: repeating-linear-gradient(to right, transparent ,transparent,transparent,transparent,transparent,transparent,transparent,transparent, black 5%);
+    }
+    .liquid{
+      height: 100px;
+      background-color: black;
+      width: 50px;
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%) 
+    }
+    .text{
+      position: absolute;
+      bottom: 0%;
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="p1 content"></div>
+    <div class="p2 content"></div>
+    <div class="p3 content">
+      <div class="deg"></div>
+      <div class="liquid"></div>
+      <div class="text">Made in Tiwan</div>
+    </div>
+    <div class="p4 content"></div>
+    <div class="p5 content"></div>
+  </div>
+  
+</body>
+</html>

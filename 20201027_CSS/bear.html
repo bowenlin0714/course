@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .main{
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background-color: black;
+      margin: auto;
+      top: 200px;
+      position: relative;
+    }
+    .ear1{
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: black;
+      position: absolute;
+      left: 50px;
+    }
+    .ear1::after{
+      content:'';
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%,-50%)
+    }
+    .ear2{
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: black;
+      position: absolute;
+      right:50px;
+    }
+    .ear2::after{
+      content:'';
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%,-50%)
+    }
+    .eye1{
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      top: 80px;
+      left: 80px;
+    }
+    .eye1::after{
+      content:'';
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+    }
+    .eye2{
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      top: 80px;
+      right: 80px;
+    }
+    .eye2::after{
+      content:'';
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 2;
+    }
+    .nose{
+      width: 150px;
+      height: 100px;
+      position: absolute;
+      background-color: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 50%;
+    }
+    .nose::before{
+      content:'';
+      width: 40px;
+      height: 20px;
+      position: absolute;
+      background-color: black;
+      top:10%;
+      left: 50%;
+      transform: translate(-50%);
+      border-radius: 50%;
+      z-index:2
+    }
+    .nose::after{
+      content:'';
+      width: 80px;
+      height: 40px;
+      position: absolute;
+      background-color: black;
+      bottom:10%;
+      left: 50%;
+      transform: translate(-50%);
+      border-radius: 0 0 80px 80px ;
+      z-index:2
+    }
+    .red{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: red;
+      position: absolute;
+      top: 50%;
+      left: -3%;
+      transform: translate(0,-50%);
+    }
+    .red2{
+      content:'';
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: red;
+      position: absolute;
+      top: 50%;
+      right: -3%;
+      transform: translate(0,-50%);
+    }
+    .v{
+      clip-path: polygon(30% 0, 100% 50%, 32% 100%, 0% 100%, 65% 50%, 0% 0%);
+      background-color: white;
+      z-index: 5;
+      width: 80px;
+      height: 200px;
+      position: absolute;
+      bottom: 10%;
+      left: 40%;
+      top: 50%;
+      transform:  rotate(90deg) 
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="ear1"></div>
+    <div class="ear2"></div>
+    <div class="eye1"></div>
+    <div class="eye2"></div>
+    <div class="nose"></div>
+    <div class="red"></div>
+    <div class="red2"></div>
+    <div class="v"></div>
+  </div>
+</body>
+</html>
