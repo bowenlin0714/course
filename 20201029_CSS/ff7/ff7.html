@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* body 不能直接設100% 
+       要設100VH */
+    html,body{
+      height: 100%;
+    }
+    body{
+      margin: 0;
+      background-image: url(./bg-full.jpg);
+      display: flex;
+      align-items: center;
+      justify-content: center;    
+      position: relative;
+    }
+    .main{
+      width: 1200px;
+      height: 550px;
+      display: flex; 
+      position: absolute;
+    }
+    .box1{
+      width: 50%;
+      background-color: blue;
+      background-image: url(./main.jpg);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+    .box2{
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      top: 0;
+      right: 0;
+      background-color: grey;
+      background-image: url(./cloud.png);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+      display: flex;
+      align-items: center;
+    }
+    .box3{
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      bottom: 0;
+      right: 0;
+      background-color: black;
+      background-image: url(./tifa.png);
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: contain;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+    img{
+      width: 150px;
+      height: 220px;
+    }
+    .cloud{
+      width: 350px;
+      height: 200px;
+      margin: 20px;
+    }
+    .tifa{
+      width: 350px;
+      height: 200px;
+      margin: 20px;
+      right: 0;
+      position: absolute;
+    }
+    .ps4{
+      width: 400px;
+      text-align:center ;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="main">
+    <div class="box1">
+      <div class="ps4">
+        <img src="./ps4-ff7.png">
+      <h1>AVAILABLE NOW</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore earum eligendi dolorum fugit officia sit distinctio minus similique atque! Quasi.officia sit distinctio minus similique atque! Quasi.</p>
+      </div>   
+    </div>
+    <div class="box2">
+      <div class="cloud">
+        <h1>Cloud</h1>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel beatae suscipit aliquam hic dignissimos magni quaerat? Cupiditate, natus quisquam quos eos commodi sit distinctio minus similique atque! Quasi.</span>
+      </div>
+      
+    </div>
+    <div class="box3">
+      <div class="tifa">
+        <h1>Tifa</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel beatae suscipit aliquam hic dignissimos magni quaerat? Cupiditate, natus quisquam quos eos commodi sit distinctio minus similique atque! Quasi.</p>
+      </div>    
+    </div>
+  </div>
+</body>
+</html>
