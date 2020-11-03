@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      text-align: center;
+    }
+    .cardstyle{
+      border: 1px solid black;
+      width: 320px;
+      height: 500px;
+      border-radius: 20%;
+      text-align: center;
+      border: 5px solid black;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 5px 5px 5px rgb(107, 107, 107);
+    }
+    #app{
+      display: flex;
+    }
+    img{
+      width: 280px;
+      height: 300px;
+      border-radius: 20%;
+    }
+    .contain{
+      display: flex;
+    }
+    button{
+      width: 70px;
+    } 
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="block">
+      <h1>財哥檳榔攤</h1>
+      <p>你按了{{num}} 個讚</p>
+    </div>
+   <div class="contain">
+    <cards v-for='item in tsai' :todo ="item" @like='handlelikes'> </cards>
+   </div>  
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    Vue.component('cards',{
+      props:['todo'],
+      template:`
+      <div class='cardstyle'>
+        <img :src="todo.images">{{todo.text}}
+        <br>
+        <button @click='like'>
+          <span v-if="check">讚</span>
+          <span v-else>收回讚</span>
+        </button>
+      </div>`,
+      methods:{
+        like(){
+          this.check=!this.check
+          this.$emit('like',this.check)
+        }
+      },
+      data(){
+        return{
+          check:true,
+        }
+      }
+    })
+    let app = new Vue({
+      el:'#app',
+      data:{
+        tsai:[
+          {images:"",text :"話...中...有話...."},
+          {images:"",text :"不...更新...自我...只能當...井底...之蛙..."},
+          {images:"",text :"檳榔汁....不宜...亂吐...建議使用...檳榔....吐杯...."},
+          {images:"",text :"虛有..."},
+          {images:"",text :"發大財"},
+        ],
+        num:0
+      },
+      mounted(){
+          for(let i=0; i<=4; i++){
+            Math.floor(Math.random()*100)
+            axios.get('https://api.kento520.tw/zack/?rand%27')
+           .then(res=>this.tsai[i].images = res.data[i].image)
+          }
+              
+      },methods:{
+       handlelikes(value){
+         if(value){
+           this.num--
+         }else{
+           this.num++
+         }
+       }
+      }
+    })
+  </script>
+  
+</body>
+</html>

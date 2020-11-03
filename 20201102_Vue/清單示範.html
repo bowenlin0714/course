@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .finish{
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="newitem" placeholder="輸入" @keyup.enter="add" :style="{border:inputborder}">
+    <button @click="add" >新增</button>
+    <ul>
+      <li v-for="(item,index) in items " class="li">
+        <del v-if="item.isfinish">
+          <span>
+            {{index+1}}:  {{item.text}}
+          </span>
+        </del>
+        <span v-else>{{index+1}}:  {{item.text}}</span>       
+        <input type="checkbox" v-model='item.isfinish'>
+        <button @click='del'>刪除</button>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return{
+          newitem:'',
+          items:[]
+        }
+      },
+      methods:{
+        add(){
+          if(this.newitem.length > 2){
+            this.items.push({
+              text:this.newitem,
+              isfinish: false
+            })
+            this.newitem = '';
+          }    
+        },
+        del(index){
+          this.items.splice(index,1)
+        },      
+      },
+      computed:{
+        inputborder(){
+          let border=''
+          if(this.newitem.length == 0){
+            border = '5px solid black'
+          }else if(this.newitem.length <= 2){
+            border = '5px solid red'
+          }else{
+            border = '5px solid blue'
+          }
+          return border
+        }
+      },
+      watch:{
+        // items(newValue,oldValue){
+        //   console.log('aaa');
+        // }
+
+        // watch 預設只偵測陣列長度改變
+        // 如果要偵測陣列裡面東西改變的話必須加: deep true
+        items: {
+          handler(newValue,oldValue){
+            localStorage.setItem('task',JSON.stringify(newValue))
+          },
+          deep: true
+        }
+      },
+      // created 跟 mounted 的差別
+      // created 因為東西還沒掛到  DOM上， 所以抓不到html
+      // mounted 元件掛載到 DOM 上
+      mounted(){
+        const data = localStorage.getItem('task')
+        if(data){
+          this.items = JSON.parse(data)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

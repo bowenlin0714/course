@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .finish{
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model='texts.content' placeholder="輸入" :style="{borderColor:inputborder}" @keyup.enter='addlist'><button @click='addlist' >新增</button>
+    <ul>
+      <li v-for='(item,index) in lists'>
+       <span :class="{'finish':item.finished}"> {{index+1}} {{item.content}}</span>
+        <input type="checkbox" @change='changeHandler(index)'>
+        <button @click='deletetask'>刪除</button>
+      </li>
+    </ul>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el:"#app",
+      data:{
+        texts:{
+          content:'',
+          finished:false
+        },
+        lists:[],
+      },
+      computed:{
+        inputborder(){
+          if(this.texts.content.length==0){
+            return 'black'
+          }else if(this.texts.content.length<=2){
+            return 'red'
+          }else{
+            return 'blue'
+          }
+        }
+      },     
+      methods:{
+        addlist(){
+          if(this.texts.content.length >2){
+            this.lists.push(this.texts);
+            localStorage.setItem("tasks",JSON.stringify(this.lists))
+            this.texts= {
+              content:'',
+              finished:false
+           }
+          }else{
+            alert('需超過2字')
+          }
+          
+        },
+        deletetask(index){
+          this.lists.splice(index,1)
+        },
+        changeHandler(index){
+         this.lists[index].finished =!this.lists[index].finished
+        },
+      }
+    })
+  </script>
+</body>
+</html>
