@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    td:first-child{
+      width: 200px;
+      height: 30px;
+      text-align: left;
+      background-color: rgb(241, 241, 241);
+    }
+    .title{
+     margin-left: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="title">
+      <input type="text" v-model='tasks.content' @keyup.enter='add' :style="{border:borderstyle}" placeholder="輸入"><button @click='add'>新增</button>
+      <br>
+      <hr>
+      <button @click='allfin'>標記已完成</button>
+      <button @click='allnot'>標記未完成</button>
+      <button @click='clearall'>清除全部</button>
+      <button @click='showall'>顯示全部</button>
+      <br>
+      <button @click='showfin'>顯示已完成</button>
+      <button @click='shownot'>顯示未完成</button>
+      <button>清除已完成</button>
+      <button>清除未完成</button>
+      <br>
+      <br>
+      <span>目前顯示 :共{{list.length}}筆資料</span>
+    </div>
+    <ul>
+      <li v-for="(item,index) in list">
+        <table>
+          <tr>
+            <td>
+              <del v-if="item.isfinished"><span>{{index+1}}:  {{item.content}}</span></del>
+              <span v-else>{{index+1}}:  {{item.content}}</span>
+            </td>
+            <td>
+              <input type="checkbox" v-model='item.isfinished'>
+              <button @click='del(index)'>刪除</button>
+            </td>
+          </tr>
+        </table>       
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return{
+          tasks:{
+            isfinished:false,
+            content:'',
+            isEdit: false,       
+            visibility:'全部任務'   
+          },
+          list:[]
+        }
+      },
+      computed:{
+        borderstyle(){
+          let style=''
+          if(this.tasks.content.length == 0){
+            style= '5px solid black'
+          }else if(this.tasks.content.length < 3){
+            style= '5px solid red'
+          }else{
+            style= '5px solid blue'
+          }
+          return style
+        },
+        filtertodo(){
+          if(this.tasks.visibility=='全部任務'){
+            return this.list  
+          }if(this.tasks.visibility=='完成任務'){
+            let anotherlist=[]
+            this.list.forEach(function(item){
+              if(!item.isfinished){
+                anotherlist.push(item)
+              }
+            })
+            return anotherlist
+          }if(this.tasks.visibility=='未完成任務'){
+            let anotherlist=[]
+            this.list.forEach(function(item){
+              if(item.isfinished){
+                anotherlist.push(item)
+              }
+            })
+            return anotherlist
+          }
+        }
+      },
+      methods:{
+        add(){
+          if(this.tasks.content.length>2){
+            this.list.push(this.tasks)
+            this.tasks={
+             isfinished:false,
+             content:''
+           }
+          }      
+        },
+        del(index){
+          this.list.splice(index,1)
+        },
+        allfin(){
+          for(item of this.list){
+           item.isfinished = true
+          }
+        },
+        allnot(){
+          for(item of this.list){
+           item.isfinished = false
+          }
+        },
+        clearall(){
+          this.list = []
+        },
+        showall(){
+          this.tasks.visibility = '全部任務'
+        },
+        showfin(){
+          this.tasks.visibility = '完成任務'
+        },
+        shownot(){
+          this.tasks.visibility = '未完成任務'
+        },
+      },
+      
+      mounted(){
+        const data = localStorage.getItem('tasks')
+        if(data){
+          this.list = JSON.parse(data)
+        }
+      },
+      watch:{
+        list:{
+          handler(newtask ,oldtask){
+            localStorage.setItem('tasks',JSON.stringify(newtask))
+          },
+          deep: true 
+        }
+      }
+    })
+  </script>
+</body>
+</html>

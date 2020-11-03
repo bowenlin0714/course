@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .blue{
+      color: blue;
+      font-weight: bolder;
+      text-decoration: underline;
+    }
+    .green{
+      color: green;
+      font-weight: bolder;
+      text-decoration: underline;
+    }
+   
+  </style>
+</head>
+<body>
+  <div id="app" >
+    <h1>{{text}}</h1>
+    <h1 v-text='text'></h1>
+    <h1 v-html="html"></h1>
+    
+    <!-- 判斷式 -->
+    <h1 v-if='num === 1'>1</h1>
+    <h1 v-else-if="num === 2">2</h1>
+    <h1 v-else>不是1不是2</h1>
+    <h1 v-show='num === 1'>1</h1>
+
+    <ul>
+      <li v-for="(food,index) in foods">{{index+1}} {{food}}</li>
+    </ul>
+
+    <!-- v-bind 綁定  -->
+    <a v-bind:href="url">FB</a>
+    <br>
+    <img :src="image">
+    <h1 :style="{color: textcolor,border: textborder}
+    ">666ssss</h1>
+    <h1 :style="textstyle">sssss</h1>
+    <h1 :class="{blue:true}">6666666</h1>
+    <h1 :class="textclass">555555</h1>
+
+    <!-- v-model  -->
+    <input type="text" v-model="input.text">{{input.text}}
+    <br>
+    <input type="checkbox" name="job" value="警察" v-model="input.check">警察
+    <input type="checkbox" name="job" value="護士" v-model="input.check">護士
+    <input type="checkbox" name="job" value="醫生" v-model="input.check">醫生
+    {{input.check}}
+    <br>
+    <input type="radio" name="purchase" value="購買" v-model="input.radio">購買
+    <input type="radio" name="purchase" value="不購買" v-model="input.radio">不購買
+    <input type="radio" name="purchase" value="考慮中" v-model="input.radio">考慮中
+    {{input.radio}}
+    <br>
+    <!-- 如果沒有代入value的話預設為輸入的字 -->
+    <select v-model="input.select1">
+      <option >A</option>
+      <option >B</option>
+      <option >C</option>
+    </select>
+    {{input.select1}}
+    <select v-model="input.select2">
+      <option value="1">A</option>
+      <option value="2">B</option>
+      <option value="3">C</option>
+    </select>
+    {{input.select2}}
+    <br>
+    請選擇食物:第{{input.foods+1}}個食物，食物是{{foods[input.foods]}}
+    <br>
+    <select v-model="input.foods">
+      <option v-for="(food,index) in foods" :value="index">
+        {{food}}
+      </option>
+    </select>
+    <br>
+    <input type="button" value="點我" @click="sayHi">
+  
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue ({
+      el:'#app',
+      data() {
+        return {
+          text:'Hi',
+          html:'<a href="https://google.com">Google</a>',
+          num: 1,
+          foods:['漢堡','薯條','香蕉','蘋果'],
+          url:'https://fb.com',
+          image:'./screen-1.jpg',
+          textcolor :'red',
+          textborder :'1px solid green',
+          textstyle: {
+            fontSize:'70px',
+            color:'purple'
+          },
+          textclass: {
+            big: true,
+            green: true
+          },
+          input:{
+            text:'',
+            check:[],
+            radio:"",
+            select1:'',
+            select2:'',
+            foods:[]
+          },
+         
+        }
+      },
+      methods:{
+        sayHi(event){
+          console.log(event);
+          alert('Hi')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

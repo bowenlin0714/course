@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" placeholder="輸入" v-model="tasks.content"><button @click='addlist'>輸入</button>
+    <ul>
+      <li v-for='(item,index) in list'>
+        <span>{{item.content}}</span></li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el:'#app',
+      data:{
+        tasks:{
+         content:'',
+         isfinish:false
+        },
+        list:[]
+      },
+      methods:{
+        addlist(){
+          if(this.tasks.content.length > 3){
+            this.list.push(this.tasks)
+            this.tasks={
+            content:'',
+            isfinish:false
+           }   
+          }else{
+            alert('須超過2字')
+          }
+          
+        }
+      },
+      computed:{
+
+      }
+    })
+  </script>
+</body>
+</html>
