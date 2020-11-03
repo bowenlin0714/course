@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .post{
+      border: 3px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <counter></counter>
+    <counter></counter>
+    <counter></counter>
+    <br>
+    <!-- 用標籤屬性傳資料到元件 -->
+    <post title='文章標題' text='文章內容'></post>
+    <post v-for="post in posts" :title="post.title" :text="post.text"></post>
+    <br>
+    <!-- 當apple事件發生時，代表資料傳出來了 -->
+    <out @apple="handleout"></out>
+    <br>
+    <up></up>
+    <down></down>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // eventBUS要在最上面
+    const eventBUS = new Vue
+  </script>
+  <!-- 元件的html -->
+  <!-- 元件的html只能有一個元素，如要放多個要用div或其他東西包起來 -->
+  <script src="./counter.js"></script>
+  <script src="./post.js"></script>
+  <script src="./out.js"></script>
+  <script src="./up.js"></script>
+  <script src="./down.js"></script>
+  <script>
+    // Vue.component('元件名稱',設定)
+  
+    let app = new Vue({
+      el:'#app',
+      data(){
+        return{
+          posts:[
+            {
+              title:'你好',
+              text:'天氣真好'
+            },
+            {
+              title:'早安',
+              text:'吃飯沒'
+            }
+          ]
+        }
+      },
+      methods:{
+        // event 為自訂事件傳出的值
+        handleout(event){
+          alert(event)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+body {
+  color: #f00;
+  background-color: #00f;
+}
+.text {
+  background-color: #008000;
+}
+.text2 h1 {
+  color: #f00;
+}
+p {
+  font-weight: bold;
+}
+p:hover {
+  color: #800080;
+}
+p:active {
+  color: #00f;
+}

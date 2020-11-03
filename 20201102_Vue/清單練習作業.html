@@ -24,31 +24,32 @@
       <hr>
       <button @click='allfin'>標記已完成</button>
       <button @click='allnot'>標記未完成</button>
-      <button @click='clearall'>清除全部</button>
+      <button @click="clear('全部')">清除全部</button>
       <button @click='showall'>顯示全部</button>
       <br>
       <button @click='showfin'>顯示已完成</button>
       <button @click='shownot'>顯示未完成</button>
-      <button>清除已完成</button>
-      <button>清除未完成</button>
+      <button @clock="clear('已完成')">清除已完成</button>
+      <button @clock="clear('未完成')">清除未完成</button>
       <br>
       <br>
       <span>目前顯示 :共{{list.length}}筆資料</span>
     </div>
     <ul>
       <li v-for="(item,index) in list">
-        <table>
-          <tr>
-            <td>
-              <del v-if="item.isfinished"><span>{{index+1}}:  {{item.content}}</span></del>
-              <span v-else>{{index+1}}:  {{item.content}}</span>
-            </td>
-            <td>
-              <input type="checkbox" v-model='item.isfinished'>
-              <button @click='del(index)'>刪除</button>
-            </td>
-          </tr>
-        </table>       
+              <span v-if="item.isEdit">
+                <input type="input" v-model="item.content">
+                <button >保存</button>
+                <button >取消</button>
+              </span>
+              <span v-else>
+                <del v-if="item.isfinished"><span>{{index+1}}:  {{item.content}}</span></del>
+                <span v-else>{{index+1}}:  {{item.content}}</span>
+                <input type="checkbox" v-model='item.isfinished'>
+                <button @click='item.isEdit= true'>編輯</button>
+                <button @click='del(index)'>刪除</button>        
+              </span>                       
+                    
       </li>
     </ul>
   </div>
@@ -62,6 +63,7 @@
             isfinished:false,
             content:'',
             isEdit: false,       
+            model: this.content,
             visibility:'全部任務'   
           },
           list:[]
@@ -124,8 +126,19 @@
            item.isfinished = false
           }
         },
-        clearall(){
-          this.list = []
+        clear(mode){
+          this.list = this.list.filter((item)=>{
+            if(mode==='全部'){
+              return false
+            }else if(mode === '已完成' && item.isfinished){
+              return false
+            }else if(mode === '未完成' && !item.isfinished){
+              return false
+            }
+            else{
+              return true
+            }
+          })     
         },
         showall(){
           this.tasks.visibility = '全部任務'
