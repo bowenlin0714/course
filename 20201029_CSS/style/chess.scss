@@ -1,0 +1,104 @@
+// 在CSS裡面引用變量
+$redchess:red;
+$blackchess: black;
+
+// 從其他地方提取部分SCSS 標題需用 _style.scss
+@import './chess_style';
+
+// 可以把常用的樣式用 @mixin 包成一個function
+// 然後用 @include 樣式() 來使用
+// 名稱後面可用 ($要改變的變數名稱) 來改變樣式
+@mixin flexCenter {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+}
+
+// sass 可以將樣式跟HTML一樣的方式包起來
+html,body{
+      height: 100%;
+      @include flexCenter();  
+    }
+    .main{
+      width: 850px;
+      height: 800px;
+      writing-mode: vertical-lr;
+      @include flexCenter();
+      flex-direction: column;
+      font-size: 35px;
+      font-family: '標楷體';
+      position: relative;
+      .content{
+        width: 800px;
+        height: 700px;
+        border: 1px solid black;
+        @include flexCenter();
+        writing-mode: horizontal-tb; ;
+        background-color: #f6c36f;
+      }
+        .b2{
+          justify-content: space-around;
+          top: 24.8%;
+          width: 840px;
+          color: $blackchess;
+        }
+        .b3{
+          top: 33.5%;
+          color: $blackchess;
+        }
+        .r1{
+          top: 86%;
+          color: $redchess;
+        }
+        .r2{
+          color: $redchess;
+          width: 840px;
+          justify-content: space-around;
+          top: 68.4%;
+        }
+        .r3{
+          color: $redchess;
+          top: 59.9%;
+        }
+    }
+    
+    table{
+      width:560px;
+      height: 630px;
+      padding: 0;
+      border: 1px solid black;
+      text-align: center;
+      font-size: 50PX;
+      td{
+        border: 1px solid black;
+        width: 70px;     
+        height: auto;
+        position: relative;
+      }
+      .han{
+        border-left: none;
+      }
+      .tru{
+        border-right: none;
+      }
+      .text{
+        height: 70px;
+      }
+      .line{
+        width: 95px;
+        border:1px solid black ;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%)  rotate(45deg);
+        background-color: black;
+      }
+      .l2{
+        transform: translate(-50%,-50%)  rotate(135deg);
+      }
+    }
+    
+    
+    
+    
+    

@@ -1,0 +1,33 @@
+.chessbar{
+  width: 610px;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 7.5%;
+  color: $blackchess;
+  .chess{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    font-weight: bolder;
+    text-shadow: 0 0 1px black;
+      &::after{
+        content: '';
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 0.5px solid black;         
+      }
+      &:hover{
+       transform: scale(1.3);
+      }
+  }
+  
+}
