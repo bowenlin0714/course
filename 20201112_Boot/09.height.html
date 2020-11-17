@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+
+  <title>position</title>
+  <style>
+    /* 抓 body 高度有兩個方式 */
+    /* 第一種 html,body 去繼承瀏覽器的高度 */
+    html,
+    body {
+      height: 100%;
+    }
+  </style>
+</head>
+
+<!-- 第二種 直接設定 body height:100vh -->
+
+<body class="vh-100">
+  <div class="container-fluid h-100 bg-info">a</div>
+
+  <!-- 在子容器設定高度百分比時，要確認父容器是否有高度可以繼承 -->
+  <div class="container bg-dark" style="height:300px;">
+    <div class="box h-50 bg-danger">a</div>
+  </div>
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  </script>
+</body>
+
+</html>

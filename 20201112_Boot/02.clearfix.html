@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+
+  <title>Border</title>
+  <style>
+    .container {
+      margin-bottom: 1rem;
+    }
+
+    span {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+    }
+
+    .row>div {
+      height: 100px;
+      border: 1px dashed #aaa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .row>div:nth-child(2)~div {
+      border-left: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Clearfix</h2>
+    <p>通過增加一個清除浮動通用類別，快速和方便的清除容器內的浮動內容。</p>
+  </div>
+  <div class="container">
+    <div class="bg-info clearfix">
+      <button type="button" class="btn btn-secondary float-left">Example Button floated left</button>
+      <button type="button" class="btn btn-secondary float-right">Example Button floated right</button>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Overflow</h2>
+    <div class="bg-info overflow-auto">
+      <button type="button" class="btn btn-secondary float-left">Example Button floated left</button>
+      <button type="button" class="btn btn-secondary float-right">Example Button floated right</button>
+    </div>
+  </div>
+
+  <!-- BFC 上下塊格式文 -->
+  <div class="container">
+    <h2>BFC 上下塊格式文</h2>
+  </div>
+  <div class="container">
+    <div class="box bg-success text-white overflow-hidden">
+      <p class="bg-dark text-white" style="margin-top:200px;">花蓮你也互動受到資訊網近日警告好評，立刻感興趣你在合同可愛受傷十二理念顧客他不，日常收到當我只是伺服器，聲明培養，銷售感覺它是將在嚴重咖啡無人專用你要臺灣，到來公主統計承認藍色最好，附件財經如此回憶一下列表相當用於口氣住房工人花蓮，也能財務，領導馬上，一。
+      </p>
+    </div>
+    <br>
+    <div class="box bg-success text-white overflow-hidden">
+      <p class="bg-dark text-white" style="margin-top:200px;">花蓮你也互動受到資訊網近日警告好評，立刻感興趣你在合同可愛受傷十二理念顧客他不，日常收到當我只是伺服器，聲明培養，銷售感覺它是將在嚴重咖啡無人專用你要臺灣，到來公主統計承認藍色最好，附件財經如此回憶一下列表相當用於口氣住房工人花蓮，也能財務，領導馬上，一。
+      </p>
+    </div>
+  </div>
+
+
+
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

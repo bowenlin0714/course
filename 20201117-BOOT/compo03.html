@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <style>
+    body{
+      background-color: #eee;
+    }
+    h3{
+      margin: 1rem 0;
+    }
+
+    .container{
+      margin-bottom: 2rem;
+    }
+
+    /* 第一種方式 直接改 content 文字 */
+    .breadcrumb-item + .breadcrumb-item::before {
+      display: inline-block;
+      padding-right: 0.5rem;
+      color: #6c757d;
+      content: '>';
+    }
+    /* 第二種方式 使用unicode */
+    .breadcrumb-item + .breadcrumb-item::before {
+      display: inline-block;
+      padding-right: 0.5rem;
+      color: #6c757d;
+      content: '\2192';
+    }
+    /* 第三種方式 使用 base64 圖片編碼字串 */
+    .breadcrumb-item + .breadcrumb-item::before {
+      display: inline-block;
+      padding-right: 0.5rem;
+      color: #6c757d;
+      content:url('網址')
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>麵包屑</h2>
+    <h3>在導航結構中透過 CSS 自動添加分隔符號指示當前頁面的位置</h3>
+    <hr>
+    <h4>麵包屑可以修改 before 的 content</h4>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
+  </div>  
+
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <!-- <script src="./js/bootstrap.min.js"></script> -->
+  <script src="./js/bootstrap.min.js"></script>
+  <script>
+   
+  </script>
+</body>
+</html>
