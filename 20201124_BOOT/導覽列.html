@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+
+  <title>列表群組</title>
+  <style>
+    h2,h3,h4 {
+      margin: 1rem 0;
+    }
+    body {
+      background: #eee
+    }
+    .container {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- navbar是 flexbox 
+       .navbar-expand 指通過某個斷點展開整個 navbar-->
+       <!-- navbar-dark 控制文字深色 -->
+       <!-- fixed-top 將導覽列固定在上方 -->
+       <!-- fixed-bottom 將導覽列固定在下方 -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-info">
+    <!-- navbar 是 logo 的容器 -->
+    <!-- 可以使用 text-hide隱藏文字  -->
+    <a class="navbar-brand " href="#">Navbar</a>
+
+    <!-- navbar-toggler 是漢堡按鈕，只出現在某個斷點縮小時 -->
+    <!-- 漢堡按鈕觸發摺疊選單功能，對應到 data-target 的 id ，讓該id內容顯示 -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Bowen">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- navbar-collapse 是 flexbox，漢堡展開的導覽選單 -->
+    <!-- 對齊的第一種方式 -->
+    <!-- justify-content-end justify-content-between -->
+    <div class="collapse navbar-collapse" id="Bowen">
+      <!-- 對齊另一方式 加入 mr-auto-->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <!-- form-inline :display: flex 彈性盒 用來顯示水平-->
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <p>lorem700</p>
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <!-- <script src="./js/bootstrap5.min.js"></script> -->
+  <script>
+
+  </script>
+</body>
+
+</html>

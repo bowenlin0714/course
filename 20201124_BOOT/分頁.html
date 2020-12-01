@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+
+  <title>分頁</title>
+  <style>
+    h2,h3,h4 {
+      margin: 1rem 0;
+    }
+    body {
+      background: #eee
+    }
+    .container {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- 資料顯示 -->
+        <table id='Bowen' class="table table-dark">
+          <thead>
+            <tr class="">
+              <th scope="col">UserId</th>
+              <th scope="col">Id</th>
+              <th scope="col">Title</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+          <nav class="d-flex justify-content-center align-items-center">
+            <a id="prev" class="page-link" href="#">上一頁</a>
+            <ul id="allPages" class="pagination justify-content-center align-items-center">
+              
+            </ul>
+            <a id="next" class="page-link" href="#">下一頁</a>
+
+          </nav>
+      </div>
+    </div>
+  </div>
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <!-- <script src="./js/bootstrap5.min.js"></script> -->
+  <script>
+    let data = null //容器 接收資料
+    let pageCount = 10 //每筆顯示幾筆資料
+    let pageBox = [] //容器，總筆數切成好幾筆存放，每批是一組陣列 1~10 11~20.....
+    let pageIndex = 1 //第幾頁
+    let totalPages = 0 //全部頁數
+    
+    // $.ajax({
+    //   url:"https://jsonplaceholder.typicode.com/albums", //資料的url
+    //   type: 'get',
+    //   success: function(res){
+    //     data = res
+    //     console.log(data);
+    //     totalPages = Math.ceil(data.length / pageCount)
+    //     for (let i=1; i<=totalPages; i++ ){
+    //       // 將總筆數資料切成好幾批，使用二維陣列紀錄 1~10,11~20....
+    //       pageBox[i] = data.slice(0 + pageCount * (i-1), i * pageCount)
+    //       // 顯示有幾頁
+    //       $('#allPages').append(`<li class = "page-item"><a class="page-link" href="#">${i}</a></li>`)
+    //     }
+    //     page(pageBox[pageIndex])
+    //   }
+    // })
+
+    $.get('https://jsonplaceholder.typicode.com/albums').then((res)=>{
+        data = res
+        console.log(data);
+        totalPages = Math.ceil(data.length / pageCount)
+        for (let i=1; i<=totalPages; i++ ){
+          // 將總筆數資料切成好幾批，使用二維陣列紀錄 1~10,11~20....
+          // slice(begin, end) begin = 從0開始的第幾筆 end = 第幾筆之前
+          // 0~9
+          pageBox[i] = data.slice(0 + pageCount * (i-1), i * pageCount)
+          // 顯示有幾頁
+          $('#allPages').append(`<li class = "page-item"><a class="page-link" href="#">${i}</a></li>`)
+        }
+        // 下一頁
+        $('#next').on('click',function(e){
+          e.preventDefault()
+          pageIndex++
+          if (pageIndex <= totalPages){
+            page(pageBox[pageIndex])
+            $('#allPages li').removeClass('active')
+            $('#allPages li').eq(pageIndex - 1).addClass('active')
+          } else {
+            pageIndex = totalPage
+          }
+        })
+        // 上一頁
+        $('#prev').on('click',function(e){
+          e.preventDefault()
+          pageIndex--
+          if (pageIndex >= 1){
+            page(pageBox[pageIndex])
+            $('#allPages li').removeClass('active')
+            $('#allPages li').eq(pageIndex - 1).addClass('active')
+          } else {
+            pageIndex = 1
+          }
+        })
+
+        // 點數字換頁
+        $('#allPages a').each(function(index){
+          $(this).on('click',function(e){
+            e.preventDefault()
+            pageIndex = index + 1
+            page(pageBox[pageIndex])
+            $(this).siblings.removeClass('active')
+            $(this).parent().addClass('active')
+          })
+        })
+
+        // 開始時顯示第一筆資料
+        page(pageBox[pageIndex])
+        // 開始第一筆 active
+        $('#allPages li').eq(0).addClass('active')
+    })
+
+    function page(array){
+      $('#Bowen tbody').html('')
+      for(const item of array){
+        $('#Bowen tbody').append(
+          `
+            <tr>
+              <td>${item.userId}</td>
+              <td>${item.id}</td>
+              <td>${item.title}</td>
+            </tr>
+          `
+        )
+      }
+    }
+  </script>
+</body>
+
+</html>

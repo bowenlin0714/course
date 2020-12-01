@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+
+  <title>工具提示框 (Tooltips)</title>
+  <style>
+    h2,
+    h3,
+    h4 {
+      margin: 1rem 0;
+    }
+
+    body {
+      background: #eee;
+    }
+
+    .container {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h4>工具提示框 (Tooltips)</h4>
+    <ol>
+      <li>除了新增 data-toggle 屬性，還須自行啟動 Javascript</li>
+      <li>data-placement 彈出顯示方向，預設 top、rignt、bottom、left</li>
+      <li>data-delay 彈出延遲時間，預設0，單位為毫秒。</li>
+      <li>data-offset="x,y"，彈出位移</li>
+      <li>title 彈出訊息</li>
+      <li>data-html="true"，可以在 title 屬性值裡面使用 html 標籤。
+      </li>
+    </ol>
+    <button id="aTip" type="button" class="btn btn-secondary" data-toggle="tooltip" data-container=".container" data-placement="top" data-delay="300"
+            data-offset="0,5" title="今天天氣微涼">
+      今天天氣微涼
+    </button>
+    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" data-delay="300" data-offset="0,5" title="今天天氣微涼">
+      今天天氣微涼
+    </button>
+    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" data-delay="300" data-offset="0,5" title="今天天氣微涼">
+      今天天氣微涼
+    </button>
+    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" data-delay="300" data-offset="0,5" title="今天天氣微涼">
+      今天天氣微涼
+    </button>
+    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" data-html="true" title="<em>多穿一件</em>">
+      今天天氣微涼
+    </button>
+  </div>
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <!-- <script src="./js/bootstrap5.min.js"></script> -->
+  <script>
+    $('[data-toggle="tooltip"]').tooltip();
+    $('#aTip').on('show.bs.tooltip', function () {
+      alert('觸發提示框一開始時')
+    })
+    $('#aTip').on('shown.bs.tooltip', function () {
+      alert('提示框出現完後')
+    })
+    $('#aTip').on('hide.bs.tooltip', function () {
+      alert('關閉提示框時')
+    })
+    $('#aTip').on('hidden.bs.tooltip', function () {
+      alert('提示框關閉後')
+    })
+
+  </script>
+</body>
+
+</html>

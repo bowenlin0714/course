@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      /* font-size: 100px; */
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <form @submit.prevent="add">
+      <input type="text" v-model="form.name" placeholder="商品名稱"> 
+      <input type="number" v-model.number="form.price" min='0'>
+      <input type="text" v-model="form.description" placeholder="商品敘述">
+      <input type="number" v-model.number="form.count" min='0'>
+      <input type="submit" value="新增">
+    </form>
+    <hr>
+    <ul>
+      <li v-for="product in products" :key="product._id">
+        {{product.name}} 
+        <br>
+        數量: {{product.count}} 
+        <br>
+        價格: {{product.price}}
+        <button @click="del(product._id)">X</button>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    let app = new Vue ({
+      el: '#app',
+      data(){
+        return{
+          products:[],
+          form:{
+            name: "",
+            price: 0,
+            description: "",
+            count: 0
+          }
+        } 
+      },
+      mounted() {
+        axios.get('http://localhost:3000/products/')
+        // 回應200一定會進到 then
+          .then(res => {          
+            this.products = res.data.result
+          })
+          .catch(error => {
+            console.log(error.response.data.message);
+          })
+      },
+      methods: {
+        add(){
+          axios.post('http://localhost:3000/products/', this.form)
+            .then(res => {
+              this.products.push(res.data.result)
+            })
+            .catch(error => {
+              alert(error.response.message)
+            })
+        },
+        del(id) {
+          axios.delete('http://localhost:3000/products/'+id)
+           .then(res => {
+            const index = this.products.findIndex(product => 
+            {
+              return product._id === id
+             })
+
+             this.products.splice(index, 1)
+           })        
+           .catch(error => {
+             alert(error.response.data.message)
+           }) 
+        }
+      }
+    })
+  </script>
+</body>
+</html>

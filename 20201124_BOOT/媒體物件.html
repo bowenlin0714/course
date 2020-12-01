@@ -1,0 +1,151 @@
+!<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+
+  <title>列表群組</title>
+  <style>
+    h2,h3,h4 {
+      margin: 1rem 0;
+    }
+    body {
+      background: #eee
+    }
+    .container {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3>媒體物件 (Media object)</h3>
+    <p>.media 是 flex，圖片與 .media-body 是彈性項目，可以使用 spacing utilities 可以控制可調整</p>
+    <div class="row">
+      <div class="col">
+        <div class="media">
+          <img src="https://picsum.photos/64/64/?random=1" class="mr-3">
+          <div class="media-body">
+            <h5 class="mt-0">Media heading</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h4>巢狀</h4>
+    <p>
+      媒體物件可以無限做巢狀，但是我們建議你別作過頭。將巢狀的媒體.media放在父媒體對象的.media-body內。
+    </p>
+    <div class="row">
+      <div class="col">
+        <div class="media">
+          <img src="https://picsum.photos/64/64/?random=1" class="mr-3">
+          <div class="media-body">
+            <h5 class="mt-0">Media heading</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        
+            <div class="media mt-3">
+              <a class="mr-3" href="#">
+                <img src="https://picsum.photos/64/64/?random=1" class="mr-3">
+              </a>
+              <div class="media-body">
+                <h5 class="mt-0">Media heading</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h4>對齊</h4>
+    <p>媒體物件中的媒體可以在你的 .media-body 內容的上部（預設）(align-self-top)、中部(align-self-center)、或下部(align-self-bottom)與 flexbox 工具對齊。</p>
+    <div class="row">
+      <div class="col">
+        <div class="media">
+          <img src="https://picsum.photos/64/64/?random=1" class="align-self-start mr-3" alt="...">
+          <div class="media-body">
+            <h5 class="mt-0">Top-aligned media</h5>
+            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+            <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h4>排序</h4>
+    <p>通過修改 HTML 本身，或者通過增加某些定制 flexbox CSS 改變媒體物件中的內容順序，以設置 order 屬性（請使用一個整數）。</p>
+    <div class="row">
+      <div class="col">
+        <div class="media">
+          <div class="media-body">
+            <h5 class="mt-0 mb-1">Media object</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+          <img src="https://picsum.photos/64/64/?random=1" class="ml-3 order-last" alt="...">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h4>媒體列表</h4>
+    <p>在你的 ul 或 ol 上，增加 .list-unstyled，以移除任何瀏覽器預設清單樣式，然後對你的 li 應用 .media。當然，你也可以使用間隔調整工具。</p>
+    <div class="row">
+      <div class="col">
+        <ul class="list-unstyled">
+          <li class="media">
+            <img src="https://picsum.photos/64/64/?random=1" class="mr-3" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">List-based media object</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </li>
+          <li class="media my-4">
+            <img src="https://picsum.photos/64/64/?random=1" class="mr-3" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">List-based media object</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </li>
+          <li class="media">
+            <img src="https://picsum.photos/64/64/?random=1" class="mr-3" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">List-based media object</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <!-- <script src="./js/bootstrap5.min.js"></script> -->
+  
+</body>
+
+</html>

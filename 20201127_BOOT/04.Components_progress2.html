@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+
+  <title>進度條 (Progress)</title>
+  <style>
+    h2,
+    h3,
+    h4 {
+      margin: 1rem 0;
+    }
+
+    body {
+      background: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- loading bar -->
+  <div id="progress" class="d-flex align-items-center vh-100" style="background:black;;">
+    <div class="progress w-100">
+      <div class="progress-bar progress-bar-striped progress-bar-animated text-right"></div>
+    </div>
+  </div>
+  <!-- content -->
+  <div id="content" class="vh-100">
+    <img class="h-100 w-100" src="https://picsum.photos/1920/1080/?random=1" style="object-fit: cover;">
+  </div>
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <!-- <script src="./js/bootstrap5.min.js"></script> -->
+  <script>
+    $('#content').hide()
+    $(window).on('load', function () {
+      // 載入進度百分比數字，影響進度條寬度
+      let loadingPerc = 0
+      let loading = setInterval(() => {
+        if (loadingPerc >= 100) {
+          $('#progress').fadeOut(function () {
+            $('#progress').removeClass('d-flex').css({ display: 'none' })
+          })
+          $('#content').fadeIn(2000)
+        } else {
+          // 每隔一段時間 loadingPerc 累加 1
+          loadingPerc += 1
+          $('.progress-bar').css({
+            width: loadingPerc + '%'
+          })
+          $('.progress-bar').text(loadingPerc + '%')
+          $('.progress-bar').css({
+            fontSize: '1.2rem',
+            fontWeight: 'bold'
+          })
+        }
+      }, 50);
+    })
+  </script>
+</body>
+
+</html>
