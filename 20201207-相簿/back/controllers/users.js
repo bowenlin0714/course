@@ -42,13 +42,13 @@ export const login = async (req, res) => {
     const result = await users.findOne({
       account: req.body.account,
       password: md5(req.body.password)
-    })
+    }, '-password')
 
     if (result === null) {
       res.status(404).send({ success: false, message: '帳號或密碼錯誤' })
     } else {
       req.session.user = result
-      res.status(200).send({ success: true, message: '' })
+      res.status(200).send({ success: true, message: '', result })
     }
   } catch (error) {
     if (error.name === 'ValidationError') {

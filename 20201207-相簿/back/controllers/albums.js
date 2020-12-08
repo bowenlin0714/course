@@ -175,9 +175,10 @@ export const user = async (req, res) => {
   }
 
   try {
-    const result = albums.find({ user: req.params.user })
+    const result = await albums.find({ user: req.params.user })
     res.status(200).send({ success: true, message: '', result })
   } catch (error) {
+    console.log(error)
     res.status(500).send({ success: false, message: '伺服器錯誤' })
   }
 }
