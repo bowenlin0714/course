@@ -301,10 +301,170 @@ body {
 }
 
 /* section04 莊園位置 ------------------------------------------------------------------------------------------------------------- */
+#section04 .embed-responsive {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  filter: brightness(50%);
+  transition: 1s;
+}
+#section04 .embed-responsive:hover {
+  filter: brightness(75%);
+}
+
+#section04 .information {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#section04 .information h3 {
+  color: var(--primary);
+  background: var(--coffee5);
+  text-align: center;
+  padding: var(--s2);
+  box-shadow: var(--shadow2);
+  position: relative;
+}
+
+#section04 .information .accordion{
+  box-shadow: var(--shadow2);
+  position: relative;
+}
+
+#accordionExample {
+  transition: 1s;
+}
+
+/* 關閉按鈕 */
+#section04 .information_switch{
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: 2;
+}
+
+#section04 .information_switch .close{
+  font-size: 2rem;
+  color: var(--primary);
+  padding: 0.3rem 0.2rem 0.2rem 0.2rem;
+  cursor: pointer;
+} 
+
+.information_switch label .fa-angle-double-left {
+  display: none;
+}
+
+#trigger:checked + #accordionExample {
+  transform: translateX(98%);
+} 
+
+/* 關閉箭頭 */
+#trigger:checked + #accordionExample .information_switch label .fa-angle-double-right{
+  display: none;
+}
+/* 開啟左側箭頭 */
+#trigger:checked + #accordionExample .information_switch label .fa-angle-double-left{
+  display: block;
+}
 
 /* section05 聯絡我們 ------------------------------------------------------------------------------------------------------------- */
+#section05 {
+  color: var(--coffee2);
+  background: var(--coffee4);
+  padding: 2rem 0;
+}
 
+#section05 .container {
+  width: 95%;
+}
+#section05 h1 {
+  text-align: center;
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#section05 h5 {
+  font-size: 1.45rem;
+  text-align: center;
+  margin-bottom: 0.2rem !important;
+}
+
+#section05 small {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#section05 .row .col-12:first-child {
+  padding-bottom: 0.2rem;
+  margin-bottom: 1.5rem !important;
+  border-bottom: 1px solid var(--coffee3);
+}
+
+#section05 .row .col-12:last-child {
+  padding-top: 0.2rem;
+  margin-top: 1.5rem !important;
+  border-top: 1px solid var(--coffee3);
+}
+
+#section05 input,
+#section05 textarea,
+#section05 select
+ {
+   border: 2px solid var(--coffee4) !important;
+ }
+
+#section05 input:focus,
+#section05 textarea:focus,
+#section05 select:focus
+ {
+   outline: none !important;
+   box-shadow: var(--shadow1);
+   border: 2px solid var(--coffee4) !important;
+ }
 /* section06 咖啡故事 ------------------------------------------------------------------------------------------------------------- */
+
+#section06 {
+  padding: 2rem 0;
+  background: url(../images/bg-01.jpg) no-repeat center/cover;
+}
+
+#section06 h1 {
+  text-align: center;
+  padding-top: var(--s5);
+  padding-bottom: var(--s3);
+  color: var(--coffee5);
+}
+
+#section06 a.nav-link {
+  color: var(--coffee5);
+  border: 1px solid transparent;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  transition: 0.3s;
+}
+
+#section06 a.nav-link.active{
+  color: var(--coffee5);
+  background: var(--coffee1);
+}
+
+#section06 a.nav-link:not(.active){
+  background: var(--coffee5);
+  color: var(--coffee1);
+}
+
+#section06 a.nav-link:hover{
+  color: var(--coffee5);
+  background: var(--coffee1);
+}
+
+
 
 /* modal */
 #login .modal-content,
@@ -369,6 +529,16 @@ body {
   #section03 .text p {
     display: block;
   }
+  /* 992 section04 -------------------------------------- */
+  #section04 .information .accordion{
+    width: 40%;
+  } 
+
+  /* 992 section05 -------------------------------------- */
+  #section05 {
+    font-size: 1.6rem;
+
+  }
 }
 
 /* 回到頂端 */
@@ -391,4 +561,57 @@ body {
   line-height: 50px;
   color: var(--coffee5);
   text-decoration: none;
+}
+
+/* footer */
+#footer {
+  color: var(--coffee5);
+  background: var(--coffee1);
+  padding: 1rem 0;
+  box-shadow: 0 -10px 10px var()var(--black50)
+}
+
+.toggle_black {
+  background: var(--coffee1) !important;
+}
+
+.menu-left a{
+  display: inline-block;
+  position: relative;
+  /* 底線間距 */
+  padding-bottom: 0.5rem;
+  transition: color 0.5s;
+}
+
+.menu-left a::before {
+  content:'';
+  width: 0;
+  height: 1px;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width 0.5s;
+}
+
+.menu-left a:hover::before {
+  width: 100%;
+  background-color: var(--coffee5);
+}
+
+.menu-left a::after {
+  content:'';
+  width: 0;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transition: width 0.5s;
+}
+
+.menu-left a:hover::after {
+  width: 100%;
+  background-color: transparent;
+  
 }

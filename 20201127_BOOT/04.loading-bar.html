@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="./css/bootstrap.css">
   <!-- loading-bar.css -->
-  <link rel="stylesheet" href="./css/loading-bar.css">
+  <!-- <link rel="stylesheet" href="./css/loading-bar.css"> -->
   <title>loading-bar</title>
   <style>
     /* loading bar 容器 */
@@ -32,24 +32,124 @@
       transform: translate(-50%, -50%);
       display: none;
     }
+    .load {
+      background-color:blue;width: 100w;height: 100vh;
+    }
 
     /* bar 百分比單位，預設 % */
     .ldBar-label::after {
       content: '%';
       font-size: 1.5rem;
     }
+    .main {
+      display: none;
+    }
   </style>
 </head>
 
 <body>
-  <div id="loadingBar" class="ldBar"></div>
-  <img src="https://picsum.photos/1920/1080/?random=1">
-  <img src="https://picsum.photos/1920/1080/?random=2">
-  <img src="https://picsum.photos/1920/1080/?random=3">
-  <img src="https://picsum.photos/1920/1080/?random=4">
-
+  <div class="load">
+    <div id="loadingBar" class="ldBar"></div>
+  </div>
+  <div class="main">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top "  >
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Zen Garden</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mr-3">
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select a design
+            </a>
+            <div class="dropdown-menu bg-transparent"  style="border: none;">
+            
+              <button class="btn">
+                <span class="btn__content">Mid Century Modern</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">Garments</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">Steel</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">Apothecary</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">Screen Filler</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">Fountain Kiss</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">A Robot Named Jimmy</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">Verde Moderna</span>
+                <span class="btn__glitch"></span>
+              </button>          
+            </div>
+          </li>
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Archieves
+            </a>
+            <div class="dropdown-menu bg-transparent" style="border: none;">
+              <button class="btn">
+                <span class="btn__content">Next Designs</span>
+                <span class="btn__glitch"></span>
+              </button>   
+              <button class="btn">
+                <span class="btn__content">View All Designs</span>
+                <span class="btn__glitch"></span>
+              </button>   
+            </div>
+          </li>
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Resources
+            </a>
+            <div class="dropdown-menu bg-transparent" style="border: none;">
+              <button class="btn">
+                <span class="btn__content">View This Design’s CSS</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">CSS Resources</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">FAQ</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">Submit a Design</span>
+                <span class="btn__glitch"></span>
+              </button>          
+              <button class="btn">
+                <span class="btn__content">Translations</span>
+                <span class="btn__glitch"></span>
+              </button>               
+            </div>
+          </li>
+        </ul>          
+       </div>
+      </div>
+    </nav>
+  </div>
+  
   <script src="./js/jquery-3.5.1.min.js"></script>
-  <script src="./js/popper.min.js"></script>
+  <!-- <script src="./js/popper.min.js"></script> -->
   <script src="./js/bootstrap.min.js"></script>
   <script src="./js/loading-bar.js"></script>
   <script>
@@ -68,22 +168,22 @@
       // 'stroke-lincap': 'round',
 
       // 使用自訂義圖片 ------------------------------------------------------------
-      'img': './images/pica.png',
+      'img': './images/load.svg',
       'img-size': '120,120',
       'type': 'fill',
       'fill-dir': 'btt', // loading 方向，ltr、rtl、btt、ttb
-      'fill-background': '#333', // 背景填滿顏色
+      'fill-background': 'red', // 背景填滿顏色
       'fill-background-extrude': 1, // 背景填滿區域大小,0跟圖片一樣大
     });
 
     let loadingTxt = 0;
-    $('img').css({ display: 'none' })
+    // $('main').css({ display: 'none' })
     $(window).on('load', function () {
       let timer = setInterval(() => {
         loadingBar.set(loadingTxt)
         if (loadingTxt >= 100) {
-          $('img').fadeIn();
-          $('#loadingBar').fadeOut();
+          $('main').fadeIn();
+          $('.load').fadeOut();
         } else {
           loadingTxt++
         }
