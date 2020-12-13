@@ -1,8 +1,8 @@
 <template lang="pug">
   #reg
     b-container
-      b-row.d-flex.justify-content-center.mt-5
-        b-col(cols="3").border.p-3.rounded
+      b-row
+        b-col(cols="12")
           b-form(@submit.prevent="onSubmit" @reset="onReset")
             b-form-group#input-group-1(
               label="帳號"
@@ -33,7 +33,7 @@
                 :state="passwordState"
               )
             div.text-center
-              b-btn.mx-1(variant="success" type="submit") 登入
+              b-btn.mx-1(variant="success" type="submit") 註冊
               b-btn.mx-1(variant="danger" type="reset") 重置
 </template>
 
@@ -70,16 +70,13 @@ export default {
     onSubmit () {
       // 如果帳號密碼驗證通過
       if (this.accountState && this.passwordState) {
-        this.axios.post(process.env.VUE_APP_API + '/users/login', this.$data)
+        this.axios.post(process.env.VUE_APP_API + '/users/', this.$data)
           .then(res => {
             if (res.data.success) {
-              this.$store.commit('login', res.data.result)
               this.$swal({
                 icon: 'success',
-                title: '登入成功'
-              }).then(() => {
-                // sweet alert 對話框關掉後才跳到相簿頁
-                this.$router.push('/album')
+                title: '註冊成功',
+                text: '歡迎加入線上相簿'
               })
             } else {
               this.$swal({

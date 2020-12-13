@@ -67,10 +67,10 @@ app.set('trust proxy', 1)
 app.use('/users', routerUser)
 app.use('/albums', routerAlbum)
 
-// bodyParser cors 之類的套件發生錯誤時的處理
+// bodyparser cors 之類的套件發生錯誤時的處理
 // app.use((err, req, res, next) => {})
-// error req res 發生的錯誤
-// next 繼續到下一個 middleware, 因為這是最後一個所以不需要
+// err 發生的錯誤
+// next 繼續到下一個 middleware，因為這是最後一個所以不需要
 // _ 代表不使用 function 的參數
 app.use((_, req, res, next) => {
   res.status(500).send({ success: false, message: '伺服器錯誤' })
