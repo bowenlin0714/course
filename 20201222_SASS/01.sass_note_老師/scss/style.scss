@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 75%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 20px 0 10px 0;
+}
+
+section {
+  margin-bottom: 2rem !important;
+}
+
+:root {
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+}
+
+/* 1. 變數 -------------------------------------------------------------------------------------------------- */
+/* Sass 變數，不會被編譯出來 */
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$white: #ffffff;
+
+// 任何 CSS 規範的值都可以設定為變數
+$gradient: linear-gradient(0deg, rgba(0, 0, 74, 1), rgba(0, 12, 198, 1) 54%, rgba(0, 23, 255, 1) 100%);
+$border: 5px solid #fff;
+$border-radius: 0.5rem;
+$padding: 0.5rem 0.5rem;
+$margin-bottom: 1rem;
+$shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+
+h1 {
+  background: $gradient;
+  color: $white;
+  border: $border;
+  border-radius: $border-radius;
+  padding: $padding;
+  box-shadow: $shadow;
+  margin-bottom: $margin-bottom;
+}
+
+/* 2. Flow Control -------------------------------------------------------------------------------------------------- */
+// random() 為內建函式
+$number: random(3);
+.mybox {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* @if ~ @else if ~ @else */
+  @if $number == 1 {
+    background-color: red;
+  } @else if $number == 2 {
+    background-color: blue;
+  } @else {
+    background-color: green;
+  }
+
+  /* 使用 and 兩運算式條件都成立 */
+  $a: 1;
+  $b: 1;
+  @if $a==1 and $b==1 {
+    color: white;
+  }
+  /* 使用 or 兩運算式其中之一成立 */
+  $c: 1;
+  $d: 0;
+  @if $c == 1 or $d == 0 {
+    font-size: 20px;
+  }
+  /* 使用 not 反轉運算式的結果 */
+  $e: 50px;
+  @if not($e == 100px) {
+    padding: 1rem;
+  }
+
+  /* 符合CSS的值型態都可以寫成判斷運算式 */
+  $f: red;
+  $g: #000;
+  $i: 1px solid #ffa;
+  @if ($f ==red and $g ==#000 and $i == 1px solid #ffa) {
+    margin: 50px;
+  }
+  /* 內建函式，類似JS的三元運算子，因為函式 if 沒有 @ */
+  border: if(true, 10px solid #000, 10px solid#aaa);
+}

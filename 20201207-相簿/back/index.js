@@ -67,7 +67,7 @@ app.set('trust proxy', 1)
 app.use('/users', routerUser)
 app.use('/albums', routerAlbum)
 
-// bodyparser cors 之類的套件發生錯誤時的處理
+// bodyparser cors 之類的套件`發生錯誤時的處理
 // app.use((err, req, res, next) => {})
 // err 發生的錯誤
 // next 繼續到下一個 middleware，因為這是最後一個所以不需要
@@ -77,5 +77,5 @@ app.use((_, req, res, next) => {
 })
 
 app.listen(process.env.PORT, () => {
-  console.log('server started')
+  console.log('伺服器啟動')
 })

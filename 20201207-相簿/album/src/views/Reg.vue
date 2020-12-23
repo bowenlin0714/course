@@ -1,8 +1,8 @@
 <template lang="pug">
   #reg
     b-container
-      b-row.d-flex.justify-content-center.mt-5
-        b-col(cols="3").border.p-3.rounded
+      b-row
+        b-col(cols="12")
           b-form(@submit.prevent="onSubmit" @reset="onReset")
             b-form-group#input-group-1(
               label="帳號"
@@ -89,7 +89,8 @@ export default {
           .catch(err => {
             this.$swal({
               icon: 'error',
-              title: err.response.data.message
+              title: '發生錯誤',
+              text: err.response.data.message
             })
           })
       }

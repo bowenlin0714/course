@@ -3,10 +3,13 @@ import FTPStorage from 'multer-ftp'
 import axios from 'axios'
 import path from 'path'
 import fs from 'fs'
+import dotenv from 'dotenv'
 
 import albums from '../models/albums.js'
 
 let storage
+
+dotenv.config()
 
 // 本機開發，檔案存電腦
 // 雲端環境，檔案存 FTP

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css' />
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="textillate">
+    <ul class="text">
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, ipsa?</li>
+      <li>學術官員傳播高達東京之家，什。</li>
+    </ul>
+  </div>
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/parallax.js"></script>
+  <script src="./js/jquery.fittext.js"></script>
+  <script src="./js/jquery.lettering.js"></script>
+  <script src="./js/jquery.textillate.js"></script>
+  <script>
+    $('#textillate').textillate({
+      selector: '.text',
+      loop: true,
+      initialDelay: 52,
+      autoStart: true,
+      type: 'char',
+      in: {
+        // set the effect name
+        effect: 'fadeInLeftBig',
+
+        // set the delay factor applied to each consecutive character
+        delayScale: 1.5,
+
+        // set the delay between each character
+        delay: 50,
+
+        // set to true to animate all the characters at the same time
+        sync: false,
+
+        // randomize the character sequence
+        // (note that shuffle doesn't make sense with sync = true)
+        shuffle: true,
+
+        // reverse the character sequence
+        // (note that reverse doesn't make sense with sync = true)
+        reverse: false,
+
+        // callback that executes once the animation has finished
+        callback: function () { }
+      },
+      out: {
+        effect: 'hinge',
+        delayScale: 1.5,
+        delay: 50,
+        sync: false,
+        shuffle: false,
+        reverse: false,
+        callback: function () { }
+      }
+    })
+  </script>
+</body>
+
+</html>

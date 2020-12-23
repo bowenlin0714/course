@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: '微軟正黑體';
+  box-sizing: border-box;
+}
+
+.container {
+  width: 75%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 20px 0 10px 0;
+}
+
+section {
+  margin-bottom: 2rem !important;
+}
+
+:root {
+  // CSS 原生變數
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+}
+
+// Scss 的變數, 不會被編譯, 只存在於 .scss 文件
+// Scss 的變數也有作用域, 全域和區域
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$white: #ffffff;
+
+// 任何 CSS 規範的值都可以設定為變數
+$gradient: linear-gradient(0deg, rgba(0, 0, 74, 1), rgba(0, 12, 198, 1) 54%, rgba(0, 23, 255, 1) 100%);
+$border: 5px solid #ffffff;
+$border-radius: 0.5rem;
+$padding: 0.5rem;
+$magrin-bottom: 1rem;
+$shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+
+h1 {
+  background: $gradient;
+  color: $white;
+  border: $border;
+  border-radius: $border-radius;
+  padding: $padding;
+  box-shadow: $shadow;
+  margin-bottom: $magrin-bottom;
+}
+
+// 單行註釋不會被編譯
+/* 多行註釋會被編譯到 .css 文件 */
+
+/* 2. Flow Control */
+
+// random() 為內建函式
+$number: random(3);
+
+.mybox {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* @if ~ @else if ~ @else*/
+  @if $number == 1 {
+    background-color: #dc3545;
+  } @else if $number == 2 {
+    background-color: #007bff;
+  } @else {
+    background-color: #28a745;
+  }
+
+  /* 使用 and 兩運算式條件都成立時 */
+  $a: 1;
+  $b: 1;
+  @if ($a == 1 and $b == 1) {
+    color: #ffffff;
+  }
+  /* 使用 or 兩運算式其中之一成立時 */
+  @if ($a == 1 or $b == 0) {
+    font-size: 20px;
+  }
+  /* 使用 not 運算式結果取反 */
+  $e: 50px;
+  @if not($e == 100px) {
+    padding: 1rem;
+  }
+
+  /* 符合 CSS 的值型別都可以寫判斷運算式 */
+  $f: red;
+  $g: #000;
+  $i: 1px solid #ffa;
+
+  @if ($f == red and $g == #000 and $i == 1px solid #ffa) {
+    margin: 50px;
+  }
+
+  /* Scss 內建函式有類似 JS 的三元判斷式, 因為函式 if() 沒有 @ */
+  /* if(條件, true 時執行, false 時執行) */
+  border: if(true, 10px solid #000, 10px solid #aaa);
+ 
+  
+}
+// @for 迴圈有兩種 through 跟 to
+  // #for ... through 
+  @for $i from 1 through 3 {
+    // 差值語法
+    .through-#{$i} {
+      width: 50px * $i;
+      height: 50px * $i;
+      display: inline-block;
+      background-color: #aaa;
+    }
+  }
+  // #for ... to 
+  @for $i from 1 to 3 {
+    // 差值語法
+    .to-#{$i} {
+      width: 50px * $i;
+      height: 50px * $i;
+      display: inline-block;
+      background-color: blue;
+    }
+  }
+
+  // 3.Nested 巢狀結構
+
+  #section03{
+    p{
+      border-bottom: 1px solid black;
+    }
+    // 選單
+    .menu {
+      margin-top: 1rem;
+      font-size: 0;
+      li {
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        font-size: 1rem;
+        a {
+          display: block;
+          background-color: black;
+          color: white;
+          text-decoration: none;
+          padding: 0.5rem;
+          // & 佔位可以替換父層選擇器
+          &:hover {
+            color: yellow;
+            background-color: #aaa;
+          }
+        }
+      }
+      //相鄰
+      li + li {
+        border-left: 1px solid #fff;
+      }
+    }
+  }
+
+  // 4.extend 
+  .extend {
+    width: 50px;
+    height: 50px;
+  }
+
+  %extend {
+    width: 50px;
+    height: 50px;
+  }
+
+  .box1 {
+    @extend %extend;
+    background-color: red;
+  }
+  .box2 {
+    @extend %extend;
+    background-color: blue;
+  }
+  .box3 {
+    @extend %extend;
+    background-color: green;
+  }
+
+  // 5.Sass 計算
+  .box4 {
+    background-color: black;
+    // 加法
+    width: 50px  + 50px;
+    height: 50px + 50px;
+    // 減法
+    width: 100px - 50px;
+    height: 100px - 50px;
+    // 乘法
+    width: 100px * 2;
+    height: 100px * 2;
+    // 除法，養成習慣用括號
+    width: (200px / 2);
+    $w: 1000px;
+    $a: 10;
+    // 變數不需要括號，但建議使用
+    height: $w / $a;
+    // 餘數
+    margin-top: 50px % 100;
+
+    // 使用 calc時 要使用差值語法
+    $x: 50px;
+    $y: 10px;
+    margin-bottom: calc(#{$x} + #{$y});
+  } 
+
+  // 6. fuction(函式)
+
+  // 回傳計算的邊長值
+  @function sidelength($sidelength, $base) {
+    @return $sidelength * $base
+  }
+
+  .sidelength {
+    width:  sidelength(200,1 ) * 1px;
+    height: #{sidelength(200, 2)}px;
+  }
+
+  // 可以設定預設值
+  @function sidelength2($sidelength: 100, $base: 1) {
+    @return $sidelength * $base
+  }
+  
+  .sidelength2 {
+    width:  sidelength2() * 1px;
+  }
+  
+  
+  nav {
+    // font-family '微軟正黑'
+    font: {
+      family: '微軟正黑體';
+      size: 1rem;
+      weight: bold;
+    }
+    border: {
+      style: solid;
+      width: 1px;
+      color: #ccc;
+    }
+  }
+
+

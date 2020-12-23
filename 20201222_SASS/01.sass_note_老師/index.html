@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <section id="section00">
+    <div class="container">
+      <h1 style="text-align:center">Sass</h1>
+      <p>Sass 是 CSS 的預處理器，目的是在減少 CSS 反覆重工的動作，以及更有效率維護樣式結構，需進行編譯（complier）成原生的CSS才能使用。</p>
+      <p>Sass 可以使用變數、函式、流程控制、嵌套、繼承(extend)、混合(mixin)等功能，也被稱為 CSS 的程式語言(SassScript)。</p>
+      <h2 style="margin:1rem 0 0;">sass 與 scss</h2>
+      <p style="margin-bottom:1rem">Sass 分為兩種 sass 與 scss，兩者同屬 Sass。不同點如下:</p>
+      <table border="1">
+        <tr>
+          <th width="15%">副檔名</th>
+          <th width="25%">語法</th>
+          <th width="65%">說明</th>
+        </tr>
+        <tr>
+          <td>.sass</td>
+          <td>縮排語法<br>沒有 css 大括號，結尾分號</td>
+          <td>語法無法兼容CSS</td>
+        </tr>
+        <tr>
+          <td>.scss</td>
+          <td>塊語法<br>寫法與CSS一致，兼容CSS。</td>
+          <td>語法兼容CSS</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 1. 變數 -->
+  <section id="section01">
+    <div class="container">
+      <h1>1. 變數(Variables)</h1>
+      <p>$宣告一個變數名稱，其位置是它的作用域，大括號裡面，就是大括號內的區域變數，就像JavaScript的let宣告。</p>
+      <p>變數可以維持網站的一致性，節省修改成本。</p>
+      <p>底線(_)和連結線(-)可以互換使用，$bg_black、$bg-black是一樣的變數。</p>
+    </div>
+  </section>
+
+  <!-- 2. 流程控制 -->
+  <section id="section02">
+    <div class="container">
+      <h2>2. 流程控制(Flow Control)</h2>
+      <h3>@if、@else if、@else</h3>
+      <p>判斷條件可以小括號，也可以不括號。</p>
+      <div class="mybox">天氣好冷</div>
+    </div>
+  </section>
+</body>
+
+</html>

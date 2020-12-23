@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <style>
+    #scene {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: -10%;
+      left: -10%;
+      right: -10%;
+      bottom: -10%;
+      z-index: -1;
+    }
+
+    .bg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .big-planet {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+
+    .big-planet img {
+      display: block;
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+      margin: auto
+    }
+
+    .planet-01 {
+      width: 25vmax;
+      height: 25vmax;
+      position: absolute;
+      top: 30% !important;
+      left: 75% !important;
+      z-index: 3
+    }
+
+    .planet-01 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .planet-02 {
+      width: 35vmax;
+      height: 35vmax;
+      position: absolute;
+      top: 10% !important;
+      left: 0 !important;
+      z-index: 4
+    }
+
+    .planet-02 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .planet-03 {
+      width: 25vmax;
+      height: 25vmax;
+      position: absolute;
+      top: 70% !important;
+      left: 50% !important;
+      z-index: 5
+    }
+
+    .planet-03 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .float-item {
+      animation: float-item infinite ease-in-out;
+    }
+
+    .dur-03 {
+      animation-duration: 3s;
+    }
+
+    .dur-05 {
+      animation-duration: 5s;
+    }
+
+    .dur-07 {
+      animation-duration: 7s;
+    }
+
+    .dur-09 {
+      animation-duration: 9s;
+    }
+
+
+
+    @keyframes float-item {
+      0% {
+        transform: translate(0, 0)
+      }
+
+      50% {
+        transform: translate(0, -10px)
+      }
+
+      100% {
+        transform: translate(0, 0)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="scene">
+    <div class="bg" data-depth='0.1'><img class="float-item dur-09" src="./images/nebula.jpg" alt=""></div>
+    <div class="big-planet" data-depth='-0.1'><img src="./images/big-planet.png" alt=""></div>
+    <div class="planet-01" data-depth='0.5'><img class="float-item dur-07" src="./images/planet-01.png" alt=""></div>
+    <div class="planet-02" data-depth='-0.7'><img class="float-item dur-05" src="./images/planet-02.png" alt=""></div>
+    <div class="planet-03" data-depth='1.2'><img class="float-item dur-03" src="./images/planet-03.png" alt=""></div>
+  </div>
+  <div class="container">
+    <div class="text-center">
+      <h1 class="text-white display-3" style="text-shadow: 0 0 5px rgba(0,238,255), 0 0 15px rgba(0,200,255);"> Parallax
+      </h1>
+    </div>
+    <p class="text-light p-a my-4 rounded" style="background-color: rgba(0,0,0,0.5);">
+      銀河星系（古稱銀河、天河、星河、天漢、銀漢等）[18]，是一個包含太陽系
+      [19]的棒旋星系。直徑介於100,000光年[20]至180,000光年[21]。大約擁有1,000億至4,000億顆恆星[22][23]，並可能有1,000億顆行星[24][25]。太陽系距離銀河中心約26,000光年，在有著濃密氣體和塵埃，被稱為獵戶臂的螺旋臂的內側邊緣。在太陽的位置，公轉週期大約是2億4,000萬年[15]。從地球看，因為是從盤狀結構的內部向外觀看，因此銀河系呈現在天球上環繞一圈的帶狀。
+      <br>
+      <br>
+      銀河系中最古老的恆星幾乎和宇宙本身一樣古老，因此可能是在大爆炸之後不久的黑暗時期形成的[9]。在10,000光年內的恆星形成核球，並有著一或多根棒從核球向外輻射。最中心處被標示為強烈的電波源，可能是個超大質量黑洞，被命名為人馬座A*。在很大距離範圍內的恆星和氣體都以每秒大約220公里的速度在軌道上繞著銀河中心運行。這種恆定的速度違反了克卜勒動力學，因而認為銀河系中有大量不會輻射或吸收電磁輻射的質量。這些質量被稱為暗物質[26]。
+      <br>
+      <br>
+      銀河系有幾個衛星星系，它們都是本星系群的成員，並且是室女超星系團的一部分；而它又是組成拉尼亞凱亞超星系團的一部分[27][28]。整個銀河系對銀河系外的參考坐標系以大約每秒600公里的速度在移動。
+      <br>
+      <br>
+      銀河的某些地區可以看作是寬約30度的弧，畫過天空的朦朧光帶[29]。然而，肉眼在天空各處看見的個別恆星，全都是銀河系的一部分[30][31]。來自這條帶狀弧上的光，都是源自銀河平面上，肉眼不能解析的恆星和其它天體累積的光亮。黑暗的區域，像是大裂縫和煤袋星雲，是來自遙遠恆星的光被星際塵埃遮蔽的區域。天空中被銀河遮蔽的區域稱為隱帶。
+      <br>
+      <br>
+      銀河有著相對較低的面亮度。它的可見度會被背景光，像是光汙染或是來自月球的雜散光，大大的降低。需要每平方秒的亮度比20.2星等更黑暗的天空才能清楚的看見銀河[32]。當肉眼可見的極限星等大約在+5.1等可以看見銀河，或更好的+6.1等，就可以看見許多的細節[33]。這使得在明亮的都市或郊區很難看見銀河，但當月球在地平線下時，在沒有光汙染的鄉村地區看見的銀河就非常明顯[註
+      1]。新的世界地圖顯示人夜晚天空的人造光源亮度，顯示由於光汙染的緣故，地球上超過三分之一的人不能在家園看見銀河[34]。
+      <br>
+      <br>
+      從地球觀看，銀河系可見的盤面區域涵蓋的面積包括天空中的30個星座[註
+      2]。銀河中心是銀河最亮的區域，其方向在人馬座。從人馬座，朦朧的白色光帶似乎傳遞到反銀心所在的御夫座。光帶然後繼續其餘的路徑回到人馬座附近，將天球分成兩個大致相等的半球。
+      <br>
+      <br>
+      銀河盤面相對於黃道（地球繞太陽公轉軌道的平面）傾斜約60度。相對於天球赤道，它向北遠達仙后座，向南則抵達南十字座，顯示地球的赤道平面和黃道相對於銀河盤面都有很大的傾斜。銀河北極位於赤經 12h 49m，赤緯
+      +27.4°（B1950），靠近周鼎一（后髮座β）；銀河南極在玉夫座α附近。由於這種高傾斜度，在一年中不同的時間，銀河的弧出現在天空中的位置可以很高，也可以在很低。在地球上的北緯65度到南緯65度之間，銀河會一天經過觀測者的天頂兩次。
+    </p>
+  </div>
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/parallax.js"></script>
+  <script src="./"></script>
+  <script>
+    var scene = document.getElementById('scene');
+    var parallaxInstance = new Parallax(scene, {
+      relativeInput: true,
+      scalarX: 20.0,
+      scalarY: 20.0,
+    });
+  </script>
+</body>
+
+</html>

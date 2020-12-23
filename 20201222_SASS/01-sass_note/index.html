@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section id="section00">
+      <div class="container">
+        <h1 style="text-align: center">Sass</h1>
+        <p>
+          Sass 是 CSS 的預處理器，目的是在減少 CSS 反覆重工的動作，以及更有效率維護樣式結構，需進行編譯 (Complier)
+          成原生的 CSS 才能使用。
+        </p>
+        <p>
+          Sass 可以使用變數、函式、流程控制、嵌套、繼承(extend)、混合(mixin)等功能，也被稱為 CSS
+          的程式語言(SassScript)。
+        </p>
+        <h2 style="margin: 1rem 0 0">Sass 與 Scss</h2>
+        <p style="mix-blend-mode: 1rem">Sass 分為兩種 Sass 與 Scss，兩者同屬 Sass。不同點如下：</p>
+        <table border="1">
+          <tr>
+            <th width="15%">副檔名</th>
+            <th width="25%">語法</th>
+            <th width="65%">說明</th>
+          </tr>
+          <tr>
+            <td>.sass</td>
+            <td>縮排語法<br />沒有 CSS 大括號、結為分號</td>
+            <td>語法無法兼容 CSS</td>
+          </tr>
+          <tr>
+            <td>.scss</td>
+            <td>塊語法<br />寫法與 CSS 一致，兼容 CSS</td>
+            <td>語法兼容 CSS</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- 1. 變數 -->
+    <section id="section01">
+      <div class="container">
+        <h1>1. 變數(Variables)</h1>
+        <p>$宣告一個變數，其位置是它的作用域。大括號裡面，就是大括號內的區域變數，就像 JavaScript 的 let 宣告</p>
+        <p>變數可以維持網站的一致性，節省修改成本。</p>
+        <p>底線(_)和連結線(-)可以互換使用，ex: bg_black 與 bg-black 視為一樣的變數。</p>
+      </div>
+    </section>
+
+    <!-- 2. 流程控制 -->
+    <section id="section02">
+      <div class="container">
+        <h2>2. 流程控制(Flow Control)</h2>
+        <h3>@if、@else if、@else</h3>
+        <p>判斷條件可以小括號、也可以不括號。</p>
+        <div class="mybox">天氣好冷</div>
+
+        <h3>@for 迴圈有兩種 through 跟 to</h3>
+        <h4>@for $i from (start number) through (end number){...}, 此迴圈包含 end number</h4>
+        <div class="through-1"></div>
+        <div class="through-2"></div>
+        <div class="through-3"></div>
+        <h4>@for $i from (start number) to (end number){...}, 此迴不包含 end number</h4>
+        <div class="to-1"></div>
+        <div class="to-2"></div>
+        <div class="to-3"></div>
+        <h4>Sass 沒有像 JS 的 for in (js物件), for in, for of，取而代之的是@each</h4>
+      </div>
+    </section>
+
+    <!-- 3. 巢狀 -->
+    <div id="section03">
+      <div class="container">
+        <h1>3. 巢狀(nested)</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quas nam minus iusto voluptatum consequatur, rem ipsa dolorem tempore reiciendis at placeat quidem odit magnam possimus repudiandae mollitia vel nemo.</p>
+        <ul class="menu">
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. Extend(繼承) -->
+    <section id="section04">
+      <div class="container">
+        <h1>4. Extend(繼承)</h1>
+        <p>繼承可以用 CSS 選擇器 或 % 佔位符來命名</p>
+        <p>使用 CSS 選擇器當作季持，符合CSS選擇器規範，會被編譯到CSS，%佔位符是屬於SCSS的範疇不會被編譯到 CSS</p>
+        <p>相同繼承樣式在編譯後會被使用群組選擇器聚集在一起</p>
+        <p>@extend 沒有參數可以使用</p>
+        <div id="extend">
+          <div class="box1"></div>
+          <div class="box2"></div>
+          <div class="box3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Sass的計算 -->
+    <div id="section05">
+      <div class="container">
+        <h1>5. Sass的計算</h1>
+        <p>可以做+-*/取餘數</p>
+        <p>除法比較特別，直接除不會有效果，養成用括號習慣</p>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+      </div>
+    </div>
+
+    <!-- 6.Sass的function -->
+    <div id="section06">
+      <div class="container">
+        <h1>6. Sass的function </h1>
+        <p>@function 與 @mixin 有點像，這兩差異在於 @function 必須用 @return 返回結果， 他無法再呼叫的地方產生一段CSS樣式</p>
+      </div>
+    </div>
+
+    <!-- 7. -->
+
+    <!-- 9.SASS 的資料型態 -->
+    <section id="section09">
+      <div class="container">
+        <h1>9.SASS 的資料型態</h1>
+        <ul>
+          <li>1. number(數字):數字有分有單位或無單位,1,2,1,3,10px ,20rem</li>
+          <li>2. string(字串):有引號字串"Noto Sans TC",無引號字串 Noto Sans TC</li>
+          <li>3. color(顏色):blue,#666,rgb(....)</li>
+          <li>4. boolean(布林值): true false</li>
+          <li>5. null(空值):null</li>
+          <li>6. list(列表):用半形空格或逗號作為分割，1.51rem 2rem 0 2rem，或 '', '', ''</li>
+          <li>7. map(物件):類似 Js 物件，具有 key/value 特性。</li>
+        </ul>
+      </div>
+    </section>
+
+    <div id="exercise">
+      <div class="container">
+        <h2>練習:使用巢狀建立三欄結構</h2>
+        <div class="row">
+          <div class="col">
+            <img src="https://picsum.photos/400/300/?random=1">
+            <h2><a href="#"></a></h2>
+            <p>不僅毫無支持點這裡下載無限有一定，信心如此發表男子要去禮物近期物品爭取，看來一身你有至今有時中壢，感情我說第二章，驚人車輛提高不願觀察在於唯一外國本次站點歌詞烏日各級，對他大賽在我隨意一遍，不代表道理付出設置像是可以用協會圍繞玩家足球電視台，一種專區將會。</p>
+          </div>
+          <div class="col">
+            <img src="https://picsum.photos/400/300/?random=2">
+            <h2><a href="#"></a></h2>
+            <p>不僅毫無支持點這裡下載無限有一定，信心如此發表男子要去禮物近期物品爭取，看來一身你有至今有時中壢，感情我說第二章，驚人車輛提高不願觀察在於唯一外國本次站點歌詞烏日各級，對他大賽在我隨意一遍，不代表道理付出設置像是可以用協會圍繞玩家足球電視台，一種專區將會。</p>
+          </div>
+          <div class="col">
+            <img src="https://picsum.photos/400/300/?random=3">
+            <h2><a href="#"></a></h2>
+            <p>不僅毫無支持點這裡下載無限有一定，信心如此發表男子要去禮物近期物品爭取，看來一身你有至今有時中壢，感情我說第二章，驚人車輛提高不願觀察在於唯一外國本次站點歌詞烏日各級，對他大賽在我隨意一遍，不代表道理付出設置像是可以用協會圍繞玩家足球電視台，一種專區將會。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
